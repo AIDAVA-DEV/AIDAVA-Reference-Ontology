@@ -44,6 +44,6 @@ For instance, consider the following JSON-to-SPHN mapping scenario:
 
 In SPHN, this JSON should ideally map to `hasDiastolicPressure` due to the `type` indicating a diastolic blood pressure reading. However, our mapping tool doesn't provide the functionality to dynamically select between `hasSystolicPressure` or `hasDiastolicPressure` based on such conditions.
 
-Proposed Approach
+## Proposed Approach
 The proposed approach involves establishing a connection between the `sphn:Measurement` entity and the `sphn:Code` class using the `hasCode` relation. This way, diverse types of measurements, including but not limited to systolic and diastolic pressures, can be accurately represented under the broader `sphn:Measurement` category with associated codes.
 By removing specific relations for individual measurement types, it will enable the simplification of the ontology, facilitate mapping.
