@@ -14,12 +14,7 @@ The `apply.py` file contains the code that implements the change. The `README.md
 `apply.py` should contain a function called `apply` that takes a `Graph` object as input and returns a `Graph` object as output.
 
 ```python
-# To Enforce type checking
-# Only works while type checking
-from typing import TYPE_CHECKING
-
-if TYPE_CHECKING:
-    from rdflib import Graph
+from rdflib import Graph
     
 def apply(graph: Graph) -> Graph:
     # Code that implements the change
