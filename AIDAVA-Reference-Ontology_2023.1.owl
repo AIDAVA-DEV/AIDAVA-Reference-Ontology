@@ -1,0 +1,261 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="https://biomedit.ch/rdf/sphn-ontology/AIDAVA"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="https://biomedit.ch/rdf/sphn-ontology/AIDAVA"
+     versionIRI="https://biomedit.ch/rdf/sphn-ontology/AIDAVA/2023/1">
+    <Prefix name="" IRI="https://biomedit.ch/rdf/sphn-ontology/aidava-reference-ontology#"/>
+    <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="sphn" IRI="https://biomedit.ch/rdf/sphn-ontology/sphn#"/>
+    <Prefix name="dcterms" IRI="http://purl.org/dc/terms/"/>
+    <Prefix name="PROJECT-NAME" IRI="https://biomedit.ch/rdf/sphn-ontology/aidava-reference-ontology#"/>
+    <Import>https://biomedit.ch/rdf/sphn-ontology/sphn/2023/2</Import>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <Literal>The RDF schema data elements defined in AIDAVA dataset and aligned with IPS.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:title"/>
+        <Literal>The AIDAVA Reference Ontology RDF Schema</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:license"/>
+        <IRI>https://creativecommons.org/licenses/by/4.0/</IRI>
+    </Annotation>
+    <Declaration>
+        <Class IRI="http://snomed.info/id/250537006"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://snomed.info/id/713609000"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/AIDAVAConcept"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Condition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/DiagnosticReport"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/HistologyInvasiveBreastCancer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Medication"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Observation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Procedure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Specimen"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/VitalSigns"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/AIDAVAobjectproperties"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/hasConditionCode"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:license"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="/HistologyInvasiveBreastCancer"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://snomed.info/id/250537006"/>
+            <Class IRI="http://snomed.info/id/713609000"/>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="http://snomed.info/id/250537006"/>
+        <Class IRI="/AIDAVAConcept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://snomed.info/id/713609000"/>
+        <Class IRI="/AIDAVAConcept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Condition"/>
+        <Class IRI="/AIDAVAConcept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/DiagnosticReport"/>
+        <Class IRI="/AIDAVAConcept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/HistologyInvasiveBreastCancer"/>
+        <Class IRI="/Condition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Medication"/>
+        <Class IRI="/AIDAVAConcept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Observation"/>
+        <Class IRI="/AIDAVAConcept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Procedure"/>
+        <Class IRI="/AIDAVAConcept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Specimen"/>
+        <Class IRI="/AIDAVAConcept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/VitalSigns"/>
+        <Class IRI="/AIDAVAConcept"/>
+    </SubClassOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="/hasConditionCode"/>
+        <ObjectProperty IRI="/AIDAVAobjectproperties"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="/hasConditionCode"/>
+        <ObjectProperty abbreviatedIRI="sphn:hasCode"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/hasConditionCode"/>
+        <Class IRI="/Condition"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/hasConditionCode"/>
+        <Class abbreviatedIRI="sphn:Code"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="sphn:hasFreeText"/>
+        <Class IRI="/Condition"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="sphn:hasOnsetDateTime"/>
+        <Class IRI="/Condition"/>
+    </DataPropertyDomain>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://snomed.info/id/250537006</IRI>
+        <Literal>Histopathology finding (finding)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://snomed.info/id/713609000</IRI>
+        <Literal>Invasive carcinoma of breast (disorder)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/AIDAVAConcept</IRI>
+        <Literal>AIDAVA Concepts defined by the AIDAVA dataset</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/AIDAVAConcept</IRI>
+        <Literal>AIDAVA concept</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/AIDAVAobjectproperties</IRI>
+        <Literal>AIDAVA object properties</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/Condition</IRI>
+        <Literal>Class representing Condition in FHIR IPS implementation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Condition</IRI>
+        <Literal>Condition</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/DiagnosticReport</IRI>
+        <Literal>Class representing Diagnostic report in FHIR IPS implementation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/DiagnosticReport</IRI>
+        <Literal>Diagnostic report</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/HistologyInvasiveBreastCancer</IRI>
+        <Literal>Histology Invasive Breast Cancer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/Medication</IRI>
+        <Literal>Class representing Medication in FHIR IPS implementation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Medication</IRI>
+        <Literal>Medication</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/Observation</IRI>
+        <Literal>Class representing Observation in FHIR IPS implementation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Observation</IRI>
+        <Literal>Observation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/Procedure</IRI>
+        <Literal>Class representing Procedure in FHIR IPS implementation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Procedure</IRI>
+        <Literal>Procedure</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/Specimen</IRI>
+        <Literal>Class representing Specimen in FHIR IPS implementation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/Specimen</IRI>
+        <Literal>Specimen</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/VitalSigns</IRI>
+        <Literal>Class representing Vital signs in FHIR IPS implementation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/VitalSigns</IRI>
+        <Literal>Vital signs</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/hasConditionCode</IRI>
+        <Literal>The code for a Condition class instance</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/hasConditionCode</IRI>
+        <Literal>Condition code</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
