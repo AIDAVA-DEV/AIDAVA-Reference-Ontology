@@ -1,0 +1,4384 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ucum: <https://biomedit.ch/rdf/sphn-resource/ucum/> .
+
+ucum:UCUM a rdfs:Class ;
+    rdfs:label "UCUM" .
+
+ucum: a owl:Ontology ;
+    rdfs:comment "RDF version of UCUM (https://ucum.org/trac), developed by the SPHN DCC (PHI, SIB Swiss Institute of Bioinformatics). The copyright follows UCUM© 1999-2020 Regenstrief Institute, Inc." ;
+    owl:versionIRI <https://biomedit.ch/rdf/sphn-resource/ucum/2023/1> .
+
+ucum:10dotLpermin a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "10.L/min" ;
+    rdfs:comment "10 liter per minute" .
+
+ucum:10dotLperrblmindotm2rbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "10.L/(min.m2)" ;
+    rdfs:comment "10 liter per minute per square meter" .
+
+ucum:10dotuNdotsperrblcm5dotm2rbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "10.uN.s/(cm5.m2)" ;
+    rdfs:comment "10 micronewton second per centimeter to the fifth power per square meter" .
+
+ucum:10exp12perL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "10*12/L" ;
+    rdfs:comment "trillion per liter" .
+
+ucum:10exp3 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "10*3" ;
+    rdfs:comment "thousand" .
+
+ucum:10exp3cblRBCscbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "10*3{RBCs}" ;
+    rdfs:comment "thousand red blood cells" .
+
+ucum:10exp3cblcopiescbrpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "10*3{copies}/mL" ;
+    rdfs:comment "thousand copies per milliliter" .
+
+ucum:10exp3perL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "10*3/L" ;
+    rdfs:comment "thousand per liter" .
+
+ucum:10exp3permL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "10*3/mL" ;
+    rdfs:comment "thousand per milliliter" .
+
+ucum:10exp3peruL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "10*3/uL" ;
+    rdfs:comment "thousand per microliter" .
+
+ucum:10exp4peruL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "10*4/uL" ;
+    rdfs:comment "10 thousand per microliter" .
+
+ucum:10exp5 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "10*5" ;
+    rdfs:comment "one hundred thousand" .
+
+ucum:10exp6 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "10*6" ;
+    rdfs:comment "million" .
+
+ucum:10exp6dotsblCFUsbrperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "10*6.[CFU]/L" ;
+    rdfs:comment "million colony forming unit per liter" .
+
+ucum:10exp6dotsblIUsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "10*6.[IU]" ;
+    rdfs:comment "million international unit" .
+
+ucum:10exp6perL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "10*6/L" ;
+    rdfs:comment "million per liter" .
+
+ucum:10exp6perkg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "10*6/kg" ;
+    rdfs:comment "million per kilogram" .
+
+ucum:10exp6permL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "10*6/mL" ;
+    rdfs:comment "million per milliliter" .
+
+ucum:10exp6perrbl24dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "10*6/(24.h)" ;
+    rdfs:comment "million per 24 hour" .
+
+ucum:10exp6peruL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "10*6/uL" ;
+    rdfs:comment "million per microliter" .
+
+ucum:10exp8 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "10*8" ;
+    rdfs:comment "100 million " .
+
+ucum:10exp9perL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "10*9/L" ;
+    rdfs:comment "billion per liter" .
+
+ucum:10exp9permL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "10*9/mL" ;
+    rdfs:comment "billion per milliliter" .
+
+ucum:10exp9peruL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "10*9/uL" ;
+    rdfs:comment "billion per microliter" .
+
+ucum:24doth a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "24.h" ;
+    rdfs:comment "24 hour" .
+
+ucum:A a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "A" ;
+    rdfs:comment "ampere" .
+
+ucum:Aperm a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "A/m" ;
+    rdfs:comment "ampere per meter" .
+
+ucum:Bq a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "Bq" ;
+    rdfs:comment "Becquerel" .
+
+ucum:Cel a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "Cel" ;
+    rdfs:comment "degree Celsius" .
+
+ucum:F a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "F" ;
+    rdfs:comment "Farad" .
+
+ucum:Gy a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "Gy" ;
+    rdfs:comment "Gray" .
+
+ucum:H a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "H" ;
+    rdfs:comment "Henry" .
+
+ucum:Hz a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "Hz" ;
+    rdfs:comment "Hertz" .
+
+ucum:J a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "J" ;
+    rdfs:comment "joule" .
+
+ucum:JperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "J/L" ;
+    rdfs:comment "joule per liter" .
+
+ucum:K a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "K" ;
+    rdfs:comment "degree Kelvin" .
+
+ucum:KperW a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "K/W" ;
+    rdfs:comment "degree Kelvin per Watt" .
+
+ucum:L a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "L" ;
+    rdfs:comment "liter" .
+
+ucum:LperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "L/L" ;
+    rdfs:comment "liter per liter" .
+
+ucum:Lperd a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "L/d" ;
+    rdfs:comment "liter per day" .
+
+ucum:Lperh a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "L/h" ;
+    rdfs:comment "liter per hour" .
+
+ucum:Lperkg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "L/kg" ;
+    rdfs:comment "liter per kilogram" .
+
+ucum:Lpermin a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "L/min" ;
+    rdfs:comment "liter per minute" .
+
+ucum:Lperminperm2 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "L/min/m2" ;
+    rdfs:comment "liter per minute per sqaure meter" .
+
+ucum:Lperrbl24dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "L/(24.h)" ;
+    rdfs:comment "liter per 24 hour" .
+
+ucum:Lperrbl8dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "L/(8.h)" ;
+    rdfs:comment "liter per 8 hour" .
+
+ucum:Lperrblmindotm2rbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "L/(min.m2)" ;
+    rdfs:comment "liter per minute per square meter" .
+
+ucum:Lpers a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "L/s" ;
+    rdfs:comment "liter per second" .
+
+ucum:Lperspers2 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "L/s/s2" ;
+    rdfs:comment "liter per second per square second" .
+
+ucum:Mbq a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "Mbq" ;
+    rdfs:comment "megabecquerel" .
+
+ucum:Ms a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "Ms" ;
+    rdfs:comment "megasecond" .
+
+ucum:N a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "N" ;
+    rdfs:comment "Newton" .
+
+ucum:Ndotcm a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "N.cm" ;
+    rdfs:comment "Newton centimeter" .
+
+ucum:Ndots a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "N.s" ;
+    rdfs:comment "Newton second" .
+
+ucum:Ohm a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "Ohm" ;
+    rdfs:comment "Ohm" .
+
+ucum:Ohmdotm a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "Ohm.m" ;
+    rdfs:comment "Ohm meter" .
+
+ucum:Pa a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "Pa" ;
+    rdfs:comment "Pascal" .
+
+ucum:S a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "S" ;
+    rdfs:comment "Siemens" .
+
+ucum:Sv a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "Sv" ;
+    rdfs:comment "Sievert" .
+
+ucum:T a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "T" ;
+    rdfs:comment "Tesla" .
+
+ucum:Torr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "Torr" ;
+    rdfs:comment """Torr 
+""" .
+
+ucum:U a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "U" ;
+    rdfs:comment "enzyme unit" .
+
+ucum:Ucbl25CelcbrperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "U{25Cel}/L" ;
+    rdfs:comment "enzyme unit per liter at 25 deg Celsius " .
+
+ucum:Ucbl37CelcbrperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "U{37Cel}/L" ;
+    rdfs:comment "enzyme unit per liter at 37 deg Celsius" .
+
+ucum:Uper10 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "U/10" ;
+    rdfs:comment "enzyme unit per 10" .
+
+ucum:Uper10exp10 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "U/10*10" ;
+    rdfs:comment "enzyme unit per 10 billion" .
+
+ucum:Uper10exp10cblcellscbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "U/10*10{cells}" ;
+    rdfs:comment "enzyme unit per 10 billion cells" .
+
+ucum:Uper10exp12 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "U/10*12" ;
+    rdfs:comment "enzyme unit per trillion" .
+
+ucum:Uper10exp12cblRBCscbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "U/10*12{RBCs}" ;
+    rdfs:comment "enzyme unit per trillion red blood cells" .
+
+ucum:Uper10exp6 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "U/10*6" ;
+    rdfs:comment "enzyme unit per million" .
+
+ucum:Uper10exp9 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "U/10*9" ;
+    rdfs:comment "enzyme unit per billion" .
+
+ucum:UperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "U/L" ;
+    rdfs:comment "enzyme unit per liter" .
+
+ucum:Uperd a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "U/d" ;
+    rdfs:comment "enzyme unit per day" .
+
+ucum:UperdL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "U/dL" ;
+    rdfs:comment "enzyme unit per deciliter" .
+
+ucum:Uperg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "U/g" ;
+    rdfs:comment "enzyme unit per gram" .
+
+ucum:UpergcblHbcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "U/g{Hb}" ;
+    rdfs:comment "enzyme unit per gram of hemoglobin" .
+
+ucum:Upergcblcreatcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "U/g{creat}" ;
+    rdfs:comment "enzyme unit per gram of creatinine" .
+
+ucum:Upergcblproteincbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "U/g{protein}" ;
+    rdfs:comment "enzyme unit per gram of protein" .
+
+ucum:Uperh a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "U/h" ;
+    rdfs:comment "enzyme unit per hour" .
+
+ucum:UperkgcblHbcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "U/kg{Hb}" ;
+    rdfs:comment "enzyme unit per kilogram of hemoglobin" .
+
+ucum:UpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "U/mL" ;
+    rdfs:comment "enzyme unit per milliliter" .
+
+ucum:UpermLcblRBCscbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "U/mL{RBCs}" ;
+    rdfs:comment "enzyme unit per milliliter of red blood cells" .
+
+ucum:Upermin a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "U/min" ;
+    rdfs:comment "enzyme unit per minute" .
+
+ucum:Upermmol a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "U/mmol" ;
+    rdfs:comment "enzyme unit per millimole" .
+
+ucum:Upermmolcblcreatcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "U/mmol{creat}" ;
+    rdfs:comment "enzyme unit per millimole of creatinine" .
+
+ucum:Uperrbl10dotgrbrcblfecescbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "U/(10.g){feces}" ;
+    rdfs:comment "enzyme unit per 10 gram of feces" .
+
+ucum:Uperrbl12dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "U/(12.h)" ;
+    rdfs:comment "enzyme unit per 12 hour" .
+
+ucum:Uperrbl24dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "U/(24.h)" ;
+    rdfs:comment "enzyme unit per 24 hour" .
+
+ucum:Uperrbl2dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "U/(2.h)" ;
+    rdfs:comment "enzyme unit per 2 hour" .
+
+ucum:Upers a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "U/s" ;
+    rdfs:comment "enzyme unit per second" .
+
+ucum:V a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "V" ;
+    rdfs:comment "volt" .
+
+ucum:Wb a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "Wb" ;
+    rdfs:comment "Weber" .
+
+ucum:a a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "a" ;
+    rdfs:comment "year" .
+
+ucum:agpercblcellcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ag/{cell}" ;
+    rdfs:comment "attogram per cell" .
+
+ucum:atm a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "atm" ;
+    rdfs:comment "atmosphere" .
+
+ucum:bar a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "bar" ;
+    rdfs:comment "bar" .
+
+ucum:cGy a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "cGy" ;
+    rdfs:comment "centigray" .
+
+ucum:cL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "cL" ;
+    rdfs:comment "centiliter" .
+
+ucum:cP a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "cP" ;
+    rdfs:comment "centipoise" .
+
+ucum:cSt a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "cSt" ;
+    rdfs:comment "centistoke" .
+
+ucum:cal a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "cal" ;
+    rdfs:comment "calorie" .
+
+ucum:cblAHFapoUcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{AHF'U}" ;
+    rdfs:comment "American Hospital Formulary unit" .
+
+ucum:cblAPSapoUcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{APS'U}" ;
+    rdfs:comment "IgA antiphosphatidylserine unit " .
+
+ucum:cblARUcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{ARU}" ;
+    rdfs:comment "aspirin response unit" .
+
+ucum:cblCAEapoUcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{CAE'U}" ;
+    rdfs:comment "complement activity enzyme unit" .
+
+ucum:cblCAG_repeatscbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{CAG_repeats}" ;
+    rdfs:comment "CAG trinucleotide repeats" .
+
+ucum:cblCH100apoUcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{CH100'U}" ;
+    rdfs:comment "complement CH100 unit" .
+
+ucum:cblCPMcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{CPM}" ;
+    rdfs:comment "counts per minute" .
+
+ucum:cblCPMcbrper10exp3cblcellcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{CPM}/10*3{cell}" ;
+    rdfs:comment "counts per minute per thousand cells" .
+
+ucum:cblCt_valuecbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{Ct_value}" ;
+    rdfs:comment "Cycle threshold value" .
+
+ucum:cblEIA_indexcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{EIA_index}" ;
+    rdfs:comment "EIA index" .
+
+ucum:cblEIA_titercbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{EIA_titer}" ;
+    rdfs:comment "EIA titer" .
+
+ucum:cblEIAapoUcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{EIA'U}" ;
+    rdfs:comment "EIA unit" .
+
+ucum:cblEIAapoUcbrperU a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{EIA'U}/U" ;
+    rdfs:comment "EIA unit per enzyme unit" .
+
+ucum:cblELISAapoUcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{ELISA'U}" ;
+    rdfs:comment "ELISA unit" .
+
+ucum:cblEVcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{EV}" ;
+    rdfs:comment "EIA value" .
+
+ucum:cblEhrlichapoUcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{Ehrlich'U}" ;
+    rdfs:comment "Ehrlich unit" .
+
+ucum:cblEhrlichapoUcbrper100dotg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{Ehrlich'U}/100.g" ;
+    rdfs:comment "Ehrlich unit per 100 gram" .
+
+ucum:cblEhrlichapoUcbrperd a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{Ehrlich'U}/d" ;
+    rdfs:comment "Ehrlich unit per day" .
+
+ucum:cblEhrlichapoUcbrperdL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{Ehrlich'U}/dL" ;
+    rdfs:comment "Ehrlich unit per deciliter" .
+
+ucum:cblEhrlichapoUcbrperrbl2dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{Ehrlich'U}/(2.h)" ;
+    rdfs:comment "Ehrlich unit per 2 hour" .
+
+ucum:cblFIUcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{FIU}" ;
+    rdfs:comment "fluorescent intensity unit" .
+
+ucum:cblGAA_repeatscbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{GAA_repeats}" ;
+    rdfs:comment "GAA trinucleotide repeats" .
+
+ucum:cblGPSapoUcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{GPS'U}" ;
+    rdfs:comment "IgG antiphosphatidylserine unit" .
+
+ucum:cblGlobulescbrpersblHPFsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{Globules}/[HPF]" ;
+    rdfs:comment "globules (drops)  per high power field" .
+
+ucum:cblHA_titercbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{HA_titer}" ;
+    rdfs:comment "influenza hemagglutination titer" .
+
+ucum:cblIFA_indexcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{IFA_index}" ;
+    rdfs:comment "immunofluorescence assay index" .
+
+ucum:cblIFA_titercbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{IFA_titer}" ;
+    rdfs:comment "Immunofluorescence assay titer" .
+
+ucum:cblINRcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{INR}" ;
+    rdfs:comment "international normalized ratio" .
+
+ucum:cblISRcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{ISR}" ;
+    rdfs:comment "immune status ratio" .
+
+ucum:cblImmuneComplexapoUcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{ImmuneComplex'U}" ;
+    rdfs:comment "immune complex unit" .
+
+ucum:cblJDFapoUcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{JDF'U}" ;
+    rdfs:comment "Juvenile Diabetes Foundation unit" .
+
+ucum:cblJDFapoUcbrperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{JDF'U}/L" ;
+    rdfs:comment "Juvenile Diabetes Foundation unit per liter" .
+
+ucum:cblKCTapoUcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{KCT'U}" ;
+    rdfs:comment "kaolin clotting time" .
+
+ucum:cblKRONUapoUcbrpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{KRONU'U}/mL" ;
+    rdfs:comment "Kronus unit per milliliter" .
+
+ucum:cblLog_IUcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{Log_IU}" ;
+    rdfs:comment "log (base 10) international unit" .
+
+ucum:cblLog_IUcbrpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{Log_IU}/mL" ;
+    rdfs:comment "log (base 10) international unit per milliliter" .
+
+ucum:cblLog_copiescbrpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{Log_copies}/mL" ;
+    rdfs:comment "log (base 10) copies per milliliter" .
+
+ucum:cblLogcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{Log}" ;
+    rdfs:comment "log base 10" .
+
+ucum:cblLyme_index_valuecbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{Lyme_index_value}" ;
+    rdfs:comment "Lyme index value" .
+
+ucum:cblMPSapoUcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{MPS'U}" ;
+    rdfs:comment "IgM antiphosphatidylserine unit" .
+
+ucum:cblMPSapoUcbrpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{MPS'U}/mL" ;
+    rdfs:comment "IgM antiphosphatidylserine unit per milliliter" .
+
+ucum:cblMdotodotMcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{M.o.M}" ;
+    rdfs:comment "multiple of the median" .
+
+ucum:cblOD_unitcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{OD_unit}" ;
+    rdfs:comment "optical density unit" .
+
+ucum:cblPan_BioapoUcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{Pan_Bio'U}" ;
+    rdfs:comment "panbio unit" .
+
+ucum:cblRBCcbrperuL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{RBC}/uL" ;
+    rdfs:comment "red blood cell per microliter" .
+
+ucum:cblRubella_viruscbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{Rubella_virus}" ;
+    rdfs:comment "rubella virus" .
+
+ucum:cblSTDVcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{STDV}" ;
+    rdfs:comment "standard deviation" .
+
+ucum:cblTSI_indexcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{TSI_index}" ;
+    rdfs:comment "thyroid-stimulating immunoglobulin index" .
+
+ucum:cblTmStpcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{TmStp}" ;
+    rdfs:comment "time stamp" .
+
+ucum:cblTscorecbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{Tscore}" ;
+    rdfs:comment "t score" .
+
+ucum:cblWBCscbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{WBCs}" ;
+    rdfs:comment "white blood cells" .
+
+ucum:cblZscorecbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{Zscore}" ;
+    rdfs:comment "z score" .
+
+ucum:cblabsorbancecbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{absorbance}" ;
+    rdfs:comment "absorbance" .
+
+ucum:cblactivitycbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{activity}" ;
+    rdfs:comment "activity" .
+
+ucum:cblbeatscbrpermin a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{beats}/min" ;
+    rdfs:comment "heart beats per minute" .
+
+ucum:cblbinding_indexcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{binding_index}" ;
+    rdfs:comment "binding index" .
+
+ucum:cblbreathscbrpermin a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{breaths}/min" ;
+    rdfs:comment "breaths per minute" .
+
+ucum:cblcellscbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{cells}" ;
+    rdfs:comment "cells" .
+
+ucum:cblcellscbrpersblHPFsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{cells}/[HPF]" ;
+    rdfs:comment "cells per high power field" .
+
+ucum:cblcellscbrperuL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{cells}/uL" ;
+    rdfs:comment "cells per microliter" .
+
+ucum:cblclock_timecbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{clock_time}" ;
+    rdfs:comment "clock time e.g 12:30PM" .
+
+ucum:cblcopiescbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{copies}" ;
+    rdfs:comment "copies" .
+
+ucum:cblcopiescbrpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{copies}/mL" ;
+    rdfs:comment "copies per milliliter" .
+
+ucum:cblcopiescbrperug a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{copies}/ug" ;
+    rdfs:comment "copies per microgram" .
+
+ucum:cblcountcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{count}" ;
+    rdfs:comment "count" .
+
+ucum:cbldelta_ODcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{delta_OD}" ;
+    rdfs:comment "change in (delta) optical density" .
+
+ucum:cbldilutioncbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{dilution}" ;
+    rdfs:comment "dilution" .
+
+ucum:cblfractioncbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{fraction}" ;
+    rdfs:comment "fraction" .
+
+ucum:cblgenomescbrpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{genomes}/mL" ;
+    rdfs:comment "genomes per milliliter" .
+
+ucum:cblindex_valcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{index_val}" ;
+    rdfs:comment "index value" .
+
+ucum:cblindexcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{index}" ;
+    rdfs:comment "index value" .
+
+ucum:cblminidropcbrpermin a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{minidrop}/min" ;
+    rdfs:comment "minidrop per minute" .
+
+ucum:cblminidropcbrpers a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{minidrop}/s" ;
+    rdfs:comment "minidrop per second" .
+
+ucum:cblmmperddperyyyycbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{mm/dd/yyyy}" ;
+    rdfs:comment "month-day-year" .
+
+ucum:cblmutationcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{mutation}" ;
+    rdfs:comment "mutation" .
+
+ucum:cblnbcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{#}" ;
+    rdfs:comment "number" .
+
+ucum:cblnbcbrperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{#}/L" ;
+    rdfs:comment "number per liter" .
+
+ucum:cblnbcbrpera a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{#}/a" ;
+    rdfs:comment "number per annum (year)" .
+
+ucum:cblnbcbrpercblplateletcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{#}/{platelet}" ;
+    rdfs:comment "molecule per platelet" .
+
+ucum:cblnbcbrperd a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{#}/d" ;
+    rdfs:comment "number per day" .
+
+ucum:cblnbcbrperg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{#}/g" ;
+    rdfs:comment "number per gram" .
+
+ucum:cblnbcbrpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{#}/mL" ;
+    rdfs:comment "number per milliliter" .
+
+ucum:cblnbcbrpermin a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{#}/min" ;
+    rdfs:comment "number per minute" .
+
+ucum:cblnbcbrpersblHPFsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{#}/[HPF]" ;
+    rdfs:comment "number per high power field" .
+
+ucum:cblnbcbrpersblLPFsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{#}/[LPF]" ;
+    rdfs:comment "number per low power field" .
+
+ucum:cblnbcbrperuL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{#}/uL" ;
+    rdfs:comment "number per microliter" .
+
+ucum:cblnbcbrperwk a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{#}/wk" ;
+    rdfs:comment "number per week" .
+
+ucum:cblpercentilecbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{percentile}" ;
+    rdfs:comment "percentile" .
+
+ucum:cblphenotypecbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{phenotype}" ;
+    rdfs:comment "phenotype" .
+
+ucum:cblratiocbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{ratio}" ;
+    rdfs:comment "ratio" .
+
+ucum:cblrel_saturationcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{rel_saturation}" ;
+    rdfs:comment "relative saturation" .
+
+ucum:cblriskcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{risk}" ;
+    rdfs:comment "risk" .
+
+ucum:cbls_co_ratiocbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{s_co_ratio}" ;
+    rdfs:comment "signal to cutoff ratio" .
+
+ucum:cblsaturationcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{saturation}" ;
+    rdfs:comment "saturation" .
+
+ucum:cblscorecbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{score}" ;
+    rdfs:comment "score" .
+
+ucum:cblshiftcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{shift}" ;
+    rdfs:comment "shift" .
+
+ucum:cblspermatozoacbrpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{spermatozoa}/mL" ;
+    rdfs:comment "spermatozoa per milliliter" .
+
+ucum:cbltitercbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{titer}" ;
+    rdfs:comment "titer" .
+
+ucum:cblyyyycbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "{yyyy}" ;
+    rdfs:comment "year" .
+
+ucum:cg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "cg" ;
+    rdfs:comment "centigram" .
+
+ucum:cm a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "cm" ;
+    rdfs:comment "centimeter" .
+
+ucum:cm2 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "cm2" ;
+    rdfs:comment "square centimeter" .
+
+ucum:cm2pers a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "cm2/s" ;
+    rdfs:comment "square centimeter per second" .
+
+ucum:cm3 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "cm3" ;
+    rdfs:comment "cubic centimeter" .
+
+ucum:cmpers a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "cm/s" ;
+    rdfs:comment "centimeter per second" .
+
+ucum:cmsblH2Osbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "cm[H2O]" ;
+    rdfs:comment "centimeter of water" .
+
+ucum:cmsblH2OsbrperLpers a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "cm[H2O]/L/s" ;
+    rdfs:comment "centimeter of water per liter per second" .
+
+ucum:cmsblH2Osbrpersperm a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "cm[H2O]/s/m" ;
+    rdfs:comment "centimeter of water per second per meter" .
+
+ucum:cmsblHgsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "cm[Hg]" ;
+    rdfs:comment "centimeter of mercury" .
+
+ucum:d a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "d" ;
+    rdfs:comment "day" .
+
+ucum:dB a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "dB" ;
+    rdfs:comment "decibel" .
+
+ucum:dL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "dL" ;
+    rdfs:comment "deciliter" .
+
+ucum:daLpermin a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "daL/min" ;
+    rdfs:comment "dekaliter per minute" .
+
+ucum:daLperminperm2 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "daL/min/m2" ;
+    rdfs:comment "dekaliter per minute per square meter" .
+
+ucum:deg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "deg" ;
+    rdfs:comment "degree (plane angle)" .
+
+ucum:degpers a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "deg/s" ;
+    rdfs:comment "degree per second" .
+
+ucum:dg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "dg" ;
+    rdfs:comment "decigram" .
+
+ucum:dm a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "dm" ;
+    rdfs:comment "decimeter" .
+
+ucum:dm2pers2 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "dm2/s2" ;
+    rdfs:comment "square decimeter per square second" .
+
+ucum:dperrbl7dotdrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "d/(7.d)" ;
+    rdfs:comment "day per 7 day" .
+
+ucum:dperwk a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "d/wk" ;
+    rdfs:comment "days per week" .
+
+ucum:dyndotspercm a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "dyn.s/cm" ;
+    rdfs:comment "dyne second per centimeter" .
+
+ucum:dyndotspercm5 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "dyn.s/cm5" ;
+    rdfs:comment "dyne second per quintic centimeter" .
+
+ucum:dyndotsperrblcmdotm2rbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "dyn.s/(cm.m2)" ;
+    rdfs:comment "dyne second per centimeter per square meter" .
+
+ucum:eV a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "eV" ;
+    rdfs:comment "electron Volt" .
+
+ucum:eq a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "eq" ;
+    rdfs:comment "equivalent" .
+
+ucum:eqperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "eq/L" ;
+    rdfs:comment "equivalent per liter" .
+
+ucum:eqpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "eq/mL" ;
+    rdfs:comment "equivalent per milliliter" .
+
+ucum:eqpermmol a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "eq/mmol" ;
+    rdfs:comment "equivalent per millimole" .
+
+ucum:eqperumol a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "eq/umol" ;
+    rdfs:comment "equivalent per micromole" .
+
+ucum:erg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "erg" ;
+    rdfs:comment "erg" .
+
+ucum:fL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "fL" ;
+    rdfs:comment "femtoliter" .
+
+ucum:fg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "fg" ;
+    rdfs:comment "femtogram" .
+
+ucum:fm a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "fm" ;
+    rdfs:comment "femtometer" .
+
+ucum:fmol a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "fmol" ;
+    rdfs:comment "femtomole" .
+
+ucum:fmolperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "fmol/L" ;
+    rdfs:comment "femtomole per liter" .
+
+ucum:fmolperg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "fmol/g" ;
+    rdfs:comment "femtomole per gram" .
+
+ucum:fmolpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "fmol/mL" ;
+    rdfs:comment "femtomole per milliliter" .
+
+ucum:fmolpermg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "fmol/mg" ;
+    rdfs:comment "femtomole per milligram" .
+
+ucum:fmolpermgcblcyt_protcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "fmol/mg{cyt_prot}" ;
+    rdfs:comment "femtomole per milligram of cytosol protein" .
+
+ucum:fmolpermgcblprotcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "fmol/mg{prot}" ;
+    rdfs:comment "femtomole per milligram of protein" .
+
+ucum:g a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g" ;
+    rdfs:comment "gram" .
+
+ucum:gcblHbcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g{Hb}" ;
+    rdfs:comment "gram of hemoglobin" .
+
+ucum:gcblcreatcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g{creat}" ;
+    rdfs:comment "gram of creatinine" .
+
+ucum:gcbltotal_nitcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g{total_nit}" ;
+    rdfs:comment "gram of total nitrogen" .
+
+ucum:gcbltotal_protcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g{total_prot}" ;
+    rdfs:comment "gram of total protein" .
+
+ucum:gcblwet_tissuecbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g{wet_tissue}" ;
+    rdfs:comment "gram of wet tissue" .
+
+ucum:gdothperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g.h/L" ;
+    rdfs:comment "gram hour per liter" .
+
+ucum:gdotm a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g.m" ;
+    rdfs:comment "gram meter" .
+
+ucum:gdotmpercblbeatcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g.m/{beat}" ;
+    rdfs:comment "gram meter per heart beat " .
+
+ucum:gperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g/L" ;
+    rdfs:comment "gram per liter" .
+
+ucum:gpercblspecimencbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g/{specimen}" ;
+    rdfs:comment "gram per specimen" .
+
+ucum:gpercbltotal_outputcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g/{total_output}" ;
+    rdfs:comment "gram per total output" .
+
+ucum:gpercbltotal_weightcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g/{total_weight}" ;
+    rdfs:comment "gram per total weight" .
+
+ucum:gpercm2 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g/cm2" ;
+    rdfs:comment "gram per square centimeter" .
+
+ucum:gpercm3 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g/cm3" ;
+    rdfs:comment "gram per cubic centimeter" .
+
+ucum:gperd a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g/d" ;
+    rdfs:comment "gram per day" .
+
+ucum:gperdL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g/dL" ;
+    rdfs:comment "gram per deciliter" .
+
+ucum:gperg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g/g" ;
+    rdfs:comment "gram per gram" .
+
+ucum:gpergcblcreatcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g/g{creat}" ;
+    rdfs:comment "gram per gram of creatinine" .
+
+ucum:gpergcblglobulincbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g/g{globulin}" ;
+    rdfs:comment "gram per gram of globulin" .
+
+ucum:gpergcbltissuecbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g/g{tissue}" ;
+    rdfs:comment "gram per gram of tissue" .
+
+ucum:gperh a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g/h" ;
+    rdfs:comment "gram per hour" .
+
+ucum:gperhperm2 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g/h/m2" ;
+    rdfs:comment "gram per hour per square meter" .
+
+ucum:gperkg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g/kg" ;
+    rdfs:comment "gram per kilogram" .
+
+ucum:gperkgperd a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g/kg/d" ;
+    rdfs:comment "gram per kilogram per day" .
+
+ucum:gperkgperh a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g/kg/h" ;
+    rdfs:comment "gram per kilogram per hour" .
+
+ucum:gperkgpermin a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g/kg/min" ;
+    rdfs:comment "gram per kilogram per minute" .
+
+ucum:gperkgperrbl8dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g/kg/(8.h)" ;
+    rdfs:comment "gram per  kilogram per 8 hour " .
+
+ucum:gperkgperrbl8dothrbrcblshiftcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g/kg/(8.h){shift}" ;
+    rdfs:comment "gram per kilogram per 8 hour shift" .
+
+ucum:gperm2 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g/m2" ;
+    rdfs:comment "gram per square meter" .
+
+ucum:gpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g/mL" ;
+    rdfs:comment "gram per milliliter" .
+
+ucum:gpermg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g/mg" ;
+    rdfs:comment "gram per milligram" .
+
+ucum:gpermin a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g/min" ;
+    rdfs:comment "gram per minute" .
+
+ucum:gpermmol a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g/mmol" ;
+    rdfs:comment "gram per millimole" .
+
+ucum:gpermmolcblcreatininecbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g/mmol{creatinine}" ;
+    rdfs:comment "gram per millimole of creatinine" .
+
+ucum:gpermol a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g/mol" ;
+    rdfs:comment "gram per mole" .
+
+ucum:gpermolcblcreatcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g/mol{creat}" ;
+    rdfs:comment "gram per mole of creatinine" .
+
+ucum:gperrbl100dotgrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g/(100.g)" ;
+    rdfs:comment "gram per 100 gram" .
+
+ucum:gperrbl12dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g/(12.h)" ;
+    rdfs:comment "gram per 12 hour" .
+
+ucum:gperrbl24dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g/(24.h)" ;
+    rdfs:comment "gram per 24 hour" .
+
+ucum:gperrbl3dotdrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g/(3.d)" ;
+    rdfs:comment "gram per 3 days" .
+
+ucum:gperrbl48dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g/(48.h)" ;
+    rdfs:comment "gram per 48 hour" .
+
+ucum:gperrbl4dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g/(4.h)" ;
+    rdfs:comment "gram per 4 hour" .
+
+ucum:gperrbl5dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g/(5.h)" ;
+    rdfs:comment "gram per 5 hour" .
+
+ucum:gperrbl6dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g/(6.h)" ;
+    rdfs:comment "gram per 6 hour" .
+
+ucum:gperrbl72dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g/(72.h)" ;
+    rdfs:comment "gram per 72 hour" .
+
+ucum:gperrbl8dothrbrcblshiftcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "g/(8.h){shift}" ;
+    rdfs:comment "gram per 8 hour shift" .
+
+ucum:h a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "h" ;
+    rdfs:comment "hour" .
+
+ucum:hperd a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "h/d" ;
+    rdfs:comment "hour per day" .
+
+ucum:hperwk a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "h/wk" ;
+    rdfs:comment "hour per week" .
+
+ucum:kL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "kL" ;
+    rdfs:comment "kiloliter" .
+
+ucum:kPa a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "kPa" ;
+    rdfs:comment "kilopascal" .
+
+ucum:kU a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "kU" ;
+    rdfs:comment "kilo enzyme unit" .
+
+ucum:kUperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "kU/L" ;
+    rdfs:comment "kilo enzyme unit per liter" .
+
+ucum:kUperLcblclasscbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "kU/L{class}" ;
+    rdfs:comment "kilo enzyme unit per liter class" .
+
+ucum:kUperg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "kU/g" ;
+    rdfs:comment "kilo enzyme unit per gram" .
+
+ucum:kUpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "kU/mL" ;
+    rdfs:comment "kilo enzyme unit per milliliter" .
+
+ucum:kat a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "kat" ;
+    rdfs:comment "katal" .
+
+ucum:katperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "kat/L" ;
+    rdfs:comment "katal per liter" .
+
+ucum:katperkg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "kat/kg" ;
+    rdfs:comment "katal per kilogram" .
+
+ucum:kcal a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "kcal" ;
+    rdfs:comment "kilocalorie" .
+
+ucum:kcalperd a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "kcal/d" ;
+    rdfs:comment "kilocalorie per day" .
+
+ucum:kcalperh a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "kcal/h" ;
+    rdfs:comment "kilocalorie per hour" .
+
+ucum:kcalperkgperrbl24dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "kcal/kg/(24.h)" ;
+    rdfs:comment "kilocalorie per kilogram per 24 hour" .
+
+ucum:kcalperrbl24dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "kcal/(24.h)" ;
+    rdfs:comment "kilocalorie per 24 hour" .
+
+ucum:kcalpersbloz_avsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "kcal/[oz_av]" ;
+    rdfs:comment "kilocalorie per ounce (US & British)" .
+
+ucum:kg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "kg" ;
+    rdfs:comment "kilogram" .
+
+ucum:kgdotmpers a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "kg.m/s" ;
+    rdfs:comment "kilogram meter per second" .
+
+ucum:kgperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "kg/L" ;
+    rdfs:comment "kilogram per liter" .
+
+ucum:kgperh a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "kg/h" ;
+    rdfs:comment "kilogram per hour" .
+
+ucum:kgperm2 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "kg/m2" ;
+    rdfs:comment "kilogram per square meter" .
+
+ucum:kgperm3 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "kg/m3" ;
+    rdfs:comment "kilogram per cubic meter" .
+
+ucum:kgpermin a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "kg/min" ;
+    rdfs:comment "kilogram per minute" .
+
+ucum:kgpermol a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "kg/mol" ;
+    rdfs:comment "kilogram per mole" .
+
+ucum:kgperrblsdotm2rbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "kg/(s.m2)" ;
+    rdfs:comment "kilogram per second per square meter" .
+
+ucum:kgpers a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "kg/s" ;
+    rdfs:comment "kilogram per second" .
+
+ucum:km a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "km" ;
+    rdfs:comment "kilometer" .
+
+ucum:ks a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ks" ;
+    rdfs:comment "kilosecond" .
+
+ucum:ksblIUsbrperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "k[IU]/L" ;
+    rdfs:comment "kilo international unit per liter" .
+
+ucum:ksblIUsbrpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "k[IU]/mL" ;
+    rdfs:comment "kilo international unit per milliliter" .
+
+ucum:ksblarbapoUsbrperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "k[arb'U]/L" ;
+    rdfs:comment "kilo arbitrary unit per liter" .
+
+ucum:lm a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "lm" ;
+    rdfs:comment "lumen" .
+
+ucum:lmdotm2 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "lm.m2" ;
+    rdfs:comment "lumen square meter" .
+
+ucum:m a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "m" ;
+    rdfs:comment "meter" .
+
+ucum:m2 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "m2" ;
+    rdfs:comment "square meter" .
+
+ucum:m2pers a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "m2/s" ;
+    rdfs:comment "square meter per second" .
+
+ucum:m3pers a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "m3/s" ;
+    rdfs:comment "cubic meter per second" .
+
+ucum:mA a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mA" ;
+    rdfs:comment "milliampere" .
+
+ucum:mCi a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mCi" ;
+    rdfs:comment "millicurie" .
+
+ucum:mL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mL" ;
+    rdfs:comment "milliliter" .
+
+ucum:mLcblfetal_RBCscbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mL{fetal_RBCs}" ;
+    rdfs:comment "milliliter of fetal red blood cells" .
+
+ucum:mLpercblbeatcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mL/{beat}" ;
+    rdfs:comment "milliliter per heart beat" .
+
+ucum:mLpercblbeatcbrperm2 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mL/{beat}/m2" ;
+    rdfs:comment "milliliter per heart beat per  square meter" .
+
+ucum:mLpercmsblH2Osbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mL/cm[H2O]" ;
+    rdfs:comment "milliliter per centimeter of water" .
+
+ucum:mLperd a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mL/d" ;
+    rdfs:comment "milliliter per day" .
+
+ucum:mLperdL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mL/dL" ;
+    rdfs:comment "milliliter per deciliter" .
+
+ucum:mLperh a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mL/h" ;
+    rdfs:comment "milliliter per hour" .
+
+ucum:mLperkg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mL/kg" ;
+    rdfs:comment "milliliter per kilogram" .
+
+ucum:mLperkgperd a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mL/kg/d" ;
+    rdfs:comment "milliliter per kilogram per day" .
+
+ucum:mLperkgperh a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mL/kg/h" ;
+    rdfs:comment "milliliter per kilogram per hour" .
+
+ucum:mLperkgpermin a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mL/kg/min" ;
+    rdfs:comment "milliliter per kilogram per minute" .
+
+ucum:mLperkgperrbl8dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mL/kg/(8.h)" ;
+    rdfs:comment "milliliter per kilogram per 8 hour" .
+
+ucum:mLperm2 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mL/m2" ;
+    rdfs:comment "milliliter per square meter" .
+
+ucum:mLpermbar a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mL/mbar" ;
+    rdfs:comment "milliliter per millibar" .
+
+ucum:mLpermin a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mL/min" ;
+    rdfs:comment "milliliter per minute" .
+
+ucum:mLperminpercbl1dot73_m2cbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mL/min/{1.73_m2}" ;
+    rdfs:comment "milliliter per minute per 1.73 square meter" .
+
+ucum:mLperminperm2 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mL/min/m2" ;
+    rdfs:comment "milliliter per minute per square meter" .
+
+ucum:mLpermm a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mL/mm" ;
+    rdfs:comment "milliliter per millimeter" .
+
+ucum:mLperrbl10dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mL/(10.h)" ;
+    rdfs:comment "milliliter per 10 hour" .
+
+ucum:mLperrbl12dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mL/(12.h)" ;
+    rdfs:comment "milliliter per 12 hour" .
+
+ucum:mLperrbl24dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mL/(24.h)" ;
+    rdfs:comment "milliliter per 24 hour" .
+
+ucum:mLperrbl2dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mL/(2.h)" ;
+    rdfs:comment "milliliter per 2 hour" .
+
+ucum:mLperrbl4dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mL/(4.h)" ;
+    rdfs:comment "milliliter per 4 hour" .
+
+ucum:mLperrbl5dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mL/(5.h)" ;
+    rdfs:comment "milliliter per 5 hour" .
+
+ucum:mLperrbl6dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mL/(6.h)" ;
+    rdfs:comment "milliliter per 6 hour" .
+
+ucum:mLperrbl72dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mL/(72.h)" ;
+    rdfs:comment "milliliter per 72 hour" .
+
+ucum:mLperrbl8dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mL/(8.h)" ;
+    rdfs:comment "milliliter per 8 hour" .
+
+ucum:mLperrbl8dothrbrperkg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mL/(8.h)/kg" ;
+    rdfs:comment "milliliter per 8 hour per kilogram" .
+
+ucum:mLpers a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mL/s" ;
+    rdfs:comment "milliliter per second" .
+
+ucum:mLpersblsin_isbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mL/[sin_i]" ;
+    rdfs:comment "milliliter per square inch (international)" .
+
+ucum:mPa a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mPa" ;
+    rdfs:comment "millipascal" .
+
+ucum:mPadots a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mPa.s" ;
+    rdfs:comment "millipascal second" .
+
+ucum:mUperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mU/L" ;
+    rdfs:comment "milli enzyme unit per liter" .
+
+ucum:mUperg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mU/g" ;
+    rdfs:comment "milli  enzyme unit per gram" .
+
+ucum:mUpergcblHbcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mU/g{Hb}" ;
+    rdfs:comment "milli enzyme unit per gram of hemoglobin" .
+
+ucum:mUpergcblprotcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mU/g{prot}" ;
+    rdfs:comment "milli enzyme unit per gram of protein" .
+
+ucum:mUpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mU/mL" ;
+    rdfs:comment "milli  enzyme unit per milliliter" .
+
+ucum:mUpermLpermin a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mU/mL/min" ;
+    rdfs:comment "milli  enzyme unit per milliliter per minute" .
+
+ucum:mUpermg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mU/mg" ;
+    rdfs:comment "milli enzyme unit per milligram" .
+
+ucum:mUpermgcblcreatcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mU/mg{creat}" ;
+    rdfs:comment "milli enzyme unit per milligram of creatinine" .
+
+ucum:mUpermmolcblRBCscbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mU/mmol{RBCs}" ;
+    rdfs:comment "milli  enzyme unit per millimole of red blood cells" .
+
+ucum:mUpermmolcblcreatcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mU/mmol{creat}" ;
+    rdfs:comment "milli  enzyme unit per millimole of creatinine" .
+
+ucum:mV a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mV" ;
+    rdfs:comment "millivolt" .
+
+ucum:mVpers a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mV/s" ;
+    rdfs:comment "millivolt per second" .
+
+ucum:mbar a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mbar" ;
+    rdfs:comment "millibar" .
+
+ucum:mbardotsperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mbar.s/L" ;
+    rdfs:comment "millibar second per liter" .
+
+ucum:mbarperLpers a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mbar/L/s" ;
+    rdfs:comment "millibar per liter per second" .
+
+ucum:meq a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "meq" ;
+    rdfs:comment "milliequivalent" .
+
+ucum:meqperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "meq/L" ;
+    rdfs:comment "milliequivalent per liter" .
+
+ucum:meqpercblspecimencbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "meq/{specimen}" ;
+    rdfs:comment "milliequivalent per specimen" .
+
+ucum:meqpercbltotal_volumecbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "meq/{total_volume}" ;
+    rdfs:comment "milliequivalent per total volume" .
+
+ucum:meqperd a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "meq/d" ;
+    rdfs:comment "milliequivalent per day" .
+
+ucum:meqperdL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "meq/dL" ;
+    rdfs:comment "milliequivalent per deciliter" .
+
+ucum:meqperg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "meq/g" ;
+    rdfs:comment "milliequivalent per gram" .
+
+ucum:meqpergcblcreatcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "meq/g{creat}" ;
+    rdfs:comment "milliequivalent per gram of creatinine" .
+
+ucum:meqperh a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "meq/h" ;
+    rdfs:comment "milliequivalent per hour" .
+
+ucum:meqperkg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "meq/kg" ;
+    rdfs:comment "milliequivalent per kilogram" .
+
+ucum:meqperkgperh a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "meq/kg/h" ;
+    rdfs:comment "milliequivalent per kilogram per hour" .
+
+ucum:meqperm2 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "meq/m2" ;
+    rdfs:comment "milliequivalent per square meter" .
+
+ucum:meqpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "meq/mL" ;
+    rdfs:comment "milliequivalent per milliliter" .
+
+ucum:meqpermin a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "meq/min" ;
+    rdfs:comment "milliequivalent per minute" .
+
+ucum:meqperrbl24dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "meq/(24.h)" ;
+    rdfs:comment "milliequivalent per 24 hour" .
+
+ucum:meqperrbl2dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "meq/(2.h)" ;
+    rdfs:comment "milliequivalent per 2 hour" .
+
+ucum:meqperrbl8dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "meq/(8.h)" ;
+    rdfs:comment "milliequivalent per 8 hour" .
+
+ucum:mg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg" ;
+    rdfs:comment "milligram" .
+
+ucum:mgcblFEUcbrperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg{FEU}/L" ;
+    rdfs:comment "milligram fibrinogen equivalent unit per liter" .
+
+ucum:mgperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg/L" ;
+    rdfs:comment "milligram per liter" .
+
+ucum:mgperLcblRBCscbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg/L{RBCs}" ;
+    rdfs:comment "milligram per liter of red blood cells" .
+
+ucum:mgpercblcollectioncbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg/{collection}" ;
+    rdfs:comment "milligram per collection" .
+
+ucum:mgpercblspecimencbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg/{specimen}" ;
+    rdfs:comment "milligram per specimen" .
+
+ucum:mgpercbltotal_outputcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg/{total_output}" ;
+    rdfs:comment "milligram per total output" .
+
+ucum:mgpercbltotal_volumecbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg/{total_volume}" ;
+    rdfs:comment "milligram per total volume" .
+
+ucum:mgperd a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg/d" ;
+    rdfs:comment "milligram per day" .
+
+ucum:mgperdL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg/dL" ;
+    rdfs:comment "milligram per deciliter" .
+
+ucum:mgperdLcblRBCscbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg/dL{RBCs}" ;
+    rdfs:comment "milligram per deciliter of red blood cells" .
+
+ucum:mgperdpercbl1dot73_m2cbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg/d/{1.73_m2}" ;
+    rdfs:comment "milligram per day per 1.73 square meter" .
+
+ucum:mgperg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg/g" ;
+    rdfs:comment "milligram per gram" .
+
+ucum:mgpergcblcreatcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg/g{creat}" ;
+    rdfs:comment "milligram per gram of creatinine" .
+
+ucum:mgpergcbldry_tissuecbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg/g{dry_tissue}" ;
+    rdfs:comment "milligram per gram of dry tissue" .
+
+ucum:mgpergcblfecescbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg/g{feces}" ;
+    rdfs:comment "milligram per gram of feces" .
+
+ucum:mgpergcbltissuecbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg/g{tissue}" ;
+    rdfs:comment "milligram per gram of tissue" .
+
+ucum:mgpergcblwet_tissuecbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg/g{wet_tissue}" ;
+    rdfs:comment "milligram per gram of wet tissue" .
+
+ucum:mgperh a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg/h" ;
+    rdfs:comment "milligram per hour" .
+
+ucum:mgperkg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg/kg" ;
+    rdfs:comment "milligram per kilogram" .
+
+ucum:mgperkgperd a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg/kg/d" ;
+    rdfs:comment "milligram per kilogram per day" .
+
+ucum:mgperkgperh a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg/kg/h" ;
+    rdfs:comment "milligram per kilogram per hour" .
+
+ucum:mgperkgpermin a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg/kg/min" ;
+    rdfs:comment "milligram per kilogram per minute" .
+
+ucum:mgperkgperrbl8dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg/kg/(8.h)" ;
+    rdfs:comment "milligram per kilogram per 8 hour" .
+
+ucum:mgperm2 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg/m2" ;
+    rdfs:comment "milligram per square meter" .
+
+ucum:mgperm3 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg/m3" ;
+    rdfs:comment "milligram per cubic meter" .
+
+ucum:mgpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg/mL" ;
+    rdfs:comment "milligram per milliliter" .
+
+ucum:mgpermg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg/mg" ;
+    rdfs:comment "milligram per milligram" .
+
+ucum:mgpermgcblcreatcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg/mg{creat}" ;
+    rdfs:comment "milligram per milligram of creatinine" .
+
+ucum:mgpermin a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg/min" ;
+    rdfs:comment "milligram per minute" .
+
+ucum:mgpermmol a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg/mmol" ;
+    rdfs:comment "milligram per millimole" .
+
+ucum:mgpermmolcblcreatcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg/mmol{creat}" ;
+    rdfs:comment "milligram per millimole of creatinine" .
+
+ucum:mgperrbl10dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg/(10.h)" ;
+    rdfs:comment "milligram per 10 hour" .
+
+ucum:mgperrbl12dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg/(12.h)" ;
+    rdfs:comment "milligram per 12 hour" .
+
+ucum:mgperrbl24dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg/(24.h)" ;
+    rdfs:comment "milligram per 24 hour" .
+
+ucum:mgperrbl2dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg/(2.h)" ;
+    rdfs:comment "milligram per 2 hour" .
+
+ucum:mgperrbl6dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg/(6.h)" ;
+    rdfs:comment "milligram per 6 hour" .
+
+ucum:mgperrbl72dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg/(72.h)" ;
+    rdfs:comment "milligram per 72 hour" .
+
+ucum:mgperrbl8dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg/(8.h)" ;
+    rdfs:comment "milligram per 8 hour" .
+
+ucum:mgperwk a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mg/wk" ;
+    rdfs:comment "milligram per week" .
+
+ucum:min a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "min" ;
+    rdfs:comment "minute" .
+
+ucum:minperd a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "min/d" ;
+    rdfs:comment "minute per day" .
+
+ucum:minperwk a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "min/wk" ;
+    rdfs:comment "minute per week" .
+
+ucum:mm a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mm" ;
+    rdfs:comment "millimeter" .
+
+ucum:mm2 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mm2" ;
+    rdfs:comment "square millimeter" .
+
+ucum:mm3 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mm3" ;
+    rdfs:comment "cubic millimeters" .
+
+ucum:mmol a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mmol" ;
+    rdfs:comment "millimole" .
+
+ucum:mmolperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mmol/L" ;
+    rdfs:comment "millimole per liter" .
+
+ucum:mmolperLcblRBCscbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mmol/L{RBCs}" ;
+    rdfs:comment "millimole per liter of red blood cells" .
+
+ucum:mmolpercblejaculatecbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mmol/{ejaculate}" ;
+    rdfs:comment "millimole per ejaculate" .
+
+ucum:mmolpercblspecimencbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mmol/{specimen}" ;
+    rdfs:comment "millimole per specimen" .
+
+ucum:mmolpercbltotal_volcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mmol/{total_vol}" ;
+    rdfs:comment "millimole per total volume" .
+
+ucum:mmolperd a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mmol/d" ;
+    rdfs:comment "millimole per day" .
+
+ucum:mmolperdL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mmol/dL" ;
+    rdfs:comment "millimole per deciliter" .
+
+ucum:mmolperg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mmol/g" ;
+    rdfs:comment "millimole per gram" .
+
+ucum:mmolpergcblcreatcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mmol/g{creat}" ;
+    rdfs:comment "millimole per gram of creatinine" .
+
+ucum:mmolperh a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mmol/h" ;
+    rdfs:comment "millimole per hour" .
+
+ucum:mmolperhpermgcblHbcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mmol/h/mg{Hb}" ;
+    rdfs:comment "millimole per hour per milligram of hemoglobin" .
+
+ucum:mmolperhpermgcblprotcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mmol/h/mg{prot}" ;
+    rdfs:comment "millimole per hour per milligram of protein" .
+
+ucum:mmolperkg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mmol/kg" ;
+    rdfs:comment "millimole per kilogram" .
+
+ucum:mmolperkgperd a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mmol/kg/d" ;
+    rdfs:comment "millimole per kilogram per day" .
+
+ucum:mmolperkgperh a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mmol/kg/h" ;
+    rdfs:comment "millimole per kilogram per hour" .
+
+ucum:mmolperkgpermin a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mmol/kg/min" ;
+    rdfs:comment "millimole per kilogram per minute" .
+
+ucum:mmolperkgperrbl8dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mmol/kg/(8.h)" ;
+    rdfs:comment "millimole per kilogram per 8 hour" .
+
+ucum:mmolperm2 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mmol/m2" ;
+    rdfs:comment "millimole per square meter" .
+
+ucum:mmolpermin a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mmol/min" ;
+    rdfs:comment "millimole per minute" .
+
+ucum:mmolpermmol a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mmol/mmol" ;
+    rdfs:comment "millimole per millimole" .
+
+ucum:mmolpermmolcblcreatcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mmol/mmol{creat}" ;
+    rdfs:comment "millimole per millmole of creatinine" .
+
+ucum:mmolpermmolcblureacbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mmol/mmol{urea}" ;
+    rdfs:comment "millimole per millimole of urea" .
+
+ucum:mmolpermol a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mmol/mol" ;
+    rdfs:comment "millimole per mole" .
+
+ucum:mmolpermolcblcreatcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mmol/mol{creat}" ;
+    rdfs:comment "millimole per mole of creatinine" .
+
+ucum:mmolperrbl12dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mmol/(12.h)" ;
+    rdfs:comment "millimole per 12 hour" .
+
+ucum:mmolperrbl24dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mmol/(24.h)" ;
+    rdfs:comment "millimole per 24 hour" .
+
+ucum:mmolperrbl2dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mmol/(2.h)" ;
+    rdfs:comment "millimole per 2 hour" .
+
+ucum:mmolperrbl5dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mmol/(5.h)" ;
+    rdfs:comment "millimole per 5 hour" .
+
+ucum:mmolperrbl6dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mmol/(6.h)" ;
+    rdfs:comment "millimole per 6 hour" .
+
+ucum:mmolperrbl8dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mmol/(8.h)" ;
+    rdfs:comment "millimole per 8 hour" .
+
+ucum:mmolpersperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mmol/s/L" ;
+    rdfs:comment "millimole per second per liter" .
+
+ucum:mmperh a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mm/h" ;
+    rdfs:comment "millimeter per hour" .
+
+ucum:mmpermin a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mm/min" ;
+    rdfs:comment "millimeter per minute" .
+
+ucum:mmsblH2Osbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mm[H2O]" ;
+    rdfs:comment "millimeter of water" .
+
+ucum:mmsblHgsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mm[Hg]" ;
+    rdfs:comment "millimeter of mercury" .
+
+ucum:mo a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mo" ;
+    rdfs:comment "month" .
+
+ucum:mol a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mol" ;
+    rdfs:comment "mole" .
+
+ucum:molperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mol/L" ;
+    rdfs:comment "mole per liter" .
+
+ucum:molperkg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mol/kg" ;
+    rdfs:comment "mole per kilogram" .
+
+ucum:molperkgpers a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mol/kg/s" ;
+    rdfs:comment "mole per kilogram per second" .
+
+ucum:molperm3 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mol/m3" ;
+    rdfs:comment "mole per cubic meter" .
+
+ucum:molpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mol/mL" ;
+    rdfs:comment "mole per milliliter" .
+
+ucum:molpermol a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mol/mol" ;
+    rdfs:comment "mole per mole" .
+
+ucum:molpermolcblcreatininecbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mol/mol{creatinine}" ;
+    rdfs:comment "mole per mole of creatinine" .
+
+ucum:molpers a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mol/s" ;
+    rdfs:comment "mole per second" .
+
+ucum:mosm a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mosm" ;
+    rdfs:comment "milliosmole" .
+
+ucum:mosmperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mosm/L" ;
+    rdfs:comment "milliosmole per liter" .
+
+ucum:mosmperkg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "mosm/kg" ;
+    rdfs:comment "milliosmole per kilogram" .
+
+ucum:mpers a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "m/s" ;
+    rdfs:comment "meter per second" .
+
+ucum:mpers2 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "m/s2" ;
+    rdfs:comment "meter per square second" .
+
+ucum:ms a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ms" ;
+    rdfs:comment "millisecond" .
+
+ucum:msblIUsbrperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "m[IU]/L" ;
+    rdfs:comment "milli international unit per liter" .
+
+ucum:msblIUsbrpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "m[IU]/mL" ;
+    rdfs:comment "milli  international unit per milliliter" .
+
+ucum:nL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nL" ;
+    rdfs:comment "nanoliter" .
+
+ucum:nUpercblRBCcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nU/{RBC}" ;
+    rdfs:comment "nanoenzyme unit per red blood cell" .
+
+ucum:nUpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nU/mL" ;
+    rdfs:comment "nanoenzyme unit per milliliter" .
+
+ucum:ng a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ng" ;
+    rdfs:comment "nanogram" .
+
+ucum:ngcblFEUcbrpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ng{FEU}/mL" ;
+    rdfs:comment "nanogram fibrinogen equivalent unit per milliliter " .
+
+ucum:ngper10exp6 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ng/10*6" ;
+    rdfs:comment "nanogram per million" .
+
+ucum:ngper10exp6cblRBCscbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ng/10*6{RBCs}" ;
+    rdfs:comment "nanogram per million red blood cells" .
+
+ucum:ngperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ng/L" ;
+    rdfs:comment "nanogram per liter" .
+
+ucum:ngperU a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ng/U" ;
+    rdfs:comment "nanogram per enzyme unit" .
+
+ucum:ngperd a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ng/d" ;
+    rdfs:comment "nanogram per day" .
+
+ucum:ngperdL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ng/dL" ;
+    rdfs:comment "nanogram per deciliter" .
+
+ucum:ngperg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ng/g" ;
+    rdfs:comment "nanogram per gram" .
+
+ucum:ngpergcblcreatcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ng/g{creat}" ;
+    rdfs:comment "nanogram per gram of creatinine" .
+
+ucum:ngperh a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ng/h" ;
+    rdfs:comment "nanogram per hour" .
+
+ucum:ngperkg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ng/kg" ;
+    rdfs:comment "nanogram per kilogram" .
+
+ucum:ngperkgperh a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ng/kg/h" ;
+    rdfs:comment "nanogram per kilogram per hour" .
+
+ucum:ngperkgpermin a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ng/kg/min" ;
+    rdfs:comment "nanogram per kilogram per minute" .
+
+ucum:ngperkgperrbl8dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ng/kg/(8.h)" ;
+    rdfs:comment "nanogram per kilogram per 8 hour" .
+
+ucum:ngperm2 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ng/m2" ;
+    rdfs:comment "nanogram per square meter" .
+
+ucum:ngpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ng/mL" ;
+    rdfs:comment "nanogram per millliiter" .
+
+ucum:ngpermLcblRBCscbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ng/mL{RBCs}" ;
+    rdfs:comment "nanogram per milliliter of red blood cells" .
+
+ucum:ngpermLperh a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ng/mL/h" ;
+    rdfs:comment "nanogram per milliliter per hour" .
+
+ucum:ngpermg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ng/mg" ;
+    rdfs:comment "nanogram per milligram" .
+
+ucum:ngpermgcblcreatcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ng/mg{creat}" ;
+    rdfs:comment "nanogram per milligram of creatinine" .
+
+ucum:ngpermgcblprotcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ng/mg{prot}" ;
+    rdfs:comment "nanogram per milligram of protein" .
+
+ucum:ngpermgperh a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ng/mg/h" ;
+    rdfs:comment "nanogram per milligram per hour" .
+
+ucum:ngpermin a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ng/min" ;
+    rdfs:comment "nanogram per minute" .
+
+ucum:ngperrbl24dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ng/(24.h)" ;
+    rdfs:comment "nanogram per 24 hour" .
+
+ucum:ngperrbl8dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ng/(8.h)" ;
+    rdfs:comment "nanogram per 8 hour" .
+
+ucum:ngpers a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ng/s" ;
+    rdfs:comment "nanogram per second" .
+
+ucum:nkat a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nkat" ;
+    rdfs:comment "nanokatal" .
+
+ucum:nm a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nm" ;
+    rdfs:comment "nanometer" .
+
+ucum:nmol a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol" ;
+    rdfs:comment "nanomole" .
+
+ucum:nmolcblATPcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol{ATP}" ;
+    rdfs:comment "nanomole of ATP " .
+
+ucum:nmolcblBCEcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol{BCE}" ;
+    rdfs:comment "nanomole bone collagen equivalent" .
+
+ucum:nmolcblBCEcbrperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol{BCE}/L" ;
+    rdfs:comment "nanomole bone collagen equivalent per liter" .
+
+ucum:nmolperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol/L" ;
+    rdfs:comment "nanomole per liter" .
+
+ucum:nmolperLcblRBCscbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol/L{RBCs}" ;
+    rdfs:comment "nanomole per liter of red blood cells" .
+
+ucum:nmolperLpermmolcblcreatcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol/L/mmol{creat}" ;
+    rdfs:comment "nanomole per liter per millimole of creatinine" .
+
+ucum:nmolperd a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol/d" ;
+    rdfs:comment "nanomole per day" .
+
+ucum:nmolperdL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol/dL" ;
+    rdfs:comment "nanomole per deciliter" .
+
+ucum:nmolperdLcblGFcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol/dL{GF}" ;
+    rdfs:comment "nanomole per deciliter of glomerular filtrate" .
+
+ucum:nmolperg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol/g" ;
+    rdfs:comment "nanomole per gram" .
+
+ucum:nmolpergcblcreatcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol/g{creat}" ;
+    rdfs:comment "nanomole per gram of creatinine" .
+
+ucum:nmolpergcbldry_wtcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol/g{dry_wt}" ;
+    rdfs:comment "nanomole per gram of dry weight" .
+
+ucum:nmolperhperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol/h/L" ;
+    rdfs:comment "nanomole per hour per liter" .
+
+ucum:nmolperhpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol/h/mL" ;
+    rdfs:comment "nanomole per hour per milliliter" .
+
+ucum:nmolperhpermgcblprotcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol/h/mg{prot}" ;
+    rdfs:comment "nanomole per hour per milligram of protein" .
+
+ucum:nmolpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol/mL" ;
+    rdfs:comment "nanomole per milliliter" .
+
+ucum:nmolpermLperh a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol/mL/h" ;
+    rdfs:comment "nanomole per milliliter per hour" .
+
+ucum:nmolpermLpermin a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol/mL/min" ;
+    rdfs:comment "nanomole per milliliter per minute" .
+
+ucum:nmolpermg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol/mg" ;
+    rdfs:comment "nanomole per milligram" .
+
+ucum:nmolpermgcblcreatcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol/mg{creat}" ;
+    rdfs:comment "nanomole per milligram of creatinine" .
+
+ucum:nmolpermgcblprotcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol/mg{prot}" ;
+    rdfs:comment "nanomole of 1/2 cystine per milligram of protein",
+        "nanomole per milligram of protein" .
+
+ucum:nmolpermgcblprotcbrperh a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol/mg{prot}/h" ;
+    rdfs:comment "nanomole per milligram of protein per hour" .
+
+ucum:nmolpermgperh a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol/mg/h" ;
+    rdfs:comment "nanomole per milligram per hour" .
+
+ucum:nmolpermin a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol/min" ;
+    rdfs:comment "nanomole per minute" .
+
+ucum:nmolperminper10exp6cblcellscbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol/min/10*6{cells}" ;
+    rdfs:comment "nanomole per minute per million cells" .
+
+ucum:nmolperminpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol/min/mL" ;
+    rdfs:comment "nanomole per minute per milliliter" .
+
+ucum:nmolperminpermg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol/min/mg" ;
+    rdfs:comment "nanomole per minute per milligram" .
+
+ucum:nmolperminpermgcblHbcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol/min/mg{Hb}" ;
+    rdfs:comment "nanomole per minute per milligram of hemoglobin" .
+
+ucum:nmolperminpermgcblprotcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol/min/mg{prot}" ;
+    rdfs:comment "nanomole per minute per milligram of protein" .
+
+ucum:nmolperminpermgcblproteincbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol/min/mg{protein}" ;
+    rdfs:comment "nanomole per minute per milligram protein" .
+
+ucum:nmolpermmol a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol/mmol" ;
+    rdfs:comment "nanomole per millimole" .
+
+ucum:nmolpermmolcblcreatcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol/mmol{creat}" ;
+    rdfs:comment "nanomole bone collagen equivalent per millimole of creatinine",
+        "nanomole per millimole of creatinine" .
+
+ucum:nmolpermol a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol/mol" ;
+    rdfs:comment "nanomole per mole" .
+
+ucum:nmolpermolcblcreatcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol/mol{creat}" ;
+    rdfs:comment "nanomole per mole creatinine" .
+
+ucum:nmolpermpermgcblprotcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol/m/mg{prot}" ;
+    rdfs:comment "nanomole per meter per milligram of protein" .
+
+ucum:nmolpernmol a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol/nmol" ;
+    rdfs:comment "nanomole per nanomole" .
+
+ucum:nmolperrbl24dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol/(24.h)" ;
+    rdfs:comment "nanomole per 24 hour" .
+
+ucum:nmolpers a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol/s" ;
+    rdfs:comment "nanomole per second" .
+
+ucum:nmolpersperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol/s/L" ;
+    rdfs:comment "nanomole per second per liter" .
+
+ucum:nmolperumolcblcreatcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nmol/umol{creat}" ;
+    rdfs:comment "nanomole per micromole  of creatinine" .
+
+ucum:nmpersperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "nm/s/L" ;
+    rdfs:comment "nanometer per second per liter" .
+
+ucum:ns a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ns" ;
+    rdfs:comment "nanosecond" .
+
+ucum:osm a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "osm" ;
+    rdfs:comment "osmole" .
+
+ucum:osmperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "osm/L" ;
+    rdfs:comment "osmole per liter" .
+
+ucum:osmperkg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "osm/kg" ;
+    rdfs:comment "osmole per kilogram" .
+
+ucum:pA a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "pA" ;
+    rdfs:comment "picoampere" .
+
+ucum:pL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "pL" ;
+    rdfs:comment "picoliter" .
+
+ucum:pT a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "pT" ;
+    rdfs:comment "picotesla" .
+
+ucum:per100 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/100" ;
+    rdfs:comment "per 100" .
+
+ucum:per100cblWBCscbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/100{WBCs}" ;
+    rdfs:comment "per 100 white blood cells" .
+
+ucum:per100cblcellcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/100{cell}" ;
+    rdfs:comment "per 100 cell" .
+
+ucum:per100cblcellscbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/100{cells}" ;
+    rdfs:comment "per 100 cells" .
+
+ucum:per100cblneutrophilscbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/100{neutrophils}" ;
+    rdfs:comment "per 100 neutrophils" .
+
+ucum:per100cblspermatozoacbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/100{spermatozoa}" ;
+    rdfs:comment "per 100 spermatozoa" .
+
+ucum:per10exp10 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/10*10" ;
+    rdfs:comment "per 10 billion  " .
+
+ucum:per10exp12 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/10*12" ;
+    rdfs:comment "per trillion " .
+
+ucum:per10exp12cblRBCscbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/10*12{RBCs}" ;
+    rdfs:comment "per trillion red blood cells" .
+
+ucum:per10exp3 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/10*3" ;
+    rdfs:comment "per thousand" .
+
+ucum:per10exp3cblRBCscbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/10*3{RBCs}" ;
+    rdfs:comment "per thousand red blood cells" .
+
+ucum:per10exp4cblRBCscbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/10*4{RBCs}" ;
+    rdfs:comment "per 10 thousand red blood cells" .
+
+ucum:per10exp6 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/10*6" ;
+    rdfs:comment "per million" .
+
+ucum:per10exp9 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/10*9" ;
+    rdfs:comment "per billion" .
+
+ucum:perL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/L" ;
+    rdfs:comment "per liter" .
+
+ucum:perU a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/U" ;
+    rdfs:comment "per enzyme unit" .
+
+ucum:pera a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/a" ;
+    rdfs:comment "per year" .
+
+ucum:percblOIFcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/{OIF}" ;
+    rdfs:comment "per oil immersion field" .
+
+ucum:percblentitycbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/{entity}" ;
+    rdfs:comment "per entity" .
+
+ucum:percent a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%" ;
+    rdfs:comment "percent" .
+
+ucum:percentcblHbcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{Hb}" ;
+    rdfs:comment "percent hemoglobin" .
+
+ucum:percentcblRBCscbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{RBCs}" ;
+    rdfs:comment "percent of red blood cells" .
+
+ucum:percentcblWBCscbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{WBCs}" ;
+    rdfs:comment "percent of white blood cells" .
+
+ucum:percentcblabnormalcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{abnormal}" ;
+    rdfs:comment "percent abnormal" .
+
+ucum:percentcblactivitycbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{activity}" ;
+    rdfs:comment "percent activity" .
+
+ucum:percentcblaggregationcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{aggregation}" ;
+    rdfs:comment "percent aggregation" .
+
+ucum:percentcblat_60_mincbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{at_60_min}" ;
+    rdfs:comment "percent at 60 minute" .
+
+ucum:percentcblbacteriacbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{bacteria}" ;
+    rdfs:comment "percent of bacteria" .
+
+ucum:percentcblbasal_activitycbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{basal_activity}" ;
+    rdfs:comment "percent basal activity" .
+
+ucum:percentcblbaselinecbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{baseline}" ;
+    rdfs:comment "percent of baseline" .
+
+ucum:percentcblbindingcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{binding}" ;
+    rdfs:comment "percent binding" .
+
+ucum:percentcblblockadecbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{blockade}" ;
+    rdfs:comment "percent blockade" .
+
+ucum:percentcblblockedcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{blocked}" ;
+    rdfs:comment "percent blocked" .
+
+ucum:percentcblboundcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{bound}" ;
+    rdfs:comment "percent bound" .
+
+ucum:percentcblbreakdowncbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{breakdown}" ;
+    rdfs:comment "percent breakdown" .
+
+ucum:percentcblcellscbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{cells}" ;
+    rdfs:comment "percent of cells" .
+
+ucum:percentcbldeficientcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{deficient}" ;
+    rdfs:comment "percent deficient" .
+
+ucum:percentcbldosecbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{dose}" ;
+    rdfs:comment "percent dose" .
+
+ucum:percentcblexcretioncbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{excretion}" ;
+    rdfs:comment "percent excretion" .
+
+ucum:percentcblhemolysiscbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{hemolysis}" ;
+    rdfs:comment "percent hemolysis" .
+
+ucum:percentcblindexcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{index}" ;
+    rdfs:comment "percent index" .
+
+ucum:percentcblinhibitioncbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{inhibition}" ;
+    rdfs:comment "percent inhibition" .
+
+ucum:percentcblloss_AChRcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{loss_AChR}" ;
+    rdfs:comment "percent  loss of acetylcholine receptor" .
+
+ucum:percentcbllosscbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{loss}" ;
+    rdfs:comment "percent loss" .
+
+ucum:percentcbllysiscbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{lysis}" ;
+    rdfs:comment "percent lysis" .
+
+ucum:percentcblnormalcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{normal}" ;
+    rdfs:comment "percent normal" .
+
+ucum:percentcblpenetrationcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{penetration}" ;
+    rdfs:comment "percent  penetration" .
+
+ucum:percentcblpooled_plasmacbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{pooled_plasma}" ;
+    rdfs:comment "percent normal pooled plasma" .
+
+ucum:percentcblpositivecbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{positive}" ;
+    rdfs:comment "percent positive" .
+
+ucum:percentcblreactivecbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{reactive}" ;
+    rdfs:comment "percent reactive" .
+
+ucum:percentcblrecoverycbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{recovery}" ;
+    rdfs:comment "percent recovery" .
+
+ucum:percentcblreferencecbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{reference}" ;
+    rdfs:comment "percent reference" .
+
+ucum:percentcblrelativecbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{relative}" ;
+    rdfs:comment "relative percent" .
+
+ucum:percentcblresidualcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{residual}" ;
+    rdfs:comment "percent residual" .
+
+ucum:percentcblresponsecbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{response}" ;
+    rdfs:comment "percent response" .
+
+ucum:percentcblsaturationcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{saturation}" ;
+    rdfs:comment "percent saturation" .
+
+ucum:percentcbltotalcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{total}" ;
+    rdfs:comment "percent total" .
+
+ucum:percentcbluptakecbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{uptake}" ;
+    rdfs:comment "percent uptake" .
+
+ucum:percentcblviablecbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{viable}" ;
+    rdfs:comment "percent viable" .
+
+ucum:percentcblvolcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "%{vol}" ;
+    rdfs:comment "percent by volume" .
+
+ucum:percmsblH2Osbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/cm[H2O]" ;
+    rdfs:comment "per centimeter of water" .
+
+ucum:perd a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/d" ;
+    rdfs:comment "per day" .
+
+ucum:perdL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/dL" ;
+    rdfs:comment "per deciliter" .
+
+ucum:perg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/g" ;
+    rdfs:comment "per gram" .
+
+ucum:pergcblHbcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/g{Hb}" ;
+    rdfs:comment "per gram of hemoglobin" .
+
+ucum:pergcblcreatcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/g{creat}" ;
+    rdfs:comment "per gram of creatinine" .
+
+ucum:pergcbltot_nitcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/g{tot_nit}" ;
+    rdfs:comment "per gram of total nitrogen" .
+
+ucum:pergcbltot_protcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/g{tot_prot}" ;
+    rdfs:comment "per gram of total protein" .
+
+ucum:pergcblwet_tiscbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/g{wet_tis}" ;
+    rdfs:comment "per gram of wet tissue" .
+
+ucum:perh a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/h" ;
+    rdfs:comment "per hour" .
+
+ucum:perkg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/kg" ;
+    rdfs:comment "per kilogram" .
+
+ucum:perkgcblbody_wtcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/kg{body_wt}" ;
+    rdfs:comment "per kilogram of body weight" .
+
+ucum:perm2 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/m2" ;
+    rdfs:comment "per square meter" .
+
+ucum:perm3 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/m3" ;
+    rdfs:comment "per cubic meter" .
+
+ucum:permL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/mL" ;
+    rdfs:comment "per milliliter" .
+
+ucum:permg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/mg" ;
+    rdfs:comment "per milligram" .
+
+ucum:permin a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/min" ;
+    rdfs:comment "per minute" .
+
+ucum:permm a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/mm" ;
+    rdfs:comment "per millimeter" .
+
+ucum:permmolcblcreatcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/mmol{creat}" ;
+    rdfs:comment "per millimole of creatinine" .
+
+ucum:permo a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/mo" ;
+    rdfs:comment "per month" .
+
+ucum:perrbl12dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/(12.h)" ;
+    rdfs:comment "per twelve hour" .
+
+ucum:pers a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/s" ;
+    rdfs:comment "per second" .
+
+ucum:persblHPFsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/[HPF]" ;
+    rdfs:comment "per high power field" .
+
+ucum:persblIUsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/[IU]" ;
+    rdfs:comment "per international unit" .
+
+ucum:persblLPFsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/[LPF]" ;
+    rdfs:comment "per low power field" .
+
+ucum:persblarbapoUsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/[arb'U]" ;
+    rdfs:comment "per arbitrary unit" .
+
+ucum:peruL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/uL" ;
+    rdfs:comment "per microliter" .
+
+ucum:perwk a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "/wk" ;
+    rdfs:comment "per week" .
+
+ucum:pg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "pg" ;
+    rdfs:comment "picogram" .
+
+ucum:pgperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "pg/L" ;
+    rdfs:comment "picogram per liter" .
+
+ucum:pgpercblRBCcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "pg/{RBC}" ;
+    rdfs:comment "picogram per red blood cell" .
+
+ucum:pgpercblcellcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "pg/{cell}" ;
+    rdfs:comment "picogram per cell" .
+
+ucum:pgperdL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "pg/dL" ;
+    rdfs:comment "picogram per deciliter" .
+
+ucum:pgpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "pg/mL" ;
+    rdfs:comment "picogram per milliliter" .
+
+ucum:pgpermLcblsLTcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "pg/mL{sLT}" ;
+    rdfs:comment "picogram per milliliter sulfidoleukotrienes" .
+
+ucum:pgpermg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "pg/mg" ;
+    rdfs:comment "picogram per milligram" .
+
+ucum:pgpermgcblcreatcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "pg/mg{creat}" ;
+    rdfs:comment "picogram per milligram of creatinine" .
+
+ucum:pgpermm a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "pg/mm" ;
+    rdfs:comment "picogram per millimeter" .
+
+ucum:pkat a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "pkat" ;
+    rdfs:comment "picokatal" .
+
+ucum:pm a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "pm" ;
+    rdfs:comment "picometer" .
+
+ucum:pmol a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "pmol" ;
+    rdfs:comment "picomole" .
+
+ucum:pmolperHpermgcblproteincbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "pmol/H/mg{protein}" ;
+    rdfs:comment "picomole per hour per milligram protein" .
+
+ucum:pmolperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "pmol/L" ;
+    rdfs:comment "picomole per liter" .
+
+ucum:pmolpercblRBCcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "pmol/{RBC}" ;
+    rdfs:comment "picomole per red blood cell" .
+
+ucum:pmolperd a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "pmol/d" ;
+    rdfs:comment "picomole per day" .
+
+ucum:pmolperdL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "pmol/dL" ;
+    rdfs:comment "picomole per deciliter" .
+
+ucum:pmolperg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "pmol/g" ;
+    rdfs:comment "picomole per gram" .
+
+ucum:pmolperhpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "pmol/h/mL" ;
+    rdfs:comment "picomole per hour per milliliter " .
+
+ucum:pmolperhpermg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "pmol/h/mg" ;
+    rdfs:comment "picomole per hour per milligram" .
+
+ucum:pmolperhpermgcblprotcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "pmol/h/mg{prot}" ;
+    rdfs:comment "picomole per hour per milligram of protein" .
+
+ucum:pmolpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "pmol/mL" ;
+    rdfs:comment "picomole per milliliter" .
+
+ucum:pmolpermg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "pmol/mg" ;
+    rdfs:comment "picomole per milligram" .
+
+ucum:pmolpermgcblprotcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "pmol/mg{prot}" ;
+    rdfs:comment "picomole per milligram of protein" .
+
+ucum:pmolpermgperh a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "pmol/mg/h" ;
+    rdfs:comment "picomole per milligram per hour" .
+
+ucum:pmolpermin a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "pmol/min" ;
+    rdfs:comment "picomole per minute" .
+
+ucum:pmolperminpermgcblprotcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "pmol/min/mg{prot}" ;
+    rdfs:comment "picomole per minute per milligram of protein" .
+
+ucum:pmolpermmolcblcreatcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "pmol/mmol{creat}" ;
+    rdfs:comment "picomole per millimole of creatinine" .
+
+ucum:pmolperrbl24dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "pmol/(24.h)" ;
+    rdfs:comment "picomole per 24 hour" .
+
+ucum:pmolperrbl8dot10exp8rbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "pmol/(8.10*8)" ;
+    rdfs:comment "picomole per 800 million " .
+
+ucum:pmolperumol a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "pmol/umol" ;
+    rdfs:comment "picomole per micromole" .
+
+ucum:pmolperumolcblcreatcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "pmol/umol{creat}" ;
+    rdfs:comment "picomole per micromole of creatinine" .
+
+ucum:ps a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ps" ;
+    rdfs:comment "picosecond" .
+
+ucum:s a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "s" ;
+    rdfs:comment "second" .
+
+ucum:sblAPLapoUsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[APL'U]" ;
+    rdfs:comment "IgA anticardiolipin unit**" .
+
+ucum:sblAPLapoUsbrpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[APL'U]/mL" ;
+    rdfs:comment "IgA anticardiolipin unit per milliliter**" .
+
+ucum:sblAUsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[AU]" ;
+    rdfs:comment "allergy unit" .
+
+ucum:sblCFUsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[CFU]" ;
+    rdfs:comment "colony forming unit" .
+
+ucum:sblCFUsbrperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[CFU]/L" ;
+    rdfs:comment "colony forming unit per liter" .
+
+ucum:sblCFUsbrpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[CFU]/mL" ;
+    rdfs:comment "colony forming unit per milliliter" .
+
+ucum:sblChsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[Ch]" ;
+    rdfs:comment "French (catheter gauge) " .
+
+ucum:sblGPLapoUsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[GPL'U]" ;
+    rdfs:comment "IgG anticardiolipin unit**" .
+
+ucum:sblGPLapoUsbrpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[GPL'U]/mL" ;
+    rdfs:comment "IgG anticardiolipin unit per milliliter**" .
+
+ucum:sblHPFsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[HPF]" ;
+    rdfs:comment "high power field" .
+
+ucum:sblIUsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[IU]" ;
+    rdfs:comment "international unit" .
+
+ucum:sblIUsbrper10exp9cblRBCscbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[IU]/10*9{RBCs}" ;
+    rdfs:comment "international unit per billion red blood cells" .
+
+ucum:sblIUsbrperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[IU]/L" ;
+    rdfs:comment "international unit per liter" .
+
+ucum:sblIUsbrperLcbl37Celcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[IU]/L{37Cel}" ;
+    rdfs:comment "international unit per liter at 37 degrees Celsius" .
+
+ucum:sblIUsbrperd a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[IU]/d" ;
+    rdfs:comment "international unit per day" .
+
+ucum:sblIUsbrperdL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[IU]/dL" ;
+    rdfs:comment "international unit per deciliter" .
+
+ucum:sblIUsbrperg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[IU]/g" ;
+    rdfs:comment "international unit per gram" .
+
+ucum:sblIUsbrpergcblHbcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[IU]/g{Hb}" ;
+    rdfs:comment "international unit per gram of hemoglobin" .
+
+ucum:sblIUsbrperh a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[IU]/h" ;
+    rdfs:comment "international unit per hour" .
+
+ucum:sblIUsbrperkg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[IU]/kg" ;
+    rdfs:comment "international unit per kilogram" .
+
+ucum:sblIUsbrperkgperd a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[IU]/kg/d" ;
+    rdfs:comment "international unit per kilogram per day" .
+
+ucum:sblIUsbrpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[IU]/mL" ;
+    rdfs:comment "international unit per milliliter" .
+
+ucum:sblIUsbrpermgcblcreatcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[IU]/mg{creat}" ;
+    rdfs:comment "international unit per milligram of creatinine" .
+
+ucum:sblIUsbrpermin a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[IU]/min" ;
+    rdfs:comment "international unit per minute" .
+
+ucum:sblIUsbrperrbl24dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[IU]/(24.h)" ;
+    rdfs:comment "international unit per 24 hour" .
+
+ucum:sblIUsbrperrbl2dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[IU]/(2.h)" ;
+    rdfs:comment "international unit per 2 hour" .
+
+ucum:sblLPFsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[LPF]" ;
+    rdfs:comment "low power field" .
+
+ucum:sblMETsbrdotminperwk a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[MET].min/wk" ;
+    rdfs:comment "metabolic equivalent minute per week" .
+
+ucum:sblMPLapoUsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[MPL'U]" ;
+    rdfs:comment "IgM anticardiolipin unit**" .
+
+ucum:sblMPLapoUsbrpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[MPL'U]/mL" ;
+    rdfs:comment "IgM anticardiolipin unit per milliliter**" .
+
+ucum:sblantiapoXaapoUsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[anti'Xa'U]" ;
+    rdfs:comment "anti factor Xa unit" .
+
+ucum:sblantiapoXaapoUsbrpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[anti'Xa'U]/mL" ;
+    rdfs:comment "anti factor Xa unit per milliliter" .
+
+ucum:sblarbapoUsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[arb'U]" ;
+    rdfs:comment "arbitrary unit" .
+
+ucum:sblarbapoUsbrperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[arb'U]/L" ;
+    rdfs:comment "arbitrary unit per liter" .
+
+ucum:sblarbapoUsbrpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[arb'U]/mL" ;
+    rdfs:comment "arbitrary unit per milliliter" .
+
+ucum:sblbdskapoUsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[bdsk'U]" ;
+    rdfs:comment "Bodansky unit" .
+
+ucum:sblbethapoUsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[beth'U]" ;
+    rdfs:comment "Bethesda unit" .
+
+ucum:sblbethapoUsbrpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[beth'U]/mL" ;
+    rdfs:comment "Bethesda unit per milliliter" .
+
+ucum:sblcin_isbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[cin_i]" ;
+    rdfs:comment "cubic inch (international)" .
+
+ucum:sbldegFsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[degF]" ;
+    rdfs:comment "degree Fahrenheit" .
+
+ucum:sbldiopsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[diop]" ;
+    rdfs:comment "diopter" .
+
+ucum:sbldr_avsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[dr_av]" ;
+    rdfs:comment "dram  (US and British)" .
+
+ucum:sbldrpsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[drp]" ;
+    rdfs:comment "drop (1/12 milliliter)" .
+
+ucum:sblfoz_ussbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[foz_us]" ;
+    rdfs:comment "fluid ounce (US)" .
+
+ucum:sblft_isbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[ft_i]" ;
+    rdfs:comment "foot (international)" .
+
+ucum:sblft_ussbrpersblft_ussbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[ft_us]/[ft_us]" ;
+    rdfs:comment "feet (US) per feet (US)" .
+
+ucum:sblgal_ussbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[gal_us]" ;
+    rdfs:comment "gallon (US)" .
+
+ucum:sblin_iapoH2Osbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[in_i'H2O]" ;
+    rdfs:comment "inch (international) of water" .
+
+ucum:sblin_isbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[in_i]" ;
+    rdfs:comment "inch (international)" .
+
+ucum:sblin_ussbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[in_us]" ;
+    rdfs:comment "inches (US)" .
+
+ucum:sblkaapoUsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[ka'U]" ;
+    rdfs:comment "King Armstrong unit" .
+
+ucum:sblknkapoUsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[knk'U]" ;
+    rdfs:comment "Kunkel unit" .
+
+ucum:sbllb_avsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[lb_av]" ;
+    rdfs:comment "pound (US and British)" .
+
+ucum:sblmclgapoUsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[mclg'U]" ;
+    rdfs:comment "Maclagan unit" .
+
+ucum:sblmi_isbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[mi_i]" ;
+    rdfs:comment "mile (international)" .
+
+ucum:sbloz_avsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[oz_av]" ;
+    rdfs:comment "ounce (US and British)" .
+
+ucum:sbloz_trsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[oz_tr]" ;
+    rdfs:comment "Troy ounce" .
+
+ucum:sblpHsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[pH]" ;
+    rdfs:comment "pH" .
+
+ucum:sblppbsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[ppb]" ;
+    rdfs:comment "part per billion" .
+
+ucum:sblppmsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[ppm]" ;
+    rdfs:comment "part per million" .
+
+ucum:sblppmsbrcblvpervcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[ppm]{v/v}" ;
+    rdfs:comment "part per million in volume per volume" .
+
+ucum:sblppthsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[ppth]" ;
+    rdfs:comment "part per thousand" .
+
+ucum:sblpptrsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[pptr]" ;
+    rdfs:comment "part per trillion" .
+
+ucum:sblpsisbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[psi]" ;
+    rdfs:comment "pound per square inch" .
+
+ucum:sblpt_ussbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[pt_us]" ;
+    rdfs:comment "pint (US)" .
+
+ucum:sblqt_ussbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[qt_us]" ;
+    rdfs:comment "quart (US)" .
+
+ucum:sblsft_isbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[sft_i]" ;
+    rdfs:comment "square foot (international)" .
+
+ucum:sblsin_isbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[sin_i]" ;
+    rdfs:comment "square inch (international)" .
+
+ucum:sblsyd_isbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[syd_i]" ;
+    rdfs:comment "square yard (international)" .
+
+ucum:sbltbapoUsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[tb'U]" ;
+    rdfs:comment "tuberculin unit" .
+
+ucum:sbltbs_ussbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[tbs_us]" ;
+    rdfs:comment "tablespoon (US)" .
+
+ucum:sbltoddapoUsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[todd'U]" ;
+    rdfs:comment "Todd unit" .
+
+ucum:sbltsp_ussbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[tsp_us]" ;
+    rdfs:comment "teaspoon (US)" .
+
+ucum:sblyd_isbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "[yd_i]" ;
+    rdfs:comment "yard (international)" .
+
+ucum:spercblcontrolcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "s/{control}" ;
+    rdfs:comment "second per control" .
+
+ucum:t a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "t" ;
+    rdfs:comment "metric ton" .
+
+ucum:uL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "uL" ;
+    rdfs:comment "microliter" .
+
+ucum:uLperh a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "uL/h" ;
+    rdfs:comment "microliter per hour" .
+
+ucum:uLperrbl2dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "uL/(2.h)" ;
+    rdfs:comment "microliter per 2 hour" .
+
+ucum:uOhm a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "uOhm" ;
+    rdfs:comment "microOhm" .
+
+ucum:uUperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "uU/L" ;
+    rdfs:comment "micro enzyme unit per liter" .
+
+ucum:uUperg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "uU/g" ;
+    rdfs:comment "micro enzyme unit per gram" .
+
+ucum:uUpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "uU/mL" ;
+    rdfs:comment "micro enzyme unit per milliliter" .
+
+ucum:uV a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "uV" ;
+    rdfs:comment "microvolt" .
+
+ucum:ueq a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ueq" ;
+    rdfs:comment "microequivalent" .
+
+ucum:ueqperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ueq/L" ;
+    rdfs:comment "microequivalent per liter" .
+
+ucum:ueqpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ueq/mL" ;
+    rdfs:comment "microequivalent per milliliter" .
+
+ucum:ug a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug" ;
+    rdfs:comment "microgram" .
+
+ucum:ugcblFEUcbrpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug{FEU}/mL" ;
+    rdfs:comment "microgram fibrinogen equivalent unit per milliliter" .
+
+ucum:ugdothperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug.h/L" ;
+    rdfs:comment "microgram hour per liter" .
+
+ucum:ugperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug/L" ;
+    rdfs:comment "microgram per liter" .
+
+ucum:ugperLcblRBCscbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug/L{RBCs}" ;
+    rdfs:comment "microgram per liter of red blood cells" .
+
+ucum:ugperLcbld-dimerunitcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug/L{d-dimer unit}" ;
+    rdfs:comment "microgram per liter of D-dimer units" .
+
+ucum:ugperLperrbl24dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug/L/(24.h)" ;
+    rdfs:comment "microgram per liter per 24 hour" .
+
+ucum:ugpercblspecimencbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug/{specimen}" ;
+    rdfs:comment "microgram per specimen" .
+
+ucum:ugperd a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug/d" ;
+    rdfs:comment "microgram per day" .
+
+ucum:ugperdL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug/dL" ;
+    rdfs:comment "microgram per deciliter" .
+
+ucum:ugperdLcblRBCscbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug/dL{RBCs}" ;
+    rdfs:comment "microgram per deciliter of red blood cells" .
+
+ucum:ugperg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug/g" ;
+    rdfs:comment "microgram per gram" .
+
+ucum:ugpergcblHbcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug/g{Hb}" ;
+    rdfs:comment "microgram per gram of hemoglobin" .
+
+ucum:ugpergcblcreatcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug/g{creat}" ;
+    rdfs:comment "microgram per gram of creatinine" .
+
+ucum:ugpergcbldry_tissuecbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug/g{dry_tissue}" ;
+    rdfs:comment "microgram per gram of dry tissue" .
+
+ucum:ugpergcbldry_wtcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug/g{dry_wt}" ;
+    rdfs:comment "microgram per gram of dry weight" .
+
+ucum:ugpergcblfecescbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug/g{feces}" ;
+    rdfs:comment "microgram  per gram of feces" .
+
+ucum:ugpergcblhaircbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug/g{hair}" ;
+    rdfs:comment "microgram per gram of hair" .
+
+ucum:ugpergcbltissuecbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug/g{tissue}" ;
+    rdfs:comment "microgram per gram of tissue" .
+
+ucum:ugperh a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug/h" ;
+    rdfs:comment "microgram per hour" .
+
+ucum:ugperkg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug/kg" ;
+    rdfs:comment "microgram per kilogram" .
+
+ucum:ugperkgperd a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug/kg/d" ;
+    rdfs:comment "microgram per kilogram per day" .
+
+ucum:ugperkgperh a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug/kg/h" ;
+    rdfs:comment "microgram per kilogram per hour" .
+
+ucum:ugperkgpermin a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug/kg/min" ;
+    rdfs:comment "microgram per kilogram per minute" .
+
+ucum:ugperkgperrbl8dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug/kg/(8.h)" ;
+    rdfs:comment "microgram per kilogram per 8 hour" .
+
+ucum:ugperm2 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug/m2" ;
+    rdfs:comment "microgram per square meter" .
+
+ucum:ugperm3 a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug/m3" ;
+    rdfs:comment "microgram per cubic meter" .
+
+ucum:ugpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug/mL" ;
+    rdfs:comment "microgram per milliliter" .
+
+ucum:ugpermLcblclasscbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug/mL{class}" ;
+    rdfs:comment "microgram per milliliter class" .
+
+ucum:ugpermLcbleqvcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug/mL{eqv}" ;
+    rdfs:comment "microgram per milliliter equivalent" .
+
+ucum:ugpermg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug/mg" ;
+    rdfs:comment "microgram per milligram" .
+
+ucum:ugpermgcblcreatcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug/mg{creat}" ;
+    rdfs:comment "microgram per milligram of creatinine" .
+
+ucum:ugpermin a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug/min" ;
+    rdfs:comment "microgram per minute" .
+
+ucum:ugpermmol a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug/mmol" ;
+    rdfs:comment "microgram per millimole" .
+
+ucum:ugpermmolcblcreatcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug/mmol{creat}" ;
+    rdfs:comment "microgram per millimole of creatinine" .
+
+ucum:ugperng a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug/ng" ;
+    rdfs:comment "microgram per nanogram" .
+
+ucum:ugperrbl100dotgrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug/(100.g)" ;
+    rdfs:comment "microgram per 100 gram" .
+
+ucum:ugperrbl24dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug/(24.h)" ;
+    rdfs:comment "microgram per 24 hour" .
+
+ucum:ugperrbl8dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug/(8.h)" ;
+    rdfs:comment "microgram per 8 hour" .
+
+ucum:ugpersblsft_isbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ug/[sft_i]" ;
+    rdfs:comment "microgram per square foot (international)" .
+
+ucum:ukat a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ukat" ;
+    rdfs:comment "microkatal" .
+
+ucum:ukatperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "ukat/L" ;
+    rdfs:comment "microkatal per liter" .
+
+ucum:um a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "um" ;
+    rdfs:comment "micrometer" .
+
+ucum:umol a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "umol" ;
+    rdfs:comment "micromole" .
+
+ucum:umolcblBCEcbrpermol a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "umol{BCE}/mol" ;
+    rdfs:comment "micromole bone collagen equivalent per mole" .
+
+ucum:umoldotminperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "umol.min/L" ;
+    rdfs:comment "micromole minute per liter" .
+
+ucum:umolper10exp6cblRBCcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "umol/10*6{RBC}" ;
+    rdfs:comment "micromole per million red blood cell" .
+
+ucum:umolperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "umol/L" ;
+    rdfs:comment "micromole per liter" .
+
+ucum:umolperLcblRBCscbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "umol/L{RBCs}" ;
+    rdfs:comment "micromole per liter of red blood cells" .
+
+ucum:umolperLperh a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "umol/L/h" ;
+    rdfs:comment "micromole per liter per hour" .
+
+ucum:umolpercblejaculatecbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "umol/{ejaculate}" ;
+    rdfs:comment "micromole per ejaculate" .
+
+ucum:umolperd a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "umol/d" ;
+    rdfs:comment "micromole per day" .
+
+ucum:umolperdL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "umol/dL" ;
+    rdfs:comment "micromole per deciliter" .
+
+ucum:umolperdLcblGFcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "umol/dL{GF}" ;
+    rdfs:comment "micromole per deciliter of glomerular filtrate" .
+
+ucum:umolperg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "umol/g" ;
+    rdfs:comment "micromole per gram" .
+
+ucum:umolpergcblHbcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "umol/g{Hb}" ;
+    rdfs:comment "micromole per gram of hemoglobin" .
+
+ucum:umolpergcblcreatcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "umol/g{creat}" ;
+    rdfs:comment "micromole per gram of creatinine" .
+
+ucum:umolperh a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "umol/h" ;
+    rdfs:comment "micromole per hour" .
+
+ucum:umolperhperg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "umol/h/g" ;
+    rdfs:comment "micromole per hour per gram" .
+
+ucum:umolperhpermg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "umol/h/mg" ;
+    rdfs:comment "micromole per hour per milligram" .
+
+ucum:umolperkg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "umol/kg" ;
+    rdfs:comment "micromole per kilogram" .
+
+ucum:umolperkgcblfecescbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "umol/kg{feces}" ;
+    rdfs:comment "micromole per kilogram of feces" .
+
+ucum:umolpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "umol/mL" ;
+    rdfs:comment "micromole per milliliter" .
+
+ucum:umolpermLpermin a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "umol/mL/min" ;
+    rdfs:comment "micromole per milliliter per minute" .
+
+ucum:umolpermg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "umol/mg" ;
+    rdfs:comment "micromole per milligram" .
+
+ucum:umolpermgcblcreatcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "umol/mg{creat}" ;
+    rdfs:comment "micromole per milligram of creatinine" .
+
+ucum:umolpermin a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "umol/min" ;
+    rdfs:comment "micromole per minute" .
+
+ucum:umolperminperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "umol/min/L" ;
+    rdfs:comment "micromole per minute per liter" .
+
+ucum:umolperminperg a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "umol/min/g" ;
+    rdfs:comment "micromole per minute per gram" .
+
+ucum:umolperminpergcblmucosacbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "umol/min/g{mucosa}" ;
+    rdfs:comment "micromole per minute per gram of mucosa" .
+
+ucum:umolperminpergcblprotcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "umol/min/g{prot}" ;
+    rdfs:comment "micromole per minute per gram of protein" .
+
+ucum:umolpermmol a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "umol/mmol" ;
+    rdfs:comment "micromole per millimole" .
+
+ucum:umolpermmolcblcreatcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "umol/mmol{creat}" ;
+    rdfs:comment "micromole per millimole of creatinine" .
+
+ucum:umolpermol a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "umol/mol" ;
+    rdfs:comment "micromole per mole" .
+
+ucum:umolpermolcblHbcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "umol/mol{Hb}" ;
+    rdfs:comment "micromole per mole of hemoglobin" .
+
+ucum:umolpermolcblcreatcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "umol/mol{creat}" ;
+    rdfs:comment "micromole per mole of creatinine" .
+
+ucum:umolperrbl24dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "umol/(24.h)" ;
+    rdfs:comment "micromole per 24 hour" .
+
+ucum:umolperrbl2dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "umol/(2.h)" ;
+    rdfs:comment "micromole per 2 hour" .
+
+ucum:umolperrbl8dothrbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "umol/(8.h)" ;
+    rdfs:comment "micromole per 8 hour" .
+
+ucum:umolperumol a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "umol/umol" ;
+    rdfs:comment "micromole per micromole" .
+
+ucum:umolperumolcblcreatcbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "umol/umol{creat}" ;
+    rdfs:comment "micromole per micromole of creatinine" .
+
+ucum:umpers a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "um/s" ;
+    rdfs:comment "microns per second" .
+
+ucum:us a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "us" ;
+    rdfs:comment "microsecond" .
+
+ucum:usblIUsbr a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "u[IU]" ;
+    rdfs:comment "micro international unit" .
+
+ucum:usblIUsbrperL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "u[IU]/L" ;
+    rdfs:comment "microinternational unit per liter" .
+
+ucum:usblIUsbrpermL a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "u[IU]/mL" ;
+    rdfs:comment "micro international unit per milliliter" .
+
+ucum:wk a owl:NamedIndividual,
+        ucum:UCUM ;
+    rdfs:label "wk" ;
+    rdfs:comment "week" .
+

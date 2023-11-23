@@ -254,3 +254,4 @@ $RECYCLE.BIN/
 
 *.ttl
 !base_sphn_rdf_schema.ttl
+!external-terminologies/*.ttl
