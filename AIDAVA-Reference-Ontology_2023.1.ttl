@@ -1,0 +1,190 @@
+@prefix : <https://biomedit.ch/rdf/sphn-ontology/AIDAVA> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sphn: <https://biomedit.ch/rdf/sphn-ontology/sphn#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix PROJECT-NAME: <https://biomedit.ch/rdf/sphn-ontology/aidava-reference-ontology#> .
+@base <https://biomedit.ch/rdf/sphn-ontology/AIDAVA> .
+
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA> rdf:type owl:Ontology ;
+                                                owl:versionIRI <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/2023/1> ;
+                                                owl:imports <https://biomedit.ch/rdf/sphn-ontology/sphn/2023/2> ;
+                                                dc:description "The RDF schema data elements defined in AIDAVA dataset and aligned with IPS." ;
+                                                dc:title "The AIDAVA Reference Ontology RDF Schema" ;
+                                                dcterms:license <https://creativecommons.org/licenses/by/4.0/> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/license
+dcterms:license rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> rdf:type owl:ObjectProperty ;
+                                                                      rdfs:label "AIDAVA object properties" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasConditionCode
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasConditionCode> rdf:type owl:ObjectProperty ;
+                                                                rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ,
+                                                                                   sphn:hasCode ;
+                                                                rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition> ;
+                                                                rdfs:range sphn:Code ;
+                                                                rdfs:comment "The code for a Condition class instance" ;
+                                                                rdfs:label "Condition code" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
+sphn:hasFreeText rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition> .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasOnsetDateTime
+sphn:hasOnsetDateTime rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition> .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://snomed.info/id/250537006
+<http://snomed.info/id/250537006> rdf:type owl:Class ;
+                                  rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAConcept> ;
+                                  rdfs:label "Histopathology finding (finding)" .
+
+
+###  http://snomed.info/id/713609000
+<http://snomed.info/id/713609000> rdf:type owl:Class ;
+                                  rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAConcept> ;
+                                  rdfs:label "Invasive carcinoma of breast (disorder)" .
+
+
+###  http://terminology.hl7.org/CodeSystem/v3-ActCode/AMB
+<http://terminology.hl7.org/CodeSystem/v3-ActCode/AMB> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://terminology.hl7.org/ValueSet/encounter-class> ;
+                                                       rdfs:comment "A comprehensive term for health care provided in a healthcare facility (e.g. a practitioneraTMs office, clinic setting, or hospital) on a nonresident basis. The term ambulatory usually implies that the patient has come to the location and is not assigned to a bed. Sometimes referred to as an outpatient encounter." ;
+                                                       rdfs:label "Ambulatory" .
+
+
+###  http://terminology.hl7.org/CodeSystem/v3-ActCode/EMER
+<http://terminology.hl7.org/CodeSystem/v3-ActCode/EMER> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://terminology.hl7.org/ValueSet/encounter-class> ;
+                                                        rdfs:comment "A patient encounter that takes place at a dedicated healthcare service delivery location where the patient receives immediate evaluation and treatment, provided until the patient can be discharged or responsibility for the patient's care is transferred elsewhere (for example, the patient could be admitted as an inpatient or transferred to another facility.)" ;
+                                                        rdfs:label "Emergency" .
+
+
+###  http://terminology.hl7.org/CodeSystem/v3-ActCode/HH
+<http://terminology.hl7.org/CodeSystem/v3-ActCode/HH> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://terminology.hl7.org/ValueSet/encounter-class> ;
+                                                      rdfs:comment "Healthcare encounter that takes place in the residence of the patient or a designee" ;
+                                                      rdfs:label "Home Health" .
+
+
+###  http://terminology.hl7.org/CodeSystem/v3-ActCode/IMP
+<http://terminology.hl7.org/CodeSystem/v3-ActCode/IMP> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://terminology.hl7.org/ValueSet/encounter-class> ;
+                                                       rdfs:comment "A patient encounter where a patient is admitted by a hospital or equivalent facility, assigned to a location where patients generally stay at least overnight and provided with room, board, and continuous nursing service." ;
+                                                       rdfs:label "Inpatient Encounter" .
+
+
+###  http://terminology.hl7.org/CodeSystem/v3-ActCode/OBSENC
+<http://terminology.hl7.org/CodeSystem/v3-ActCode/OBSENC> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://terminology.hl7.org/ValueSet/encounter-class> ;
+                                                          rdfs:comment "An encounter where the patient usually will start in different encounter, such as one in the emergency department (EMER) but then transition to this type of encounter because they require a significant period of treatment and monitoring to determine whether or not their condition warrants an inpatient admission or discharge. In the majority of cases the decision about admission or discharge will occur within a time period determined by local, regional or national regulation, often between 24 and 48 hours." ;
+                                                          rdfs:label "Observation Encounter" .
+
+
+###  http://terminology.hl7.org/CodeSystem/v3-ActCode/VR
+<http://terminology.hl7.org/CodeSystem/v3-ActCode/VR> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://terminology.hl7.org/ValueSet/encounter-class> ;
+                                                      rdfs:comment "A patient encounter where the patient and the practitioner(s) are not in the same physical location. Examples include telephone conference, email exchange, robotic surgery, and televideo conference." ;
+                                                      rdfs:label "Virtual" .
+
+
+###  http://terminology.hl7.org/ValueSet/encounter-class
+<http://terminology.hl7.org/ValueSet/encounter-class> rdf:type owl:Class ;
+                                                      rdfs:subClassOf sphn:ValueSet ;
+                                                      rdfs:comment "This value set defines a set of codes that can be used to indicate the class of encounter: a specific code indicating class of service provided." ;
+                                                      rdfs:label "Encounter Class" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAConcept
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAConcept> rdf:type owl:Class ;
+                                                             rdfs:comment "AIDAVA Concepts defined by the AIDAVA dataset" ;
+                                                             rdfs:label "AIDAVA concept" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAConcept> ;
+                                                         rdfs:comment "Class representing Condition in FHIR IPS implementation" ;
+                                                         rdfs:label "Condition" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport> rdf:type owl:Class ;
+                                                                rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAConcept> ;
+                                                                rdfs:comment "Class representing Diagnostic report in FHIR IPS implementation" ;
+                                                                rdfs:label "Diagnostic report" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/HistologyInvasiveBreastCancer
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/HistologyInvasiveBreastCancer> rdf:type owl:Class ;
+                                                                             owl:equivalentClass [ owl:intersectionOf ( <http://snomed.info/id/250537006>
+                                                                                                                        <http://snomed.info/id/713609000>
+                                                                                                                      ) ;
+                                                                                                   rdf:type owl:Class
+                                                                                                 ] ;
+                                                                             rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition> ;
+                                                                             rdfs:label "Histology Invasive Breast Cancer" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Medication> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAConcept> ;
+                                                          rdfs:comment "Class representing Medication in FHIR IPS implementation" ;
+                                                          rdfs:label "Medication" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Observation> rdf:type owl:Class ;
+                                                           rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAConcept> ;
+                                                           rdfs:comment "Class representing Observation in FHIR IPS implementation" ;
+                                                           rdfs:label "Observation" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAConcept> ;
+                                                         rdfs:comment "Class representing Procedure in FHIR IPS implementation" ;
+                                                         rdfs:label "Procedure" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAConcept> ;
+                                                        rdfs:comment "Class representing Specimen in FHIR IPS implementation" ;
+                                                        rdfs:label "Specimen" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/VitalSigns
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/VitalSigns> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAConcept> ;
+                                                          rdfs:comment "Class representing Vital signs in FHIR IPS implementation" ;
+                                                          rdfs:label "Vital signs" .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
