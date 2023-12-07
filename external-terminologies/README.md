@@ -1,0 +1,1 @@
+Describe the source of the external resources used by SPHN.
