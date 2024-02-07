@@ -5,6 +5,7 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix snomed: <http://snomed.info/id/> .
 @prefix sphn: <https://biomedit.ch/rdf/sphn-ontology/sphn#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix PROJECT-NAME: <https://biomedit.ch/rdf/sphn-ontology/aidava-reference-ontology#> .
