@@ -6,6 +6,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sphn: <https://biomedit.ch/rdf/sphn-ontology/sphn#> .
+@prefix snomed: <http://snomed.info/id/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix PROJECT-NAME: <https://biomedit.ch/rdf/sphn-ontology/aidava-reference-ontology#> .
 @base <https://biomedit.ch/rdf/sphn-ontology/AIDAVA> .
@@ -44,6 +45,80 @@ dcterms:license rdf:type owl:AnnotationProperty .
                                                                 rdfs:label "Condition code" .
 
 
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode
+sphn:hasCode rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure>
+                                         sphn:AdministrativeGender
+                                         sphn:AdverseEvent
+                                         sphn:Allergen
+                                         sphn:Allergy
+                                         sphn:AllergyEpisode
+                                         sphn:BodyPosition
+                                         sphn:BodySite
+                                         sphn:CardiacIndex
+                                         sphn:CardiacOutput
+                                         sphn:CareHandling
+                                         sphn:ChromosomalLocation
+                                         sphn:Chromosome
+                                         sphn:CivilStatus
+                                         sphn:Consent
+                                         sphn:DataDetermination
+                                         sphn:DataFile
+                                         sphn:DataProviderInstitute
+                                         sphn:DeathStatus
+                                         sphn:DiagnosticRadiologicExamination
+                                         sphn:Drug
+                                         sphn:DrugAdministrationEvent
+                                         sphn:DrugPrescription
+                                         sphn:ElectrocardiographicProcedure
+                                         sphn:FOPHDiagnosis
+                                         sphn:FOPHProcedure
+                                         sphn:Gene
+                                         sphn:HeartRate
+                                         sphn:ICDODiagnosis
+                                         sphn:Intent
+                                         sphn:LabAnalyzer
+                                         sphn:LabResult
+                                         sphn:LabTest
+                                         sphn:Laterality
+                                         sphn:Location
+                                         sphn:Measurement
+                                         sphn:MeasurementMethod
+                                         sphn:MedicalDevice
+                                         sphn:NursingDiagnosis
+                                         sphn:OncologyTreatmentAssessment
+                                         sphn:Organism
+                                         sphn:PharmaceuticalDoseForm
+                                         sphn:PhysiologicState
+                                         sphn:ProblemCondition
+                                         sphn:Protein
+                                         sphn:RadiotherapyProcedure
+                                         sphn:Reference
+                                         sphn:Sample
+                                         sphn:SimpleScore
+                                         sphn:Substance
+                                         sphn:TimePattern
+                                         sphn:Transcript
+                                         sphn:TumorGrade
+                                         sphn:TumorSpecimen
+                                         sphn:TumorStage
+                                         sphn:Unit
+                                         sphn:VariantDescriptor
+                                         <https://loinc.org/rdf/29308-4>
+                                       )
+                         ] .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasMeasurementMethod
+sphn:hasMeasurementMethod rdfs:domain [ rdf:type owl:Class ;
+                                        owl:unionOf ( sphn:BloodPressure
+                                                      sphn:HeartRate
+                                                      sphn:Measurement
+                                                      sphn:OxygenSaturation
+                                                    )
+                                      ] .
+
+
 #################################################################
 #    Data properties
 #################################################################
@@ -64,6 +139,10 @@ sphn:hasOnsetDateTime rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/
 <http://snomed.info/id/250537006> rdf:type owl:Class ;
                                   rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAConcept> ;
                                   rdfs:label "Histopathology finding (finding)" .
+
+
+###  http://snomed.info/id/363787002
+<http://snomed.info/id/363787002> rdf:type owl:Class .
 
 
 ###  http://snomed.info/id/713609000
@@ -187,4 +266,43 @@ sphn:hasOnsetDateTime rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/
                                                           rdfs:label "Vital signs" .
 
 
-###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement
+sphn:Measurement rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                          owl:onProperty sphn:hasCode ;
+                                                          owl:someValuesFrom <http://snomed.info/id/363787002>
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty sphn:hasCode ;
+                                                          owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty sphn:hasCode ;
+                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ,
+                                 [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                          owl:onProperty sphn:hasMeasurementMethod ;
+                                                          owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty sphn:hasMeasurementMethod ;
+                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+sphn:hasDiastolicPressure owl:deprecated "" .
+
+
+sphn:hasSystolicPressure owl:deprecated "" .
+
+
+###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
