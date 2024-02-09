@@ -867,12 +867,6 @@ sphn:hasMeanPressure rdf:type owl:ObjectProperty ;
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasMeasurementMethod
 sphn:hasMeasurementMethod rdf:type owl:ObjectProperty ;
                           rdfs:subPropertyOf sphn:SPHNAttributeObject ;
-                          rdfs:domain [ rdf:type owl:Class ;
-                                        owl:unionOf ( sphn:BloodPressure
-                                                      sphn:HeartRate
-                                                      sphn:OxygenSaturation
-                                                    )
-                                      ] ;
                           rdfs:range sphn:MeasurementMethod ;
                           rdfs:comment "measurement method of the concept" ;
                           rdfs:label "has measurement method" ;

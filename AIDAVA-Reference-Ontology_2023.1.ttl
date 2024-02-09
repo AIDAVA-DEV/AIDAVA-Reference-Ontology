@@ -109,6 +109,16 @@ sphn:hasCode rdfs:domain [ rdf:type owl:Class ;
                          ] .
 
 
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasMeasurementMethod
+sphn:hasMeasurementMethod rdfs:domain [ rdf:type owl:Class ;
+                                        owl:unionOf ( sphn:BloodPressure
+                                                      sphn:HeartRate
+                                                      sphn:Measurement
+                                                      sphn:OxygenSaturation
+                                                    )
+                                      ] .
+
+
 #################################################################
 #    Data properties
 #################################################################
@@ -267,6 +277,17 @@ sphn:Measurement rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restricti
                                                         ]
                                                         [ rdf:type owl:Restriction ;
                                                           owl:onProperty sphn:hasCode ;
+                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ,
+                                 [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                          owl:onProperty sphn:hasMeasurementMethod ;
+                                                          owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty sphn:hasMeasurementMethod ;
                                                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                         ]
                                                       ) ;
