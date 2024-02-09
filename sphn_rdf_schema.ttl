@@ -319,66 +319,6 @@ sphn:hasChromosome rdf:type owl:ObjectProperty ;
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode
 sphn:hasCode rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf sphn:SPHNAttributeObject ;
-             rdfs:domain [ rdf:type owl:Class ;
-                           owl:unionOf ( sphn:AdministrativeGender
-                                         sphn:AdverseEvent
-                                         sphn:Allergen
-                                         sphn:Allergy
-                                         sphn:AllergyEpisode
-                                         sphn:BodyPosition
-                                         sphn:BodySite
-                                         sphn:CardiacIndex
-                                         sphn:CardiacOutput
-                                         sphn:CareHandling
-                                         sphn:ChromosomalLocation
-                                         sphn:Chromosome
-                                         sphn:CivilStatus
-                                         sphn:Consent
-                                         sphn:DataDetermination
-                                         sphn:DataFile
-                                         sphn:DataProviderInstitute
-                                         sphn:DeathStatus
-                                         sphn:Diagnosis
-                                         sphn:DiagnosticRadiologicExamination
-                                         sphn:Drug
-                                         sphn:DrugAdministrationEvent
-                                         sphn:DrugPrescription
-                                         sphn:ElectrocardiographicProcedure
-                                         sphn:FOPHDiagnosis
-                                         sphn:FOPHProcedure
-                                         sphn:Gene
-                                         sphn:HeartRate
-                                         sphn:ICDODiagnosis
-                                         sphn:Intent
-                                         sphn:LabAnalyzer
-                                         sphn:LabResult
-                                         sphn:LabTest
-                                         sphn:Laterality
-                                         sphn:Location
-                                         sphn:MeasurementMethod
-                                         sphn:MedicalDevice
-                                         sphn:NursingDiagnosis
-                                         sphn:OncologyTreatmentAssessment
-                                         sphn:Organism
-                                         sphn:PharmaceuticalDoseForm
-                                         sphn:PhysiologicState
-                                         sphn:ProblemCondition
-                                         sphn:Procedure
-                                         sphn:Protein
-                                         sphn:RadiotherapyProcedure
-                                         sphn:Reference
-                                         sphn:Sample
-                                         sphn:SimpleScore
-                                         sphn:Substance
-                                         sphn:TimePattern
-                                         sphn:Transcript
-                                         sphn:TumorGrade
-                                         sphn:TumorSpecimen
-                                         sphn:TumorStage
-                                         sphn:Unit
-                                         sphn:VariantDescriptor
-                                       )
-                         ] ;
              rdfs:range [ rdf:type owl:Class ;
                           owl:unionOf ( sphn:Code
                                         sphn:Terminology
