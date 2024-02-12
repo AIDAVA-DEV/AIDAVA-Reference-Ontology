@@ -230,24 +230,6 @@ sphn:hasAllergen rdf:type owl:ObjectProperty ;
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasBodySite
 sphn:hasBodySite rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf sphn:SPHNAttributeObject ;
-                 rdfs:domain [ rdf:type owl:Class ;
-                               owl:unionOf ( sphn:AccessDevicePresence
-                                             sphn:AllergyEpisode
-                                             sphn:BloodPressure
-                                             sphn:BodyTemperature
-                                             sphn:CircumferenceMeasure
-                                             sphn:DiagnosticRadiologicExamination
-                                             sphn:ElectrocardiographicProcedure
-                                             sphn:FOPHProcedure
-                                             sphn:HeartRate
-                                             sphn:OncologyTreatmentAssessment
-                                             sphn:OxygenSaturation
-                                             sphn:Procedure
-                                             sphn:RadiotherapyProcedure
-                                             sphn:Sample
-                                             sphn:TumorSpecimen
-                                           )
-                             ] ;
                  rdfs:range sphn:BodySite ;
                  rdfs:comment "body site where the concept was measured, performed or collected" ;
                  rdfs:label "has body site" ;
