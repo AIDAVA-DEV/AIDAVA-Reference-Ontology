@@ -136,6 +136,28 @@ dcterms:license rdf:type owl:AnnotationProperty .
                                                               <http://www.w3.org/2004/02/skos/core#definition> "a name associated with the patient" .
 
 
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasBodySite
+sphn:hasBodySite rdfs:domain [ rdf:type owl:Class ;
+                               owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis>
+                                             <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure>
+                                             sphn:AccessDevicePresence
+                                             sphn:AllergyEpisode
+                                             sphn:BloodPressure
+                                             sphn:BodyTemperature
+                                             sphn:CircumferenceMeasure
+                                             sphn:DiagnosticRadiologicExamination
+                                             sphn:ElectrocardiographicProcedure
+                                             sphn:FOPHProcedure
+                                             sphn:HeartRate
+                                             sphn:OncologyTreatmentAssessment
+                                             sphn:OxygenSaturation
+                                             sphn:RadiotherapyProcedure
+                                             sphn:Sample
+                                             sphn:TumorSpecimen
+                                           )
+                             ] .
+
+
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode
 sphn:hasCode rdfs:domain [ rdf:type owl:Class ;
                            owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure>
@@ -395,6 +417,45 @@ sphn:hasOnsetDateTime rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/
                                                            rdfs:label "Observation" .
 
 
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf sphn:Diagnosis ,
+                                                                                 [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty sphn:hasBodySite ;
+                                                                                                          owl:someValuesFrom sphn:BodySite
+                                                                                                        ]
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty sphn:hasBodySite ;
+                                                                                                          owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                        ]
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty sphn:hasBodySite ;
+                                                                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                        ]
+                                                                                                      ) ;
+                                                                                   rdf:type owl:Class
+                                                                                 ] ,
+                                                                                 [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty sphn:hasSubjectAge ;
+                                                                                                          owl:someValuesFrom <https://loinc.org/rdf/30525-0>
+                                                                                                        ]
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty sphn:hasSubjectAge ;
+                                                                                                          owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                                        ]
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty sphn:hasSubjectAge ;
+                                                                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                        ]
+                                                                                                      ) ;
+                                                                                   rdf:type owl:Class
+                                                                                 ] ;
+                                                                 rdfs:comment "determination of the presence of an oncological disease, from expressed signs and symptoms and assessments such as biopsy, tumor marker test, imaging, or the like" ;
+                                                                 rdfs:label "Oncology Diagnosis" ;
+                                                                 <http://www.w3.org/2004/02/skos/core#definition> "determination of the presence of an oncological disease, from expressed signs and symptoms and assessments such as biopsy, tumor marker test, imaging, or the like" ;
+                                                                 <http://www.w3.org/2004/02/skos/core#note> "sphn:hasCode allowed coding system: SNOMED CT, ICD-10, ICD-O-3 Topography, ICD-O-3 Morphology, NANDA, ORPHA or other" .
+
+
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> rdf:type owl:Class ;
                                                        rdfs:subClassOf sphn:SPHNConcept ;
@@ -430,6 +491,10 @@ sphn:hasOnsetDateTime rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/
                                                           rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAConcept> ;
                                                           rdfs:comment "Class representing Vital signs in FHIR IPS implementation" ;
                                                           rdfs:label "Vital signs" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#ICDODiagnosis
+sphn:ICDODiagnosis owl:deprecated "true"^^xsd:boolean .
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement
