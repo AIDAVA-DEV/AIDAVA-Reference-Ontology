@@ -210,6 +210,14 @@ sphn:hasMeasurementMethod rdfs:domain [ rdf:type owl:Class ;
                                       ] .
 
 
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResultCode
+sphn:hasQualitativeResultCode rdfs:domain [ rdf:type owl:Class ;
+                                            owl:unionOf ( sphn:LabResult
+                                                          sphn:Measurement
+                                                        )
+                                          ] .
+
+
 #################################################################
 #    Data properties
 #################################################################
