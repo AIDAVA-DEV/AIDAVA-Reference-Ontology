@@ -35,6 +35,26 @@ dcterms:license rdf:type owl:AnnotationProperty .
                                                                       rdfs:label "AIDAVA object properties" .
 
 
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdministrativeGender
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdministrativeGender> rdf:type owl:ObjectProperty ;
+                                                                       rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
+                                                                       rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> ;
+                                                                       rdfs:range sphn:AdministrativeGender ;
+                                                                       rdfs:comment "the gender of the individual used for administrative purposes" ;
+                                                                       rdfs:label "has administrative gender" ;
+                                                                       <http://www.w3.org/2004/02/skos/core#definition> "the gender of the individual used for administrative purposes" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDate
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDate> rdf:type owl:ObjectProperty ;
+                                                            rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
+                                                            rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> ;
+                                                            rdfs:range sphn:BirthDate ;
+                                                            rdfs:comment "The date of birth for the individual" ;
+                                                            rdfs:label "has birth date" ;
+                                                            <http://www.w3.org/2004/02/skos/core#definition> "The date of birth for the individual" .
+
+
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasConditionCode
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasConditionCode> rdf:type owl:ObjectProperty ;
                                                                 rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ,
@@ -43,6 +63,77 @@ dcterms:license rdf:type owl:AnnotationProperty .
                                                                 rdfs:range sphn:Code ;
                                                                 rdfs:comment "The code for a Condition class instance" ;
                                                                 rdfs:label "Condition code" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> rdf:type owl:ObjectProperty ;
+                                                          rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
+                                                          rdfs:domain [ rdf:type owl:Class ;
+                                                                        owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure>
+                                                                                      sphn:AccessDevicePresence
+                                                                                      sphn:AdministrativeCase
+                                                                                      sphn:AdministrativeGender
+                                                                                      sphn:AdverseEvent
+                                                                                      sphn:Allergy
+                                                                                      sphn:AllergyEpisode
+                                                                                      sphn:Biobanksample
+                                                                                      sphn:BirthDate
+                                                                                      sphn:BloodPressure
+                                                                                      sphn:BodyHeight
+                                                                                      sphn:BodyMassIndex
+                                                                                      sphn:BodyPosition
+                                                                                      sphn:BodySurfaceArea
+                                                                                      sphn:BodyTemperature
+                                                                                      sphn:BodyWeight
+                                                                                      sphn:CardiacIndex
+                                                                                      sphn:CardiacOutput
+                                                                                      sphn:CircumferenceMeasure
+                                                                                      sphn:CivilStatus
+                                                                                      sphn:Consent
+                                                                                      sphn:DataFile
+                                                                                      sphn:DeathDate
+                                                                                      sphn:DeathStatus
+                                                                                      sphn:DiagnosticRadiologicExamination
+                                                                                      sphn:DrugAdministrationEvent
+                                                                                      sphn:DrugPrescription
+                                                                                      sphn:ElectrocardiographicProcedure
+                                                                                      sphn:FOPHDiagnosis
+                                                                                      sphn:FOPHProcedure
+                                                                                      sphn:GestationalAgeAtBirth
+                                                                                      sphn:HealthcareEncounter
+                                                                                      sphn:HeartRate
+                                                                                      sphn:ICDODiagnosis
+                                                                                      sphn:InhaledOxygenConcentration
+                                                                                      sphn:LabResult
+                                                                                      sphn:Measurement
+                                                                                      sphn:NursingDiagnosis
+                                                                                      sphn:OncologyTreatmentAssessment
+                                                                                      sphn:OxygenSaturation
+                                                                                      sphn:ProblemCondition
+                                                                                      sphn:RadiotherapyProcedure
+                                                                                      sphn:RespiratoryRate
+                                                                                      sphn:Sample
+                                                                                      sphn:SimpleScore
+                                                                                      sphn:TNMClassification
+                                                                                      sphn:TumorGrade
+                                                                                      sphn:TumorSpecimen
+                                                                                      sphn:TumorStage
+                                                                                      sphn:VariantDescriptor
+                                                                                      <https://loinc.org/rdf/29308-4>
+                                                                                      <https://loinc.org/rdf/30525-0>
+                                                                                    )
+                                                                      ] ;
+                                                          rdfs:label "has patient" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName> rdf:type owl:ObjectProperty ;
+                                                              rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
+                                                              rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> ;
+                                                              rdfs:range <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName> ;
+                                                              rdfs:comment "a name associated with the patient" ;
+                                                              rdfs:label "has subject name" ;
+                                                              <http://www.w3.org/2004/02/skos/core#definition> "a name associated with the patient" .
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode
@@ -123,8 +214,59 @@ sphn:hasMeasurementMethod rdfs:domain [ rdf:type owl:Class ;
 #    Data properties
 #################################################################
 
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVADataProperties
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVADataProperties> rdf:type owl:DatatypeProperty ;
+                                                                    rdfs:label "AIDAVA data properties" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdress
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdress> rdf:type owl:DatatypeProperty ;
+                                                         rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVADataProperties> ;
+                                                         rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> ;
+                                                         rdfs:range xsd:string ;
+                                                         rdfs:comment "an address for the individual" ;
+                                                         rdfs:label "has adress" ;
+                                                         <http://www.w3.org/2004/02/skos/core#definition> "an address for the individual" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasFamilyName
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasFamilyName> rdf:type owl:DatatypeProperty ;
+                                                             rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVADataProperties> ;
+                                                             rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName> ;
+                                                             rdfs:range xsd:string ;
+                                                             rdfs:comment "family name (often called 'Surname')" ;
+                                                             rdfs:label "has family name" ;
+                                                             <http://www.w3.org/2004/02/skos/core#definition> "family name (often called 'Surname')" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasGivenName
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasGivenName> rdf:type owl:DatatypeProperty ;
+                                                            rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVADataProperties> ;
+                                                            rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName> ;
+                                                            rdfs:range xsd:string ;
+                                                            rdfs:comment "given names (not always 'first'), includes middle names" ;
+                                                            rdfs:label "has given name" ;
+                                                            <http://www.w3.org/2004/02/skos/core#definition> "given names (not always 'first'), includes middle names" .
+
+
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
 sphn:hasFreeText rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition> .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier
+sphn:hasIdentifier rdfs:domain [ rdf:type owl:Class ;
+                                 owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient>
+                                               sphn:AdministrativeCase
+                                               sphn:Biobanksample
+                                               sphn:Code
+                                               sphn:Consent
+                                               sphn:DataFile
+                                               sphn:HealthcareEncounter
+                                               sphn:Sample
+                                               sphn:SubjectPseudoIdentifier
+                                               sphn:TumorSpecimen
+                                             )
+                               ] .
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasOnsetDateTime
@@ -245,6 +387,14 @@ sphn:hasOnsetDateTime rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/
                                                            rdfs:label "Observation" .
 
 
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> rdf:type owl:Class ;
+                                                       rdfs:subClassOf sphn:SPHNConcept ;
+                                                       rdfs:comment "Individual receiving health care services" ;
+                                                       rdfs:label "Patient" ;
+                                                       <http://www.w3.org/2004/02/skos/core#definition> "Individual receiving health care services" .
+
+
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure> rdf:type owl:Class ;
                                                          rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAConcept> ;
@@ -257,6 +407,14 @@ sphn:hasOnsetDateTime rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/
                                                         rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAConcept> ;
                                                         rdfs:comment "Class representing Specimen in FHIR IPS implementation" ;
                                                         rdfs:label "Specimen" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName> rdf:type owl:Class ;
+                                                           rdfs:subClassOf sphn:SPHNConcept ;
+                                                           rdfs:comment "Name of a human" ;
+                                                           rdfs:label "Subject Name" ;
+                                                           <http://www.w3.org/2004/02/skos/core#definition> "Name of a human" .
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/VitalSigns
@@ -295,11 +453,18 @@ sphn:Measurement rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restricti
                                  ] .
 
 
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier
+sphn:SubjectPseudoIdentifier owl:deprecated "true"^^xsd:boolean .
+
+
 #################################################################
 #    Annotations
 #################################################################
 
 sphn:hasDiastolicPressure owl:deprecated "true"^^xsd:boolean .
+
+
+sphn:hasSubjectPseudoIdentifier owl:deprecated "true"^^xsd:boolean .
 
 
 sphn:hasSystolicPressure owl:deprecated "true"^^xsd:boolean .
