@@ -99,6 +99,26 @@ xsd:time rdf:type rdfs:Datatype .
                                                                       rdfs:label "AIDAVA object properties" .
 
 
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdministrativeGender
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdministrativeGender> rdf:type owl:ObjectProperty ;
+                                                                       rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
+                                                                       rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> ;
+                                                                       rdfs:range <https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeGender> ;
+                                                                       rdfs:comment "the gender of the individual used for administrative purposes" ;
+                                                                       rdfs:label "has administrative gender" ;
+                                                                       <http://www.w3.org/2004/02/skos/core#definition> "the gender of the individual used for administrative purposes" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDate
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDate> rdf:type owl:ObjectProperty ;
+                                                            rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
+                                                            rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> ;
+                                                            rdfs:range <https://biomedit.ch/rdf/sphn-ontology/sphn#BirthDate> ;
+                                                            rdfs:comment "The date of birth for the individual" ;
+                                                            rdfs:label "has birth date" ;
+                                                            <http://www.w3.org/2004/02/skos/core#definition> "The date of birth for the individual" .
+
+
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasConditionCode
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasConditionCode> rdf:type owl:ObjectProperty ;
                                                                 rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ,
@@ -107,6 +127,77 @@ xsd:time rdf:type rdfs:Datatype .
                                                                 rdfs:range <https://biomedit.ch/rdf/sphn-ontology/sphn#Code> ;
                                                                 rdfs:comment "The code for a Condition class instance" ;
                                                                 rdfs:label "Condition code" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> rdf:type owl:ObjectProperty ;
+                                                          rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
+                                                          rdfs:domain [ rdf:type owl:Class ;
+                                                                        owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#AccessDevicePresence>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeGender>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#AdverseEvent>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#Allergy>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#AllergyEpisode>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#Biobanksample>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#BirthDate>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#BloodPressure>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#BodyHeight>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#BodyMassIndex>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#BodyPosition>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#BodySurfaceArea>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#BodyTemperature>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#BodyWeight>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#CardiacIndex>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#CardiacOutput>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#CircumferenceMeasure>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#CivilStatus>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#Consent>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#DeathDate>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#DeathStatus>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#DiagnosticRadiologicExamination>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#DrugAdministrationEvent>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#ElectrocardiographicProcedure>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHDiagnosis>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHProcedure>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#GestationalAgeAtBirth>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#HeartRate>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#ICDODiagnosis>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#InhaledOxygenConcentration>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#LabResult>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#NursingDiagnosis>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#OncologyTreatmentAssessment>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#OxygenSaturation>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#RadiotherapyProcedure>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#RespiratoryRate>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#Sample>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#SimpleScore>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#TumorGrade>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#TumorSpecimen>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#TumorStage>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#VariantDescriptor>
+                                                                                      <https://loinc.org/rdf/29308-4>
+                                                                                      <https://loinc.org/rdf/30525-0>
+                                                                                    )
+                                                                      ] ;
+                                                          rdfs:label "has patient" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName> rdf:type owl:ObjectProperty ;
+                                                              rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
+                                                              rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> ;
+                                                              rdfs:range <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName> ;
+                                                              rdfs:comment "a name associated with the patient" ;
+                                                              rdfs:label "has subject name" ;
+                                                              <http://www.w3.org/2004/02/skos/core#definition> "a name associated with the patient" .
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNAttributeObject
@@ -550,7 +641,7 @@ xsd:time rdf:type rdfs:Datatype .
                                                                   rdfs:range <https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity> ;
                                                                   rdfs:comment "measured diastolic pressure value and unit" ;
                                                                   rdfs:label "has diastolic pressure" ;
-                                                                  owl:deprecated "" ;
+                                                                  owl:deprecated "true"^^xsd:boolean ;
                                                                   <http://www.w3.org/2004/02/skos/core#definition> "measured diastolic pressure value and unit" .
 
 
@@ -1539,6 +1630,7 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                         rdfs:range <https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier> ;
                                                                         rdfs:comment "link to a pseudo code assigned as unique identifier to an individual by a data provider institute" ;
                                                                         rdfs:label "has subject pseudo identifier" ;
+                                                                        owl:deprecated "true"^^xsd:boolean ;
                                                                         <http://www.w3.org/2004/02/skos/core#definition> "link to a pseudo code assigned as unique identifier to an individual by a data provider institute" .
 
 
@@ -1549,7 +1641,7 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                  rdfs:range <https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity> ;
                                                                  rdfs:comment "measured systolic pressure value and unit" ;
                                                                  rdfs:label "has systolic pressure" ;
-                                                                 owl:deprecated "" ;
+                                                                 owl:deprecated "true"^^xsd:boolean ;
                                                                  <http://www.w3.org/2004/02/skos/core#definition> "measured systolic pressure value and unit" .
 
 
@@ -1712,6 +1804,41 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 #################################################################
 #    Data properties
 #################################################################
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVADataProperties
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVADataProperties> rdf:type owl:DatatypeProperty ;
+                                                                    rdfs:label "AIDAVA data properties" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdress
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdress> rdf:type owl:DatatypeProperty ;
+                                                         rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVADataProperties> ;
+                                                         rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> ;
+                                                         rdfs:range xsd:string ;
+                                                         rdfs:comment "an address for the individual" ;
+                                                         rdfs:label "has adress" ;
+                                                         <http://www.w3.org/2004/02/skos/core#definition> "an address for the individual" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasFamilyName
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasFamilyName> rdf:type owl:DatatypeProperty ;
+                                                             rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVADataProperties> ;
+                                                             rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName> ;
+                                                             rdfs:range xsd:string ;
+                                                             rdfs:comment "family name (often called 'Surname')" ;
+                                                             rdfs:label "has family name" ;
+                                                             <http://www.w3.org/2004/02/skos/core#definition> "family name (often called 'Surname')" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasGivenName
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasGivenName> rdf:type owl:DatatypeProperty ;
+                                                            rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVADataProperties> ;
+                                                            rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName> ;
+                                                            rdfs:range xsd:string ;
+                                                            rdfs:comment "given names (not always 'first'), includes middle names" ;
+                                                            rdfs:label "has given name" ;
+                                                            <http://www.w3.org/2004/02/skos/core#definition> "given names (not always 'first'), includes middle names" .
+
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNAttributeDatatype
 <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNAttributeDatatype> rdf:type owl:DatatypeProperty ;
@@ -2056,7 +2183,8 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 <https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier> rdf:type owl:DatatypeProperty ;
                                                            rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNAttributeDatatype> ;
                                                            rdfs:domain [ rdf:type owl:Class ;
-                                                                         owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase>
+                                                                         owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient>
+                                                                                       <https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase>
                                                                                        <https://biomedit.ch/rdf/sphn-ontology/sphn#Biobanksample>
                                                                                        <https://biomedit.ch/rdf/sphn-ontology/sphn#Code>
                                                                                        <https://biomedit.ch/rdf/sphn-ontology/sphn#Consent>
@@ -3236,6 +3364,14 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                            rdfs:label "Observation" .
 
 
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept> ;
+                                                       rdfs:comment "Individual receiving health care services" ;
+                                                       rdfs:label "Patient" ;
+                                                       <http://www.w3.org/2004/02/skos/core#definition> "Individual receiving health care services" .
+
+
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure> rdf:type owl:Class ;
                                                          rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAConcept> ;
@@ -3248,6 +3384,14 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                         rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAConcept> ;
                                                         rdfs:comment "Class representing Specimen in FHIR IPS implementation" ;
                                                         rdfs:label "Specimen" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName> rdf:type owl:Class ;
+                                                           rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept> ;
+                                                           rdfs:comment "Name of a human" ;
+                                                           rdfs:label "Subject Name" ;
+                                                           <http://www.w3.org/2004/02/skos/core#definition> "Name of a human" .
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/VitalSigns
@@ -9370,6 +9514,7 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                      ] ;
                                                                      rdfs:comment "a pseudo code assigned as unique identifier to an individual by a data provider institute" ;
                                                                      rdfs:label "Subject Pseudo Identifier" ;
+                                                                     owl:deprecated "true"^^xsd:boolean ;
                                                                      <http://www.w3.org/2004/02/skos/core#definition> "a pseudo code assigned as unique identifier to an individual by a data provider institute" .
 
 
