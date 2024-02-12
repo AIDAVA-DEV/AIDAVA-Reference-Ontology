@@ -1275,7 +1275,11 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResultCode
 <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResultCode> rdf:type owl:ObjectProperty ;
                                                                       rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ;
-                                                                      rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#LabResult> ;
+                                                                      rdfs:domain [ rdf:type owl:Class ;
+                                                                                    owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/sphn#LabResult>
+                                                                                                  <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>
+                                                                                                )
+                                                                                  ] ;
                                                                       rdfs:range [ rdf:type owl:Class ;
                                                                                    owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/sphn#Code>
                                                                                                  <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology>
