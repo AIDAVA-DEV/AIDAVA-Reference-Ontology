@@ -322,7 +322,9 @@ xsd:time rdf:type rdfs:Datatype .
 <https://biomedit.ch/rdf/sphn-ontology/sphn#hasBodySite> rdf:type owl:ObjectProperty ;
                                                          rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNAttributeObject> ;
                                                          rdfs:domain [ rdf:type owl:Class ;
-                                                                       owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/sphn#AccessDevicePresence>
+                                                                       owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#AccessDevicePresence>
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#AllergyEpisode>
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#BloodPressure>
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#BodyTemperature>
@@ -333,7 +335,6 @@ xsd:time rdf:type rdfs:Datatype .
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#HeartRate>
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#OncologyTreatmentAssessment>
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#OxygenSaturation>
-                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#RadiotherapyProcedure>
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#Sample>
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#TumorSpecimen>
@@ -3366,6 +3367,45 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                            rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAConcept> ;
                                                            rdfs:comment "Class representing Observation in FHIR IPS implementation" ;
                                                            rdfs:label "Observation" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis> ,
+                                                                                 [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasBodySite> ;
+                                                                                                          owl:someValuesFrom <https://biomedit.ch/rdf/sphn-ontology/sphn#BodySite>
+                                                                                                        ]
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasBodySite> ;
+                                                                                                          owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                        ]
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasBodySite> ;
+                                                                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                        ]
+                                                                                                      ) ;
+                                                                                   rdf:type owl:Class
+                                                                                 ] ,
+                                                                                 [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectAge> ;
+                                                                                                          owl:someValuesFrom <https://loinc.org/rdf/30525-0>
+                                                                                                        ]
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectAge> ;
+                                                                                                          owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                                        ]
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectAge> ;
+                                                                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                        ]
+                                                                                                      ) ;
+                                                                                   rdf:type owl:Class
+                                                                                 ] ;
+                                                                 rdfs:comment "determination of the presence of an oncological disease, from expressed signs and symptoms and assessments such as biopsy, tumor marker test, imaging, or the like" ;
+                                                                 rdfs:label "Oncology Diagnosis" ;
+                                                                 <http://www.w3.org/2004/02/skos/core#definition> "determination of the presence of an oncological disease, from expressed signs and symptoms and assessments such as biopsy, tumor marker test, imaging, or the like" ;
+                                                                 <http://www.w3.org/2004/02/skos/core#note> "sphn:hasCode allowed coding system: SNOMED CT, ICD-10, ICD-O-3 Topography, ICD-O-3 Morphology, NANDA, ORPHA or other" .
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
@@ -7639,6 +7679,7 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                            ] ;
                                                            rdfs:comment "ICD-O diagnosis" ;
                                                            rdfs:label "ICD-O Diagnosis" ;
+                                                           owl:deprecated "true"^^xsd:boolean ;
                                                            <http://www.w3.org/2004/02/skos/core#definition> "ICD-O diagnosis" ;
                                                            <http://www.w3.org/2004/02/skos/core#note> "sphn:hasMorphologyCode allowed coding system: ICD-O-3 Morphology" ,
                                                                                                       "sphn:hasTopographyCode allowed coding system: ICD-O-3 Topography" .
