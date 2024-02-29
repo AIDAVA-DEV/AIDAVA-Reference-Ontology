@@ -133,8 +133,7 @@ xsd:time rdf:type rdfs:Datatype .
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> rdf:type owl:ObjectProperty ;
                                                           rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
                                                           rdfs:domain [ rdf:type owl:Class ;
-                                                                        owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure>
-                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#AccessDevicePresence>
+                                                                        owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/sphn#AccessDevicePresence>
                                                                                       <https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase>
                                                                                       <https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeGender>
                                                                                       <https://biomedit.ch/rdf/sphn-ontology/sphn#AdverseEvent>
@@ -157,6 +156,7 @@ xsd:time rdf:type rdfs:Datatype .
                                                                                       <https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile>
                                                                                       <https://biomedit.ch/rdf/sphn-ontology/sphn#DeathDate>
                                                                                       <https://biomedit.ch/rdf/sphn-ontology/sphn#DeathStatus>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis>
                                                                                       <https://biomedit.ch/rdf/sphn-ontology/sphn#DiagnosticRadiologicExamination>
                                                                                       <https://biomedit.ch/rdf/sphn-ontology/sphn#DrugAdministrationEvent>
                                                                                       <https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription>
@@ -174,6 +174,7 @@ xsd:time rdf:type rdfs:Datatype .
                                                                                       <https://biomedit.ch/rdf/sphn-ontology/sphn#OncologyTreatmentAssessment>
                                                                                       <https://biomedit.ch/rdf/sphn-ontology/sphn#OxygenSaturation>
                                                                                       <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>
                                                                                       <https://biomedit.ch/rdf/sphn-ontology/sphn#RadiotherapyProcedure>
                                                                                       <https://biomedit.ch/rdf/sphn-ontology/sphn#RespiratoryRate>
                                                                                       <https://biomedit.ch/rdf/sphn-ontology/sphn#Sample>
@@ -183,10 +184,9 @@ xsd:time rdf:type rdfs:Datatype .
                                                                                       <https://biomedit.ch/rdf/sphn-ontology/sphn#TumorSpecimen>
                                                                                       <https://biomedit.ch/rdf/sphn-ontology/sphn#TumorStage>
                                                                                       <https://biomedit.ch/rdf/sphn-ontology/sphn#VariantDescriptor>
-                                                                                      <https://loinc.org/rdf/29308-4>
-                                                                                      <https://loinc.org/rdf/30525-0>
                                                                                     )
                                                                       ] ;
+                                                          rdfs:range <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> ;
                                                           rdfs:label "has patient" .
 
 
@@ -322,19 +322,19 @@ xsd:time rdf:type rdfs:Datatype .
 <https://biomedit.ch/rdf/sphn-ontology/sphn#hasBodySite> rdf:type owl:ObjectProperty ;
                                                          rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNAttributeObject> ;
                                                          rdfs:domain [ rdf:type owl:Class ;
-                                                                       owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis>
-                                                                                     <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure>
-                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#AccessDevicePresence>
+                                                                       owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/sphn#AccessDevicePresence>
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#AllergyEpisode>
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#BloodPressure>
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#BodyTemperature>
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#CircumferenceMeasure>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis>
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#DiagnosticRadiologicExamination>
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#ElectrocardiographicProcedure>
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHProcedure>
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#HeartRate>
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#OncologyTreatmentAssessment>
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#OxygenSaturation>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#RadiotherapyProcedure>
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#Sample>
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#TumorSpecimen>
@@ -412,8 +412,7 @@ xsd:time rdf:type rdfs:Datatype .
 <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> rdf:type owl:ObjectProperty ;
                                                      rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNAttributeObject> ;
                                                      rdfs:domain [ rdf:type owl:Class ;
-                                                                   owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure>
-                                                                                 <https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeGender>
+                                                                   owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeGender>
                                                                                  <https://biomedit.ch/rdf/sphn-ontology/sphn#AdverseEvent>
                                                                                  <https://biomedit.ch/rdf/sphn-ontology/sphn#Allergen>
                                                                                  <https://biomedit.ch/rdf/sphn-ontology/sphn#Allergy>
@@ -431,6 +430,7 @@ xsd:time rdf:type rdfs:Datatype .
                                                                                  <https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile>
                                                                                  <https://biomedit.ch/rdf/sphn-ontology/sphn#DataProviderInstitute>
                                                                                  <https://biomedit.ch/rdf/sphn-ontology/sphn#DeathStatus>
+                                                                                 <https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis>
                                                                                  <https://biomedit.ch/rdf/sphn-ontology/sphn#DiagnosticRadiologicExamination>
                                                                                  <https://biomedit.ch/rdf/sphn-ontology/sphn#Drug>
                                                                                  <https://biomedit.ch/rdf/sphn-ontology/sphn#DrugAdministrationEvent>
@@ -456,6 +456,7 @@ xsd:time rdf:type rdfs:Datatype .
                                                                                  <https://biomedit.ch/rdf/sphn-ontology/sphn#PharmaceuticalDoseForm>
                                                                                  <https://biomedit.ch/rdf/sphn-ontology/sphn#PhysiologicState>
                                                                                  <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>
+                                                                                 <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>
                                                                                  <https://biomedit.ch/rdf/sphn-ontology/sphn#Protein>
                                                                                  <https://biomedit.ch/rdf/sphn-ontology/sphn#RadiotherapyProcedure>
                                                                                  <https://biomedit.ch/rdf/sphn-ontology/sphn#Reference>
@@ -469,7 +470,6 @@ xsd:time rdf:type rdfs:Datatype .
                                                                                  <https://biomedit.ch/rdf/sphn-ontology/sphn#TumorStage>
                                                                                  <https://biomedit.ch/rdf/sphn-ontology/sphn#Unit>
                                                                                  <https://biomedit.ch/rdf/sphn-ontology/sphn#VariantDescriptor>
-                                                                                 <https://loinc.org/rdf/29308-4>
                                                                                )
                                                                  ] ;
                                                      rdfs:range [ rdf:type owl:Class ;

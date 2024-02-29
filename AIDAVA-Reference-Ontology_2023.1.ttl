@@ -69,7 +69,7 @@ dcterms:license rdf:type owl:AnnotationProperty .
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> rdf:type owl:ObjectProperty ;
                                                           rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
                                                           rdfs:domain [ rdf:type owl:Class ;
-                                                                        owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure>
+                                                                        owl:unionOf ( sphn:Procedure
                                                                                       sphn:AccessDevicePresence
                                                                                       sphn:AdministrativeCase
                                                                                       sphn:AdministrativeGender
@@ -119,10 +119,10 @@ dcterms:license rdf:type owl:AnnotationProperty .
                                                                                       sphn:TumorSpecimen
                                                                                       sphn:TumorStage
                                                                                       sphn:VariantDescriptor
-                                                                                      <https://loinc.org/rdf/29308-4>
-                                                                                      <https://loinc.org/rdf/30525-0>
+                                                                                      sphn:Diagnosis
                                                                                     )
                                                                       ] ;
+                                                          rdfs:range <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> ;
                                                           rdfs:label "has patient" .
 
 
@@ -138,9 +138,7 @@ dcterms:license rdf:type owl:AnnotationProperty .
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasBodySite
 sphn:hasBodySite rdfs:domain [ rdf:type owl:Class ;
-                               owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis>
-                                             <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure>
-                                             sphn:AccessDevicePresence
+                               owl:unionOf ( sphn:AccessDevicePresence
                                              sphn:AllergyEpisode
                                              sphn:BloodPressure
                                              sphn:BodyTemperature
@@ -151,17 +149,18 @@ sphn:hasBodySite rdfs:domain [ rdf:type owl:Class ;
                                              sphn:HeartRate
                                              sphn:OncologyTreatmentAssessment
                                              sphn:OxygenSaturation
+                                             sphn:Procedure
                                              sphn:RadiotherapyProcedure
                                              sphn:Sample
                                              sphn:TumorSpecimen
+                                             sphn:Diagnosis
                                            )
                              ] .
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode
 sphn:hasCode rdfs:domain [ rdf:type owl:Class ;
-                           owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure>
-                                         sphn:AdministrativeGender
+                           owl:unionOf ( sphn:AdministrativeGender
                                          sphn:AdverseEvent
                                          sphn:Allergen
                                          sphn:Allergy
@@ -205,6 +204,7 @@ sphn:hasCode rdfs:domain [ rdf:type owl:Class ;
                                          sphn:PhysiologicState
                                          sphn:ProblemCondition
                                          sphn:Protein
+                                         sphn:Procedure
                                          sphn:RadiotherapyProcedure
                                          sphn:Reference
                                          sphn:Sample
@@ -217,7 +217,7 @@ sphn:hasCode rdfs:domain [ rdf:type owl:Class ;
                                          sphn:TumorStage
                                          sphn:Unit
                                          sphn:VariantDescriptor
-                                         <https://loinc.org/rdf/29308-4>
+                                         sphn:Diagnosis
                                        )
                          ] .
 
