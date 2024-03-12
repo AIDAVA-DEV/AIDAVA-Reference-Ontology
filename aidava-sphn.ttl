@@ -332,6 +332,7 @@ xsd:time rdf:type rdfs:Datatype .
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#ElectrocardiographicProcedure>
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHProcedure>
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#HeartRate>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#OncologyTreatmentAssessment>
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#OxygenSaturation>
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>
@@ -544,6 +545,7 @@ xsd:time rdf:type rdfs:Datatype .
                                                                   rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNAttributeObject> ;
                                                                   rdfs:domain [ rdf:type owl:Class ;
                                                                                 owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/sphn#InhaledOxygenConcentration>
+                                                                                              <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>
                                                                                               <https://biomedit.ch/rdf/sphn-ontology/sphn#RespiratoryRate>
                                                                                             )
                                                                               ] ;
@@ -1015,6 +1017,7 @@ xsd:time rdf:type rdfs:Datatype .
                                                              rdfs:range <https://biomedit.ch/rdf/sphn-ontology/sphn#Quantity> ;
                                                              rdfs:comment "measured average pressure value and unit" ;
                                                              rdfs:label "has mean pressure" ;
+                                                             owl:deprecated "true"^^xsd:boolean ;
                                                              <http://www.w3.org/2004/02/skos/core#definition> "measured average pressure value and unit" .
 
 
@@ -1173,6 +1176,7 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                 rdfs:range <https://biomedit.ch/rdf/sphn-ontology/sphn#MedicalDevice> ;
                                                                 rdfs:comment "type of device used for oxygen therapy, e.g. nasal cannula, Venturi mask" ;
                                                                 rdfs:label "has oxygen equipment" ;
+                                                                owl:deprecated "true"^^xsd:boolean ;
                                                                 <http://www.w3.org/2004/02/skos/core#definition> "type of device used for oxygen therapy, e.g. nasal cannula, Venturi mask" ;
                                                                 <https://biomedit.ch/rdf/sphn-ontology/sphn#replaces> <https://biomedit.ch/rdf/sphn-ontology/sphn#hasInhaledOxygenConcentrationMedicalDevice> .
 
@@ -1184,6 +1188,7 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                rdfs:range <https://biomedit.ch/rdf/sphn-ontology/sphn#DrugAdministrationEvent> ;
                                                                rdfs:comment "quantity and duration of oxygen flow rate administration" ;
                                                                rdfs:label "has oxygen flow rate" ;
+                                                               owl:deprecated "true"^^xsd:boolean ;
                                                                <http://www.w3.org/2004/02/skos/core#definition> "quantity and duration of oxygen flow rate administration" ;
                                                                <https://biomedit.ch/rdf/sphn-ontology/sphn#replaces> <https://biomedit.ch/rdf/sphn-ontology/sphn#hasInhaledOxygenConcentrationDrugAdministrationEvent> .
 
@@ -1430,6 +1435,7 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                           ] ;
                                                                rdfs:comment "code, name, coding system and version describing the regular or irregular state of the heart rate" ;
                                                                rdfs:label "has regularity code" ;
+                                                               owl:deprecated "true"^^xsd:boolean ;
                                                                <http://www.w3.org/2004/02/skos/core#definition> "code, name, coding system and version describing the regular or irregular state of the heart rate" ;
                                                                <https://biomedit.ch/rdf/sphn-ontology/sphn#replaces> <https://biomedit.ch/rdf/sphn-ontology/sphn#hasHeartRateRegularityCode> .
 
@@ -4394,7 +4400,8 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#BloodPressure
 <https://biomedit.ch/rdf/sphn-ontology/sphn#BloodPressure> rdf:type owl:Class ;
-                                                           rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> ,
+                                                           rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#Deprecated> ,
+                                                                           <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> ,
                                                                            [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                                     owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasBodySite> ;
                                                                                                     owl:someValuesFrom [ rdf:type owl:Restriction ;
@@ -4551,6 +4558,7 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                            ] ;
                                                            rdfs:comment "blood pressure measured either in the artery, in the vein, or in the pulmonary circulation" ;
                                                            rdfs:label "Blood Pressure" ;
+                                                           owl:deprecated "true"^^xsd:boolean ;
                                                            <http://www.w3.org/2004/02/skos/core#definition> "blood pressure measured either in the artery, in the vein, or in the pulmonary circulation" ;
                                                            <https://biomedit.ch/rdf/sphn-ontology/sphn#replaces> <https://biomedit.ch/rdf/sphn-ontology/sphn#SystemicArterialBloodPressure> .
 
@@ -4558,7 +4566,8 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#BodyHeight
 <https://biomedit.ch/rdf/sphn-ontology/sphn#BodyHeight> rdf:type owl:Class ;
                                                         owl:equivalentClass <https://loinc.org/rdf/8302-2> ;
-                                                        rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> ,
+                                                        rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#Deprecated> ,
+                                                                        <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> ,
                                                                         [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                                  owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase> ;
                                                                                                  owl:minCardinality "0"^^xsd:nonNegativeInteger
@@ -4616,6 +4625,7 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                         ] ;
                                                         rdfs:comment "height of the individual" ;
                                                         rdfs:label "Body Height" ;
+                                                        owl:deprecated "true"^^xsd:boolean ;
                                                         <http://www.w3.org/2004/02/skos/core#definition> "height of the individual" .
 
 
@@ -4906,7 +4916,8 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#BodyTemperature
 <https://biomedit.ch/rdf/sphn-ontology/sphn#BodyTemperature> rdf:type owl:Class ;
                                                              owl:equivalentClass <https://loinc.org/rdf/8310-5> ;
-                                                             rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> ,
+                                                             rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#Deprecated> ,
+                                                                             <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> ,
                                                                              [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                                       owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase> ;
                                                                                                       owl:minCardinality "0"^^xsd:nonNegativeInteger
@@ -4975,13 +4986,15 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                              ] ;
                                                              rdfs:comment "body temperature of the individual" ;
                                                              rdfs:label "Body Temperature" ;
+                                                             owl:deprecated "true"^^xsd:boolean ;
                                                              <http://www.w3.org/2004/02/skos/core#definition> "body temperature of the individual" .
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#BodyWeight
 <https://biomedit.ch/rdf/sphn-ontology/sphn#BodyWeight> rdf:type owl:Class ;
                                                         owl:equivalentClass <https://loinc.org/rdf/29463-7> ;
-                                                        rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> ,
+                                                        rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#Deprecated> ,
+                                                                        <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> ,
                                                                         [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                                  owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase> ;
                                                                                                  owl:minCardinality "0"^^xsd:nonNegativeInteger
@@ -5039,6 +5052,7 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                         ] ;
                                                         rdfs:comment "weight of the individual" ;
                                                         rdfs:label "Body Weight" ;
+                                                        owl:deprecated "true"^^xsd:boolean ;
                                                         <http://www.w3.org/2004/02/skos/core#definition> "weight of the individual" .
 
 
@@ -5132,7 +5146,8 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#CardiacOutput
 <https://biomedit.ch/rdf/sphn-ontology/sphn#CardiacOutput> rdf:type owl:Class ;
-                                                           rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> ,
+                                                           rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#Deprecated> ,
+                                                                           <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> ,
                                                                            [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                                     owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasMethodCode> ;
                                                                                                     owl:someValuesFrom [ rdf:type owl:Class ;
@@ -5219,6 +5234,7 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                            ] ;
                                                            rdfs:comment "volume of blood passing through the heart per unit of time" ;
                                                            rdfs:label "Cardiac Output" ;
+                                                           owl:deprecated "true"^^xsd:boolean ;
                                                            <http://www.w3.org/2004/02/skos/core#definition> "volume of blood passing through the heart per unit of time" .
 
 
@@ -5346,7 +5362,8 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#CircumferenceMeasure
 <https://biomedit.ch/rdf/sphn-ontology/sphn#CircumferenceMeasure> rdf:type owl:Class ;
-                                                                  rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> ,
+                                                                  rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#Deprecated> ,
+                                                                                  <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> ,
                                                                                   [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                                            owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasBodySite> ;
                                                                                                            owl:someValuesFrom [ rdf:type owl:Restriction ;
@@ -5428,6 +5445,7 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                   ] ;
                                                                   rdfs:comment "circumference measurement of a body site" ;
                                                                   rdfs:label "Circumference Measure" ;
+                                                                  owl:deprecated "true"^^xsd:boolean ;
                                                                   <http://www.w3.org/2004/02/skos/core#definition> "circumference measurement of a body site" ;
                                                                   <http://www.w3.org/2004/02/skos/core#scopeNote> "sphn:hasBodySite no subclasses allowed" .
 
@@ -7464,7 +7482,8 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#HeartRate
 <https://biomedit.ch/rdf/sphn-ontology/sphn#HeartRate> rdf:type owl:Class ;
                                                        owl:equivalentClass <https://loinc.org/rdf/8867-4> ;
-                                                       rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> ,
+                                                       rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#Deprecated> ,
+                                                                       <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> ,
                                                                        [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                                 owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRegularityCode> ;
                                                                                                 owl:someValuesFrom [ rdf:type owl:Class ;
@@ -7574,6 +7593,7 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                        ] ;
                                                        rdfs:comment "frequency of the heart beats, i.e. the number of time a heart beats per unit of time" ;
                                                        rdfs:label "Heart Rate" ;
+                                                       owl:deprecated "true"^^xsd:boolean ;
                                                        <http://www.w3.org/2004/02/skos/core#definition> "frequency of the heart beats, i.e. the number of time a heart beats per unit of time" ;
                                                        <http://www.w3.org/2004/02/skos/core#scopeNote> "sphn:hasRegularityCode no subclasses allowed" .
 
@@ -7688,7 +7708,8 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#InhaledOxygenConcentration
 <https://biomedit.ch/rdf/sphn-ontology/sphn#InhaledOxygenConcentration> rdf:type owl:Class ;
                                                                         owl:equivalentClass <https://loinc.org/rdf/3150-0> ;
-                                                                        rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> ,
+                                                                        rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#Deprecated> ,
+                                                                                        <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> ,
                                                                                         [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                                                  owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity> ;
                                                                                                                  owl:someValuesFrom [ rdf:type owl:Restriction ;
@@ -7789,6 +7810,7 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                         ] ;
                                                                         rdfs:comment "fraction of inspired oxygen (FiO2) either calculated knowing the device used and the amount of oxygen administrated or coming from the respiratory system settings" ;
                                                                         rdfs:label "Inhaled Oxygen Concentration" ;
+                                                                        owl:deprecated "true"^^xsd:boolean ;
                                                                         <http://www.w3.org/2004/02/skos/core#definition> "fraction of inspired oxygen (FiO2) either calculated knowing the device used and the amount of oxygen administrated or coming from the respiratory system settings" .
 
 
@@ -8131,6 +8153,28 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                            rdf:type owl:Class
                                                                          ] ,
                                                                          [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasBodySite> ;
+                                                                                                  owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                                ]
+                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasBodySite> ;
+                                                                                                  owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                ]
+                                                                                              ) ;
+                                                                           rdf:type owl:Class
+                                                                         ] ,
+                                                                         [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataDetermination> ;
+                                                                                                  owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                                ]
+                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataDetermination> ;
+                                                                                                  owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                ]
+                                                                                              ) ;
+                                                                           rdf:type owl:Class
+                                                                         ] ,
+                                                                         [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                                   owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataProviderInstitute> ;
                                                                                                   owl:minCardinality "1"^^xsd:nonNegativeInteger
                                                                                                 ]
@@ -8147,6 +8191,28 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                                 ]
                                                                                                 [ rdf:type owl:Restriction ;
                                                                                                   owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasMeasurementMethod> ;
+                                                                                                  owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                ]
+                                                                                              ) ;
+                                                                           rdf:type owl:Class
+                                                                         ] ,
+                                                                         [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasPhysiologicState> ;
+                                                                                                  owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                                ]
+                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasPhysiologicState> ;
+                                                                                                  owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                ]
+                                                                                              ) ;
+                                                                           rdf:type owl:Class
+                                                                         ] ,
+                                                                         [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResultCode> ;
+                                                                                                  owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                                ]
+                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResultCode> ;
                                                                                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                                                                 ]
                                                                                               ) ;
@@ -8526,7 +8592,8 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#OxygenSaturation
 <https://biomedit.ch/rdf/sphn-ontology/sphn#OxygenSaturation> rdf:type owl:Class ;
-                                                              rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> ,
+                                                              rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#Deprecated> ,
+                                                                              <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> ,
                                                                               [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                                        owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity> ;
                                                                                                        owl:someValuesFrom [ rdf:type owl:Restriction ;
@@ -8616,6 +8683,7 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                               ] ;
                                                               rdfs:comment "fraction of oxygen present in the blood" ;
                                                               rdfs:label "Oxygen Saturation" ;
+                                                              owl:deprecated "true"^^xsd:boolean ;
                                                               <http://www.w3.org/2004/02/skos/core#definition> "fraction of oxygen present in the blood" ;
                                                               <http://www.w3.org/2004/02/skos/core#note> "sphn:hasBodySite/sphn:hasCode recommended values:  29707007 | Toe structure (body structure), |7569003 | Finger structure (body structure) |, 48800003 | Ear lobule structure (body structure) |" ,
                                                                                                          "sphn:hasMeasurementMethod/sphn:hasCode recommended values:  252465000 | Pulse oximetry (procedure) |" .
