@@ -69,8 +69,7 @@ dcterms:license rdf:type owl:AnnotationProperty .
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> rdf:type owl:ObjectProperty ;
                                                           rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
                                                           rdfs:domain [ rdf:type owl:Class ;
-                                                                        owl:unionOf ( sphn:Procedure
-                                                                                      sphn:AccessDevicePresence
+                                                                        owl:unionOf ( sphn:AccessDevicePresence
                                                                                       sphn:AdministrativeCase
                                                                                       sphn:AdministrativeGender
                                                                                       sphn:AdverseEvent
@@ -93,6 +92,7 @@ dcterms:license rdf:type owl:AnnotationProperty .
                                                                                       sphn:DataFile
                                                                                       sphn:DeathDate
                                                                                       sphn:DeathStatus
+                                                                                      sphn:Diagnosis
                                                                                       sphn:DiagnosticRadiologicExamination
                                                                                       sphn:DrugAdministrationEvent
                                                                                       sphn:DrugPrescription
@@ -110,6 +110,7 @@ dcterms:license rdf:type owl:AnnotationProperty .
                                                                                       sphn:OncologyTreatmentAssessment
                                                                                       sphn:OxygenSaturation
                                                                                       sphn:ProblemCondition
+                                                                                      sphn:Procedure
                                                                                       sphn:RadiotherapyProcedure
                                                                                       sphn:RespiratoryRate
                                                                                       sphn:Sample
@@ -119,7 +120,6 @@ dcterms:license rdf:type owl:AnnotationProperty .
                                                                                       sphn:TumorSpecimen
                                                                                       sphn:TumorStage
                                                                                       sphn:VariantDescriptor
-                                                                                      sphn:Diagnosis
                                                                                     )
                                                                       ] ;
                                                           rdfs:range <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> ;
@@ -143,17 +143,18 @@ sphn:hasBodySite rdfs:domain [ rdf:type owl:Class ;
                                              sphn:BloodPressure
                                              sphn:BodyTemperature
                                              sphn:CircumferenceMeasure
+                                             sphn:Diagnosis
                                              sphn:DiagnosticRadiologicExamination
                                              sphn:ElectrocardiographicProcedure
                                              sphn:FOPHProcedure
                                              sphn:HeartRate
+                                             sphn:Measurement
                                              sphn:OncologyTreatmentAssessment
                                              sphn:OxygenSaturation
                                              sphn:Procedure
                                              sphn:RadiotherapyProcedure
                                              sphn:Sample
                                              sphn:TumorSpecimen
-                                             sphn:Diagnosis
                                            )
                              ] .
 
@@ -178,6 +179,7 @@ sphn:hasCode rdfs:domain [ rdf:type owl:Class ;
                                          sphn:DataFile
                                          sphn:DataProviderInstitute
                                          sphn:DeathStatus
+                                         sphn:Diagnosis
                                          sphn:DiagnosticRadiologicExamination
                                          sphn:Drug
                                          sphn:DrugAdministrationEvent
@@ -203,8 +205,8 @@ sphn:hasCode rdfs:domain [ rdf:type owl:Class ;
                                          sphn:PharmaceuticalDoseForm
                                          sphn:PhysiologicState
                                          sphn:ProblemCondition
-                                         sphn:Protein
                                          sphn:Procedure
+                                         sphn:Protein
                                          sphn:RadiotherapyProcedure
                                          sphn:Reference
                                          sphn:Sample
@@ -217,9 +219,17 @@ sphn:hasCode rdfs:domain [ rdf:type owl:Class ;
                                          sphn:TumorStage
                                          sphn:Unit
                                          sphn:VariantDescriptor
-                                         sphn:Diagnosis
                                        )
                          ] .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataDetermination
+sphn:hasDataDetermination rdfs:domain [ rdf:type owl:Class ;
+                                        owl:unionOf ( sphn:InhaledOxygenConcentration
+                                                      sphn:Measurement
+                                                      sphn:RespiratoryRate
+                                                    )
+                                      ] .
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasMeasurementMethod
@@ -230,6 +240,14 @@ sphn:hasMeasurementMethod rdfs:domain [ rdf:type owl:Class ;
                                                       sphn:OxygenSaturation
                                                     )
                                       ] .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasMedicalDevice
+sphn:hasMedicalDevice rdfs:domain [ rdf:type owl:Class ;
+                                    owl:unionOf ( sphn:AccessDevicePresence
+                                                  sphn:Measurement
+                                                )
+                                  ] .
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResultCode
@@ -493,8 +511,48 @@ sphn:hasOnsetDateTime rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/
                                                           rdfs:label "Vital signs" .
 
 
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#BloodPressure
+sphn:BloodPressure rdfs:subClassOf sphn:Deprecated ;
+                   owl:deprecated "true"^^xsd:boolean .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#BodyHeight
+sphn:BodyHeight rdfs:subClassOf sphn:Deprecated ;
+                owl:deprecated "true"^^xsd:boolean .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#BodyTemperature
+sphn:BodyTemperature rdfs:subClassOf sphn:Deprecated ;
+                     owl:deprecated "true"^^xsd:boolean .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#BodyWeight
+sphn:BodyWeight rdfs:subClassOf sphn:Deprecated ;
+                owl:deprecated "true"^^xsd:boolean .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#CardiacOutput
+sphn:CardiacOutput rdfs:subClassOf sphn:Deprecated ;
+                   owl:deprecated "true"^^xsd:boolean .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#CircumferenceMeasure
+sphn:CircumferenceMeasure rdfs:subClassOf sphn:Deprecated ;
+                          owl:deprecated "true"^^xsd:boolean .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#HeartRate
+sphn:HeartRate rdfs:subClassOf sphn:Deprecated ;
+               owl:deprecated "true"^^xsd:boolean .
+
+
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#ICDODiagnosis
 sphn:ICDODiagnosis owl:deprecated "true"^^xsd:boolean .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#InhaledOxygenConcentration
+sphn:InhaledOxygenConcentration rdfs:subClassOf sphn:Deprecated ;
+                                owl:deprecated "true"^^xsd:boolean .
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement
@@ -514,6 +572,46 @@ sphn:Measurement rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restricti
                                    rdf:type owl:Class
                                  ] ,
                                  [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                          owl:onProperty sphn:hasMedicalDevice ;
+                                                          owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty sphn:hasTypeCode ;
+                                                                               owl:someValuesFrom <http://snomed.info/id/105789008>
+                                                                             ]
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty sphn:hasMedicalDevice ;
+                                                          owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty sphn:hasMedicalDevice ;
+                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ,
+                                 [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                          owl:onProperty sphn:hasBodySite ;
+                                                          owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty sphn:hasBodySite ;
+                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ,
+                                 [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                          owl:onProperty sphn:hasDataDetermination ;
+                                                          owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty sphn:hasDataDetermination ;
+                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ,
+                                 [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                           owl:onProperty sphn:hasMeasurementMethod ;
                                                           owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                         ]
@@ -523,7 +621,34 @@ sphn:Measurement rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restricti
                                                         ]
                                                       ) ;
                                    rdf:type owl:Class
+                                 ] ,
+                                 [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                          owl:onProperty sphn:hasPhysiologicState ;
+                                                          owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty sphn:hasPhysiologicState ;
+                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ,
+                                 [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                          owl:onProperty sphn:hasQualitativeResultCode ;
+                                                          owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty sphn:hasQualitativeResultCode ;
+                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
                                  ] .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#OxygenSaturation
+sphn:OxygenSaturation rdfs:subClassOf sphn:Deprecated ;
+                      owl:deprecated "true"^^xsd:boolean .
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier
@@ -535,6 +660,18 @@ sphn:SubjectPseudoIdentifier owl:deprecated "true"^^xsd:boolean .
 #################################################################
 
 sphn:hasDiastolicPressure owl:deprecated "true"^^xsd:boolean .
+
+
+sphn:hasMeanPressure owl:deprecated "true"^^xsd:boolean .
+
+
+sphn:hasOxygenEquipment owl:deprecated "true"^^xsd:boolean .
+
+
+sphn:hasOxygenFlowRate owl:deprecated "true"^^xsd:boolean .
+
+
+sphn:hasRegularityCode owl:deprecated "true"^^xsd:boolean .
 
 
 sphn:hasSubjectPseudoIdentifier owl:deprecated "true"^^xsd:boolean .
