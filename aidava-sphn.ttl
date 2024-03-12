@@ -1040,7 +1040,11 @@ xsd:time rdf:type rdfs:Datatype .
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasMedicalDevice
 <https://biomedit.ch/rdf/sphn-ontology/sphn#hasMedicalDevice> rdf:type owl:ObjectProperty ;
                                                               rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNAttributeObject> ;
-                                                              rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#AccessDevicePresence> ;
+                                                              rdfs:domain [ rdf:type owl:Class ;
+                                                                            owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/sphn#AccessDevicePresence>
+                                                                                          <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>
+                                                                                        )
+                                                                          ] ;
                                                               rdfs:range <https://biomedit.ch/rdf/sphn-ontology/sphn#MedicalDevice> ;
                                                               rdfs:comment """product intended for medical use when the main effect is not achieved by a medicinal product; medical devices include, 
 but are not limited to, implants, instruments, devices, in vitro diagnostics, used in the concept""" ;
@@ -8136,6 +8140,24 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                                 ]
                                                                                                 [ rdf:type owl:Restriction ;
                                                                                                   owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ;
+                                                                                                  owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                ]
+                                                                                              ) ;
+                                                                           rdf:type owl:Class
+                                                                         ] ,
+                                                                         [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasMedicalDevice> ;
+                                                                                                  owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                                       owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasTypeCode> ;
+                                                                                                                       owl:someValuesFrom <http://snomed.info/id/105789008>
+                                                                                                                     ]
+                                                                                                ]
+                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasMedicalDevice> ;
+                                                                                                  owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                ]
+                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasMedicalDevice> ;
                                                                                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                                                                 ]
                                                                                               ) ;
