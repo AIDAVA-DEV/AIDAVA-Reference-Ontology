@@ -3012,7 +3012,8 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 
 
 ###  http://snomed.info/id/404684003
-<http://snomed.info/id/404684003> rdf:type owl:Class .
+<http://snomed.info/id/404684003> rdf:type owl:Class ;
+                                  owl:equivalentClass <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition> .
 
 
 ###  http://snomed.info/id/40983000
@@ -3119,8 +3120,7 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 
 
 ###  http://snomed.info/id/55607006
-<http://snomed.info/id/55607006> rdf:type owl:Class ;
-                                 owl:equivalentClass <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition> .
+<http://snomed.info/id/55607006> rdf:type owl:Class .
 
 
 ###  http://snomed.info/id/60132005
@@ -3381,7 +3381,8 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis> rdf:type owl:Class ;
-                                                                 rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis> ,
+                                                                 rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#Deprecated> ,
+                                                                                 <https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis> ,
                                                                                  [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                                           owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasBodySite> ;
                                                                                                           owl:someValuesFrom <https://biomedit.ch/rdf/sphn-ontology/sphn#BodySite>
@@ -3414,6 +3415,7 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                  ] ;
                                                                  rdfs:comment "determination of the presence of an oncological disease, from expressed signs and symptoms and assessments such as biopsy, tumor marker test, imaging, or the like" ;
                                                                  rdfs:label "Oncology Diagnosis" ;
+                                                                 owl:deprecated "true"^^xsd:boolean ;
                                                                  <http://www.w3.org/2004/02/skos/core#definition> "determination of the presence of an oncological disease, from expressed signs and symptoms and assessments such as biopsy, tumor marker test, imaging, or the like" ;
                                                                  <http://www.w3.org/2004/02/skos/core#note> "sphn:hasCode allowed coding system: SNOMED CT, ICD-10, ICD-O-3 Topography, ICD-O-3 Morphology, NANDA, ORPHA or other" .
 
@@ -5899,7 +5901,8 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis
 <https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis> rdf:type owl:Class ;
-                                                       rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept> ,
+                                                       rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#Deprecated> ,
+                                                                       <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept> ,
                                                                        [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                                 owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase> ;
                                                                                                 owl:minCardinality "0"^^xsd:nonNegativeInteger
@@ -5972,6 +5975,7 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                        ] ;
                                                        rdfs:comment "determination of the presence of a disease, condition, or injury from expressed signs and symptoms and assessments such as physical examination, laboratory test, or the like" ;
                                                        rdfs:label "Diagnosis" ;
+                                                       owl:deprecated "true"^^xsd:boolean ;
                                                        <http://www.w3.org/2004/02/skos/core#definition> "determination of the presence of a disease, condition, or injury from expressed signs and symptoms and assessments such as physical examination, laboratory test, or the like" ;
                                                        <http://www.w3.org/2004/02/skos/core#note> "sphn:hasCode allowed coding system: SNOMED CT, ICD-10, ICD-O-3 Topography, ICD-O-3 Morphology, NANDA, ORPHA or other" .
 
@@ -6946,7 +6950,8 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHDiagnosis
 <https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHDiagnosis> rdf:type owl:Class ;
                                                            owl:equivalentClass <https://loinc.org/rdf/38999-9> ;
-                                                           rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis> ,
+                                                           rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#Deprecated> ,
+                                                                           <https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis> ,
                                                                            [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                                     owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ;
                                                                                                     owl:someValuesFrom <https://biomedit.ch/rdf/sphn-resource/icd-10-gm/ICD-10-GM>
@@ -7045,6 +7050,7 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                            ] ;
                                                            rdfs:comment "discharge diagnosis given respecting the rules of FOPH and used for building the DRGs, e.g. K35 acute appendicitis" ;
                                                            rdfs:label "FOPH Diagnosis" ;
+                                                           owl:deprecated "true"^^xsd:boolean ;
                                                            <http://www.w3.org/2004/02/skos/core#definition> "discharge diagnosis given respecting the rules of FOPH and used for building the DRGs, e.g. K35 acute appendicitis" .
 
 
@@ -8343,7 +8349,8 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#NursingDiagnosis
 <https://biomedit.ch/rdf/sphn-ontology/sphn#NursingDiagnosis> rdf:type owl:Class ;
-                                                              rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis> ,
+                                                              rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#Deprecated> ,
+                                                                              <https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis> ,
                                                                               [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                                        owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ;
                                                                                                        owl:someValuesFrom <https://biomedit.ch/rdf/sphn-ontology/sphn#Code>
@@ -8427,6 +8434,7 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                               ] ;
                                                               rdfs:comment "clinical judgment concerning a human response to health conditions/life processes, or a vulnerability for that response, by an individual, family, group or community; a nursing diagnosis provides the basis for selection of nursing interventions to achieve outcomes for which the nurse has accountability" ;
                                                               rdfs:label "Nursing Diagnosis" ;
+                                                              owl:deprecated "true"^^xsd:boolean ;
                                                               <http://www.w3.org/2004/02/skos/core#definition> "clinical judgment concerning a human response to health conditions/life processes, or a vulnerability for that response, by an individual, family, group or community; a nursing diagnosis provides the basis for selection of nursing interventions to achieve outcomes for which the nurse has accountability" ;
                                                               <http://www.w3.org/2004/02/skos/core#note> "sphn:hasCode allowed coding system: NANDA" .
 
@@ -8765,7 +8773,7 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
 <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition> rdf:type owl:Class ;
-                                                              owl:equivalentClass <https://loinc.org/rdf/44100-6> ;
+                                                              owl:equivalentClass <https://loinc.org/rdf/75321-0> ;
                                                               rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept> ,
                                                                               [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                                        owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRelativeTemporalityCode> ;
