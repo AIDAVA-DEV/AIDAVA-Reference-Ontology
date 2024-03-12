@@ -335,6 +335,10 @@ sphn:hasOnsetDateTime rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/
 <http://snomed.info/id/363787002> rdf:type owl:Class .
 
 
+###  http://snomed.info/id/404684003
+<http://snomed.info/id/404684003> owl:equivalentClass sphn:ProblemCondition .
+
+
 ###  http://snomed.info/id/713609000
 <http://snomed.info/id/713609000> rdf:type owl:Class ;
                                   rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAConcept> ;
@@ -437,7 +441,8 @@ sphn:hasOnsetDateTime rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/
 
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis> rdf:type owl:Class ;
-                                                                 rdfs:subClassOf sphn:Diagnosis ,
+                                                                 rdfs:subClassOf sphn:Deprecated ,
+                                                                                 sphn:Diagnosis ,
                                                                                  [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                                           owl:onProperty sphn:hasBodySite ;
                                                                                                           owl:someValuesFrom sphn:BodySite
@@ -470,6 +475,7 @@ sphn:hasOnsetDateTime rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/
                                                                                  ] ;
                                                                  rdfs:comment "determination of the presence of an oncological disease, from expressed signs and symptoms and assessments such as biopsy, tumor marker test, imaging, or the like" ;
                                                                  rdfs:label "Oncology Diagnosis" ;
+                                                                 owl:deprecated "true"^^xsd:boolean ;
                                                                  <http://www.w3.org/2004/02/skos/core#definition> "determination of the presence of an oncological disease, from expressed signs and symptoms and assessments such as biopsy, tumor marker test, imaging, or the like" ;
                                                                  <http://www.w3.org/2004/02/skos/core#note> "sphn:hasCode allowed coding system: SNOMED CT, ICD-10, ICD-O-3 Topography, ICD-O-3 Morphology, NANDA, ORPHA or other" .
 
@@ -539,6 +545,16 @@ sphn:CardiacOutput rdfs:subClassOf sphn:Deprecated ;
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#CircumferenceMeasure
 sphn:CircumferenceMeasure rdfs:subClassOf sphn:Deprecated ;
                           owl:deprecated "true"^^xsd:boolean .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis
+sphn:Diagnosis rdfs:subClassOf sphn:Deprecated ;
+               owl:deprecated "true"^^xsd:boolean .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHDiagnosis
+sphn:FOPHDiagnosis rdfs:subClassOf sphn:Deprecated ;
+                   owl:deprecated "true"^^xsd:boolean .
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#HeartRate
@@ -646,9 +662,18 @@ sphn:Measurement rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restricti
                                  ] .
 
 
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#NursingDiagnosis
+sphn:NursingDiagnosis rdfs:subClassOf sphn:Deprecated ;
+                      owl:deprecated "true"^^xsd:boolean .
+
+
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#OxygenSaturation
 sphn:OxygenSaturation rdfs:subClassOf sphn:Deprecated ;
                       owl:deprecated "true"^^xsd:boolean .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
+sphn:ProblemCondition owl:equivalentClass <https://loinc.org/rdf/75321-0> .
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier
