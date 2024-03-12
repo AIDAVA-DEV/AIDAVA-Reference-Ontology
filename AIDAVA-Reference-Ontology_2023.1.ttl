@@ -242,6 +242,14 @@ sphn:hasMeasurementMethod rdfs:domain [ rdf:type owl:Class ;
                                       ] .
 
 
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasMedicalDevice
+sphn:hasMedicalDevice rdfs:domain [ rdf:type owl:Class ;
+                                    owl:unionOf ( sphn:AccessDevicePresence
+                                                  sphn:Measurement
+                                                )
+                                  ] .
+
+
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResultCode
 sphn:hasQualitativeResultCode rdfs:domain [ rdf:type owl:Class ;
                                             owl:unionOf ( sphn:LabResult
@@ -558,6 +566,24 @@ sphn:Measurement rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restricti
                                                         ]
                                                         [ rdf:type owl:Restriction ;
                                                           owl:onProperty sphn:hasCode ;
+                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ,
+                                 [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                          owl:onProperty sphn:hasMedicalDevice ;
+                                                          owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty sphn:hasTypeCode ;
+                                                                               owl:someValuesFrom <http://snomed.info/id/105789008>
+                                                                             ]
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty sphn:hasMedicalDevice ;
+                                                          owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty sphn:hasMedicalDevice ;
                                                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                         ]
                                                       ) ;
