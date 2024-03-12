@@ -371,11 +371,6 @@ sphn:hasCurrentLocation rdf:type owl:ObjectProperty ;
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataDetermination
 sphn:hasDataDetermination rdf:type owl:ObjectProperty ;
                           rdfs:subPropertyOf sphn:SPHNAttributeObject ;
-                          rdfs:domain [ rdf:type owl:Class ;
-                                        owl:unionOf ( sphn:InhaledOxygenConcentration
-                                                      sphn:RespiratoryRate
-                                                    )
-                                      ] ;
                           rdfs:range sphn:DataDetermination ;
                           rdfs:comment "indicates whether the value was measured, calculated or set as a parameter of the ventilator" ;
                           rdfs:label "has data determination" ;
@@ -858,7 +853,6 @@ sphn:hasMeasurementMethod rdf:type owl:ObjectProperty ;
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasMedicalDevice
 sphn:hasMedicalDevice rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf sphn:SPHNAttributeObject ;
-                      rdfs:domain sphn:AccessDevicePresence ;
                       rdfs:range sphn:MedicalDevice ;
                       rdfs:comment """product intended for medical use when the main effect is not achieved by a medicinal product; medical devices include, 
 but are not limited to, implants, instruments, devices, in vitro diagnostics, used in the concept""" ;
