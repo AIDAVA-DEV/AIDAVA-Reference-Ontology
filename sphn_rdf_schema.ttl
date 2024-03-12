@@ -2857,8 +2857,7 @@ sphn:hasYear rdf:type owl:DatatypeProperty ;
 
 
 ###  http://snomed.info/id/55607006
-<http://snomed.info/id/55607006> rdf:type owl:Class ;
-                                 owl:equivalentClass sphn:ProblemCondition .
+<http://snomed.info/id/55607006> rdf:type owl:Class .
 
 
 ###  http://snomed.info/id/60132005
@@ -8220,7 +8219,6 @@ sphn:PhysiologicState rdf:type owl:Class ;
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
 sphn:ProblemCondition rdf:type owl:Class ;
-                      owl:equivalentClass <https://loinc.org/rdf/44100-6> ;
                       rdfs:subClassOf sphn:SPHNConcept ,
                                       [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                owl:onProperty sphn:hasRelativeTemporalityCode ;
