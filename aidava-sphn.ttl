@@ -335,6 +335,7 @@ xsd:time rdf:type rdfs:Datatype .
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#OncologyTreatmentAssessment>
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#OxygenSaturation>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#RadiotherapyProcedure>
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#Sample>
@@ -8796,6 +8797,17 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                                      ]
                                                                                                      [ rdf:type owl:Restriction ;
                                                                                                        owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase> ;
+                                                                                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                     ]
+                                                                                                   ) ;
+                                                                                rdf:type owl:Class
+                                                                              ] ,
+                                                                              [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                       owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasBodySite> ;
+                                                                                                       owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                                     ]
+                                                                                                     [ rdf:type owl:Restriction ;
+                                                                                                       owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasBodySite> ;
                                                                                                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                                                                      ]
                                                                                                    ) ;

@@ -151,6 +151,7 @@ sphn:hasBodySite rdfs:domain [ rdf:type owl:Class ;
                                              sphn:Measurement
                                              sphn:OncologyTreatmentAssessment
                                              sphn:OxygenSaturation
+                                             sphn:ProblemCondition
                                              sphn:Procedure
                                              sphn:RadiotherapyProcedure
                                              sphn:Sample
@@ -673,7 +674,18 @@ sphn:OxygenSaturation rdfs:subClassOf sphn:Deprecated ;
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
-sphn:ProblemCondition owl:equivalentClass <https://loinc.org/rdf/75321-0> .
+sphn:ProblemCondition owl:equivalentClass <https://loinc.org/rdf/75321-0> ;
+                      rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                               owl:onProperty sphn:hasBodySite ;
+                                                               owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                             ]
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty sphn:hasBodySite ;
+                                                               owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] .
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier
