@@ -136,6 +136,19 @@ dcterms:license rdf:type owl:AnnotationProperty .
                                                               <http://www.w3.org/2004/02/skos/core#definition> "a name associated with the patient" .
 
 
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/usingSubstance
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/usingSubstance> rdf:type owl:ObjectProperty ;
+                                                              rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
+                                                              rdfs:domain sphn:Procedure ;
+                                                              rdfs:range [ rdf:type owl:Class ;
+                                                                           owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product>
+                                                                                         sphn:Substance
+                                                                                       )
+                                                                         ] ;
+                                                              rdfs:label "using substance" ;
+                                                              <http://www.w3.org/2004/02/skos/core#definition> "a relation between a procedure and substance or pharmaceutical / biologic product" .
+
+
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasBodySite
 sphn:hasBodySite rdfs:domain [ rdf:type owl:Class ;
                                owl:unionOf ( sphn:AccessDevicePresence
@@ -162,7 +175,8 @@ sphn:hasBodySite rdfs:domain [ rdf:type owl:Class ;
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode
 sphn:hasCode rdfs:domain [ rdf:type owl:Class ;
-                           owl:unionOf ( sphn:AdministrativeGender
+                           owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product>
+                                         sphn:AdministrativeGender
                                          sphn:AdverseEvent
                                          sphn:Allergen
                                          sphn:Allergy
@@ -336,6 +350,11 @@ sphn:hasOnsetDateTime rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/
 <http://snomed.info/id/363787002> rdf:type owl:Class .
 
 
+###  http://snomed.info/id/373873005
+<http://snomed.info/id/373873005> rdf:type owl:Class ;
+                                  owl:equivalentClass <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product> .
+
+
 ###  http://snomed.info/id/404684003
 <http://snomed.info/id/404684003> owl:equivalentClass sphn:ProblemCondition .
 
@@ -494,6 +513,34 @@ sphn:hasOnsetDateTime rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/
                                                          rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAConcept> ;
                                                          rdfs:comment "Class representing Procedure in FHIR IPS implementation" ;
                                                          rdfs:label "Procedure" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product> rdf:type owl:Class ;
+                                                       rdfs:subClassOf sphn:SPHNConcept ,
+                                                                       [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty sphn:hasCode ;
+                                                                                                owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                     owl:unionOf ( <http://snomed.info/id/373873005>
+                                                                                                                                   sphn:Code
+                                                                                                                                   sphn:Terminology
+                                                                                                                                 )
+                                                                                                                   ]
+                                                                                              ]
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty sphn:hasCode ;
+                                                                                                owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                              ]
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty sphn:hasCode ;
+                                                                                                owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                              ]
+                                                                                            ) ;
+                                                                         rdf:type owl:Class
+                                                                       ] ;
+                                                       rdfs:comment "a pharmaceutical or biologic product" ;
+                                                       rdfs:label "Product" ;
+                                                       <http://www.w3.org/2004/02/skos/core#definition> "a pharmaceutical or biologic product" .
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen
@@ -686,6 +733,13 @@ sphn:ProblemCondition owl:equivalentClass <https://loinc.org/rdf/75321-0> ;
                                                            ) ;
                                         rdf:type owl:Class
                                       ] .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure
+sphn:Procedure rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                 owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/usingSubstance> ;
+                                 owl:minCardinality "0"^^xsd:nonNegativeInteger
+                               ] .
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier
