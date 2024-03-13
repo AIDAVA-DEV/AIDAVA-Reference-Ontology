@@ -1356,7 +1356,6 @@ sphn:hasStartCytobandCode rdf:type owl:ObjectProperty ;
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode
 sphn:hasStatusCode rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf sphn:hasCode ;
-                   rdfs:domain sphn:Consent ;
                    rdfs:range [ rdf:type owl:Class ;
                                 owl:unionOf ( sphn:Code
                                               sphn:Terminology
