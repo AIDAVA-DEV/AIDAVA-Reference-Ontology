@@ -1571,7 +1571,11 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode
 <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode> rdf:type owl:ObjectProperty ;
                                                            rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ;
-                                                           rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#Consent> ;
+                                                           rdfs:domain [ rdf:type owl:Class ;
+                                                                         owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/sphn#Consent>
+                                                                                       <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>
+                                                                                     )
+                                                                       ] ;
                                                            rdfs:range [ rdf:type owl:Class ;
                                                                         owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/sphn#Code>
                                                                                       <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology>
@@ -2972,6 +2976,22 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 <http://snomed.info/id/385645004> rdf:type owl:Class .
 
 
+###  http://snomed.info/id/385651009
+<http://snomed.info/id/385651009> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/385655000
+<http://snomed.info/id/385655000> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/385656004
+<http://snomed.info/id/385656004> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/385660001
+<http://snomed.info/id/385660001> rdf:type owl:Class .
+
+
 ###  http://snomed.info/id/386725007
 <http://snomed.info/id/386725007> rdf:type owl:Class ;
                                   owl:equivalentClass <https://biomedit.ch/rdf/sphn-ontology/sphn#BodyTemperature> .
@@ -3040,8 +3060,20 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 <http://snomed.info/id/40983000> rdf:type owl:Class .
 
 
+###  http://snomed.info/id/410513005
+<http://snomed.info/id/410513005> rdf:type owl:Class .
+
+
 ###  http://snomed.info/id/410529002
 <http://snomed.info/id/410529002> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/410537005
+<http://snomed.info/id/410537005> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/410545000
+<http://snomed.info/id/410545000> rdf:type owl:Class .
 
 
 ###  http://snomed.info/id/410592001
@@ -8935,6 +8967,31 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure
 <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure> rdf:type owl:Class ;
                                                        rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept> ,
+                                                                       [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode> ;
+                                                                                                owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                     owl:unionOf ( <http://snomed.info/id/385651009>
+                                                                                                                                   <http://snomed.info/id/385655000>
+                                                                                                                                   <http://snomed.info/id/385656004>
+                                                                                                                                   <http://snomed.info/id/385660001>
+                                                                                                                                   <http://snomed.info/id/410513005>
+                                                                                                                                   <http://snomed.info/id/410537005>
+                                                                                                                                   <http://snomed.info/id/410545000>
+                                                                                                                                   <http://snomed.info/id/723510000>
+                                                                                                                                 )
+                                                                                                                   ]
+                                                                                              ]
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode> ;
+                                                                                                owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                                              ]
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode> ;
+                                                                                                owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                              ]
+                                                                                            ) ;
+                                                                         rdf:type owl:Class
+                                                                       ] ,
                                                                        [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                                 owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase> ;
                                                                                                 owl:minCardinality "0"^^xsd:nonNegativeInteger

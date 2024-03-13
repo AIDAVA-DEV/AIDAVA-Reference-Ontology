@@ -273,6 +273,14 @@ sphn:hasQualitativeResultCode rdfs:domain [ rdf:type owl:Class ;
                                           ] .
 
 
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode
+sphn:hasStatusCode rdfs:domain [ rdf:type owl:Class ;
+                                 owl:unionOf ( sphn:Consent
+                                               sphn:Procedure
+                                             )
+                               ] .
+
+
 #################################################################
 #    Data properties
 #################################################################
@@ -355,8 +363,36 @@ sphn:hasOnsetDateTime rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/
                                   owl:equivalentClass <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product> .
 
 
+###  http://snomed.info/id/385651009
+<http://snomed.info/id/385651009> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/385655000
+<http://snomed.info/id/385655000> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/385656004
+<http://snomed.info/id/385656004> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/385660001
+<http://snomed.info/id/385660001> rdf:type owl:Class .
+
+
 ###  http://snomed.info/id/404684003
 <http://snomed.info/id/404684003> owl:equivalentClass sphn:ProblemCondition .
+
+
+###  http://snomed.info/id/410513005
+<http://snomed.info/id/410513005> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/410537005
+<http://snomed.info/id/410537005> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/410545000
+<http://snomed.info/id/410545000> rdf:type owl:Class .
 
 
 ###  http://snomed.info/id/713609000
@@ -736,7 +772,32 @@ sphn:ProblemCondition owl:equivalentClass <https://loinc.org/rdf/75321-0> ;
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure
-sphn:Procedure rdfs:subClassOf [ rdf:type owl:Restriction ;
+sphn:Procedure rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                        owl:onProperty sphn:hasStatusCode ;
+                                                        owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                             owl:unionOf ( <http://snomed.info/id/385651009>
+                                                                                           <http://snomed.info/id/385655000>
+                                                                                           <http://snomed.info/id/385656004>
+                                                                                           <http://snomed.info/id/385660001>
+                                                                                           <http://snomed.info/id/410513005>
+                                                                                           <http://snomed.info/id/410537005>
+                                                                                           <http://snomed.info/id/410545000>
+                                                                                           <http://snomed.info/id/723510000>
+                                                                                         )
+                                                                           ]
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty sphn:hasStatusCode ;
+                                                        owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty sphn:hasStatusCode ;
+                                                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ,
+                               [ rdf:type owl:Restriction ;
                                  owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/usingSubstance> ;
                                  owl:minCardinality "0"^^xsd:nonNegativeInteger
                                ] .
