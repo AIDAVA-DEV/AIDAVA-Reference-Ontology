@@ -768,6 +768,10 @@ sphn:ProblemCondition owl:equivalentClass <https://loinc.org/rdf/75321-0> ;
                                                              ]
                                                            ) ;
                                         rdf:type owl:Class
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty sphn:hasCode ;
+                                        owl:minCardinality "0"^^xsd:nonNegativeInteger
                                       ] .
 
 
