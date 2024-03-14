@@ -8246,17 +8246,6 @@ sphn:ProblemCondition rdf:type owl:Class ;
                                         rdf:type owl:Class
                                       ] ,
                                       [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                               owl:onProperty sphn:hasCode ;
-                                                               owl:minCardinality "0"^^xsd:nonNegativeInteger
-                                                             ]
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty sphn:hasCode ;
-                                                               owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                                                             ]
-                                                           ) ;
-                                        rdf:type owl:Class
-                                      ] ,
-                                      [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                owl:onProperty sphn:hasDataProviderInstitute ;
                                                                owl:minCardinality "1"^^xsd:nonNegativeInteger
                                                              ]
