@@ -136,6 +136,15 @@ dcterms:license rdf:type owl:AnnotationProperty .
                                                               <http://www.w3.org/2004/02/skos/core#definition> "a name associated with the patient" .
 
 
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/interprets
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/interprets> rdf:type owl:ObjectProperty ;
+                                                          rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
+                                                          rdfs:domain sphn:ProblemCondition ;
+                                                          rdfs:range sphn:Measurement ;
+                                                          rdfs:label "interprets" ;
+                                                          <http://www.w3.org/2004/02/skos/core#definition> "a relation between a clinical finding and an observable entity" .
+
+
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/usingSubstance
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/usingSubstance> rdf:type owl:ObjectProperty ;
                                                               rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
@@ -768,6 +777,10 @@ sphn:ProblemCondition owl:equivalentClass <https://loinc.org/rdf/75321-0> ;
                                                              ]
                                                            ) ;
                                         rdf:type owl:Class
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/interprets> ;
+                                        owl:minCardinality "0"^^xsd:nonNegativeInteger
                                       ] ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty sphn:hasCode ;
