@@ -2203,7 +2203,11 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 <https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText> rdf:type owl:DatatypeProperty ;
                                                          rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNAttributeDatatype> ;
                                                          rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition> ,
-                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition> ;
+                                                                     [ rdf:type owl:Class ;
+                                                                       owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/sphn#Intent>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>
+                                                                                   )
+                                                                     ] ;
                                                          rdfs:range xsd:string ;
                                                          rdfs:comment "free text related to the concept" ;
                                                          rdfs:label "has free text" ;
@@ -7975,6 +7979,17 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                            ]
                                                                                            [ rdf:type owl:Restriction ;
                                                                                              owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ;
+                                                                                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                           ]
+                                                                                         ) ;
+                                                                      rdf:type owl:Class
+                                                                    ] ,
+                                                                    [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                             owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText> ;
+                                                                                             owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                           ]
+                                                                                           [ rdf:type owl:Restriction ;
+                                                                                             owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText> ;
                                                                                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                                                            ]
                                                                                          ) ;
