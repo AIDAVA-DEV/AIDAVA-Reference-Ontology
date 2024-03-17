@@ -8336,17 +8336,6 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                            rdf:type owl:Class
                                                                          ] ,
                                                                          [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                                                  owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity> ;
-                                                                                                  owl:minCardinality "0"^^xsd:nonNegativeInteger
-                                                                                                ]
-                                                                                                [ rdf:type owl:Restriction ;
-                                                                                                  owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity> ;
-                                                                                                  owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                                                                                                ]
-                                                                                              ) ;
-                                                                           rdf:type owl:Class
-                                                                         ] ,
-                                                                         [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                                   owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasSubjectPseudoIdentifier> ;
                                                                                                   owl:minCardinality "1"^^xsd:nonNegativeInteger
                                                                                                 ]
@@ -8367,6 +8356,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                                 ]
                                                                                               ) ;
                                                                            rdf:type owl:Class
+                                                                         ] ,
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity> ;
+                                                                           owl:minCardinality "1"^^xsd:nonNegativeInteger
                                                                          ] ;
                                                          rdfs:comment "annotation used to indicate the size or magnitude of something that was determined by comparison to a standard" ;
                                                          rdfs:label "Measurement" ;
