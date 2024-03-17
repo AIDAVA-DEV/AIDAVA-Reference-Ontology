@@ -9479,6 +9479,7 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                              ] ;
                                                              rdfs:comment "frequency at which the breathing occurs" ;
                                                              rdfs:label "Respiratory Rate" ;
+                                                             owl:deprecated "true"^^xsd:boolean ;
                                                              <http://www.w3.org/2004/02/skos/core#definition> "frequency at which the breathing occurs" ;
                                                              <http://www.w3.org/2004/02/skos/core#scopeNote> "sphn:hasDataDetermination no subclasses allowed" .
 
