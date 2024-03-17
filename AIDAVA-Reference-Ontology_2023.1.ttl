@@ -820,6 +820,10 @@ sphn:Procedure rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restriction
                                ] .
 
 
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#RespiratoryRate
+sphn:RespiratoryRate owl:deprecated "true"^^xsd:boolean .
+
+
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier
 sphn:SubjectPseudoIdentifier owl:deprecated "true"^^xsd:boolean .
 
