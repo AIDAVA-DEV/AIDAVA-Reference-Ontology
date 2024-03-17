@@ -752,6 +752,10 @@ sphn:Measurement rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restricti
                                                         ]
                                                       ) ;
                                    rdf:type owl:Class
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty sphn:hasQuantity ;
+                                   owl:minCardinality "1"^^xsd:nonNegativeInteger
                                  ] .
 
 

@@ -7696,17 +7696,6 @@ sphn:Measurement rdf:type owl:Class ;
                                    rdf:type owl:Class
                                  ] ,
                                  [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                          owl:onProperty sphn:hasQuantity ;
-                                                          owl:minCardinality "0"^^xsd:nonNegativeInteger
-                                                        ]
-                                                        [ rdf:type owl:Restriction ;
-                                                          owl:onProperty sphn:hasQuantity ;
-                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                                                        ]
-                                                      ) ;
-                                   rdf:type owl:Class
-                                 ] ,
-                                 [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                           owl:onProperty sphn:hasSubjectPseudoIdentifier ;
                                                           owl:minCardinality "1"^^xsd:nonNegativeInteger
                                                         ]
