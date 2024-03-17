@@ -547,7 +547,41 @@ sphn:hasOnsetDateTime rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/
 
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> rdf:type owl:Class ;
-                                                       rdfs:subClassOf sphn:SPHNConcept ;
+                                                       rdfs:subClassOf sphn:SPHNConcept ,
+                                                                       [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdministrativeGender> ;
+                                                                                                owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                              ]
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdministrativeGender> ;
+                                                                                                owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                              ]
+                                                                                            ) ;
+                                                                         rdf:type owl:Class
+                                                                       ] ,
+                                                                       [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDate> ;
+                                                                                                owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                                              ]
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDate> ;
+                                                                                                owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                              ]
+                                                                                            ) ;
+                                                                         rdf:type owl:Class
+                                                                       ] ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName> ;
+                                                                         owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                       ] ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdress> ;
+                                                                         owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                       ] ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty sphn:hasIdentifier ;
+                                                                         owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                       ] ;
                                                        rdfs:comment "Individual receiving health care services" ;
                                                        rdfs:label "Patient" ;
                                                        <http://www.w3.org/2004/02/skos/core#definition> "Individual receiving health care services" .
@@ -597,7 +631,22 @@ sphn:hasOnsetDateTime rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/
 
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName> rdf:type owl:Class ;
-                                                           rdfs:subClassOf sphn:SPHNConcept ;
+                                                           rdfs:subClassOf sphn:SPHNConcept ,
+                                                                           [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                    owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasFamilyName> ;
+                                                                                                    owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                                  ]
+                                                                                                  [ rdf:type owl:Restriction ;
+                                                                                                    owl:onProperty sphn:hasCodingDateTime ;
+                                                                                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                  ]
+                                                                                                ) ;
+                                                                             rdf:type owl:Class
+                                                                           ] ,
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasGivenName> ;
+                                                                             owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                           ] ;
                                                            rdfs:comment "Name of a human" ;
                                                            rdfs:label "Subject Name" ;
                                                            <http://www.w3.org/2004/02/skos/core#definition> "Name of a human" .
