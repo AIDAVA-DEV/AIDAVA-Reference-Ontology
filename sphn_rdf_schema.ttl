@@ -1936,7 +1936,6 @@ sphn:hasFirstRecordDateTime rdf:type owl:DatatypeProperty ;
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText
 sphn:hasFreeText rdf:type owl:DatatypeProperty ;
                  rdfs:subPropertyOf sphn:SPHNAttributeDatatype ;
-                 rdfs:domain sphn:ProblemCondition ;
                  rdfs:range xsd:string ;
                  rdfs:comment "free text related to the concept" ;
                  rdfs:label "has free text" ;
