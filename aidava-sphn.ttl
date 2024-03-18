@@ -914,7 +914,11 @@ xsd:time rdf:type rdfs:Datatype .
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasLabTest
 <https://biomedit.ch/rdf/sphn-ontology/sphn#hasLabTest> rdf:type owl:ObjectProperty ;
                                                         rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNAttributeObject> ;
-                                                        rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#LabResult> ;
+                                                        rdfs:domain [ rdf:type owl:Class ;
+                                                                      owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/sphn#LabResult>
+                                                                                    <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>
+                                                                                  )
+                                                                    ] ;
                                                         rdfs:range <https://biomedit.ch/rdf/sphn-ontology/sphn#LabTest> ;
                                                         rdfs:comment "lab test information associated to the concept" ;
                                                         rdfs:label "has lab test" ;
@@ -2405,7 +2409,11 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResult
 <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResult> rdf:type owl:DatatypeProperty ;
                                                                   rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNAttributeDatatype> ;
-                                                                  rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#LabResult> ;
+                                                                  rdfs:domain [ rdf:type owl:Class ;
+                                                                                owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/sphn#LabResult>
+                                                                                              <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>
+                                                                                            )
+                                                                              ] ;
                                                                   rdfs:range xsd:string ;
                                                                   rdfs:comment "qualitative results of the concept" ;
                                                                   rdfs:label "has qualitative result" ;
@@ -2939,7 +2947,8 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 
 
 ###  http://snomed.info/id/363787002
-<http://snomed.info/id/363787002> rdf:type owl:Class .
+<http://snomed.info/id/363787002> rdf:type owl:Class ;
+                                  owl:equivalentClass <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> .
 
 
 ###  http://snomed.info/id/364075005
@@ -8038,7 +8047,8 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#LabResult
 <https://biomedit.ch/rdf/sphn-ontology/sphn#LabResult> rdf:type owl:Class ;
-                                                       rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept> ,
+                                                       rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#Deprecated> ,
+                                                                       <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept> ,
                                                                        [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                                 owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase> ;
                                                                                                 owl:minCardinality "0"^^xsd:nonNegativeInteger
@@ -8162,6 +8172,7 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                        ] ;
                                                        rdfs:comment "transmitted laboratory analysis results for a specific biosample analyzed" ;
                                                        rdfs:label "Lab Result" ;
+                                                       owl:deprecated "true"^^xsd:boolean ;
                                                        <http://www.w3.org/2004/02/skos/core#definition> "transmitted laboratory analysis results for a specific biosample analyzed" .
 
 
