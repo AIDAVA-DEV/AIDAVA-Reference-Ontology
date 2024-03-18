@@ -256,6 +256,14 @@ sphn:hasDataDetermination rdfs:domain [ rdf:type owl:Class ;
                                       ] .
 
 
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasLabTest
+sphn:hasLabTest rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( sphn:LabResult
+                                            sphn:Measurement
+                                          )
+                            ] .
+
+
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasMeasurementMethod
 sphn:hasMeasurementMethod rdfs:domain [ rdf:type owl:Class ;
                                         owl:unionOf ( sphn:BloodPressure
@@ -358,6 +366,14 @@ sphn:hasIdentifier rdfs:domain [ rdf:type owl:Class ;
 sphn:hasOnsetDateTime rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition> .
 
 
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResult
+sphn:hasQualitativeResult rdfs:domain [ rdf:type owl:Class ;
+                                        owl:unionOf ( sphn:LabResult
+                                                      sphn:Measurement
+                                                    )
+                                      ] .
+
+
 #################################################################
 #    Classes
 #################################################################
@@ -369,7 +385,8 @@ sphn:hasOnsetDateTime rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/
 
 
 ###  http://snomed.info/id/363787002
-<http://snomed.info/id/363787002> rdf:type owl:Class .
+<http://snomed.info/id/363787002> rdf:type owl:Class ;
+                                  owl:equivalentClass sphn:Measurement .
 
 
 ###  http://snomed.info/id/373873005
@@ -730,6 +747,11 @@ sphn:Intent rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                  ) ;
                               rdf:type owl:Class
                             ] .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#LabResult
+sphn:LabResult rdfs:subClassOf sphn:Deprecated ;
+               owl:deprecated "true"^^xsd:boolean .
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement

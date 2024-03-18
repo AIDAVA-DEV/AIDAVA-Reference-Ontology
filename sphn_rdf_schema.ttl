@@ -711,7 +711,6 @@ sphn:hasIntent rdf:type owl:ObjectProperty ;
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasLabTest
 sphn:hasLabTest rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf sphn:SPHNAttributeObject ;
-                rdfs:domain sphn:LabResult ;
                 rdfs:range sphn:LabTest ;
                 rdfs:comment "lab test information associated to the concept" ;
                 rdfs:label "has lab test" ;
@@ -2119,7 +2118,6 @@ sphn:hasOnsetDateTime rdf:type owl:DatatypeProperty ;
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResult
 sphn:hasQualitativeResult rdf:type owl:DatatypeProperty ;
                           rdfs:subPropertyOf sphn:SPHNAttributeDatatype ;
-                          rdfs:domain sphn:LabResult ;
                           rdfs:range xsd:string ;
                           rdfs:comment "qualitative results of the concept" ;
                           rdfs:label "has qualitative result" ;
