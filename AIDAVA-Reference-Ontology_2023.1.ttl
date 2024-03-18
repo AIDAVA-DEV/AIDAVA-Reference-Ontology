@@ -611,6 +611,7 @@ sphn:hasQualitativeResult rdfs:domain [ rdf:type owl:Class ;
 
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure> rdf:type owl:Class ;
+                                                         owl:equivalentClass sphn:Procedure ;
                                                          rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAConcept> ;
                                                          rdfs:comment "Class representing Procedure in FHIR IPS implementation" ;
                                                          rdfs:label "Procedure" .
