@@ -3538,6 +3538,7 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure> rdf:type owl:Class ;
+                                                         owl:equivalentClass <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure> ;
                                                          rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAConcept> ;
                                                          rdfs:comment "Class representing Procedure in FHIR IPS implementation" ;
                                                          rdfs:label "Procedure" .
