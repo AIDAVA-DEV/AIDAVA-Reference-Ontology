@@ -8379,6 +8379,17 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                            rdf:type owl:Class
                                                                          ] ,
                                                                          [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasLabTest> ;
+                                                                                                  owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                                ]
+                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasLabTest> ;
+                                                                                                  owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                ]
+                                                                                              ) ;
+                                                                           rdf:type owl:Class
+                                                                         ] ,
+                                                                         [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                                   owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasMeasurementMethod> ;
                                                                                                   owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                                                 ]
