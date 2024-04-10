@@ -290,6 +290,15 @@ sphn:hasQualitativeResultCode rdfs:domain [ rdf:type owl:Class ;
                                           ] .
 
 
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasSample
+sphn:hasSample rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( sphn:Biobanksample
+                                           sphn:LabResult
+                                           sphn:Measurement
+                                         )
+                           ] .
+
+
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode
 sphn:hasStatusCode rdfs:domain [ rdf:type owl:Class ;
                                  owl:unionOf ( sphn:Consent
@@ -867,6 +876,17 @@ sphn:Measurement rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restricti
                                                         ]
                                                         [ rdf:type owl:Restriction ;
                                                           owl:onProperty sphn:hasQualitativeResultCode ;
+                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ,
+                                 [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                          owl:onProperty sphn:hasSample ;
+                                                          owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty sphn:hasSample ;
                                                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                         ]
                                                       ) ;
