@@ -129,6 +129,33 @@ xsd:time rdf:type rdfs:Datatype .
                                                                 rdfs:label "Condition code" .
 
 
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDrugAdministrationEvent
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDrugAdministrationEvent> rdf:type owl:ObjectProperty ;
+                                                                          rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
+                                                                          rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> ;
+                                                                          rdfs:range <https://biomedit.ch/rdf/sphn-ontology/sphn#DrugAdministrationEvent> ;
+                                                                          rdfs:label "has drug administration event" ;
+                                                                          <http://www.w3.org/2004/02/skos/core#definition> "a relation between the patient and the medication administration events they have had" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDrugPrescription
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDrugPrescription> rdf:type owl:ObjectProperty ;
+                                                                   rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
+                                                                   rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> ;
+                                                                   rdfs:range <https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription> ;
+                                                                   rdfs:label "has drug prescription" ;
+                                                                   <http://www.w3.org/2004/02/skos/core#definition> "a relation between the patient and the medical product prescriptions available for the patient" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasMeasurement
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasMeasurement> rdf:type owl:ObjectProperty ;
+                                                              rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
+                                                              rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> ;
+                                                              rdfs:range <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> ;
+                                                              rdfs:label "has measurement" ;
+                                                              <http://www.w3.org/2004/02/skos/core#definition> "a relation between the patient and the measurements available for the patient" .
+
+
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> rdf:type owl:ObjectProperty ;
                                                           rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
@@ -188,6 +215,24 @@ xsd:time rdf:type rdfs:Datatype .
                                                                       ] ;
                                                           rdfs:range <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> ;
                                                           rdfs:label "has patient" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProblemCondition
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProblemCondition> rdf:type owl:ObjectProperty ;
+                                                                   rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
+                                                                   rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> ;
+                                                                   rdfs:range <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition> ;
+                                                                   rdfs:label "has problem condition" ;
+                                                                   <http://www.w3.org/2004/02/skos/core#definition> "a relation between the patient and the problem conditions they have/had" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProcedure
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProcedure> rdf:type owl:ObjectProperty ;
+                                                            rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
+                                                            rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> ;
+                                                            rdfs:range <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure> ;
+                                                            rdfs:label "has procedure" ;
+                                                            <http://www.w3.org/2004/02/skos/core#definition> "a relation between the patient and the procedures they have had" .
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName
@@ -3522,6 +3567,26 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                               ]
                                                                                             ) ;
                                                                          rdf:type owl:Class
+                                                                       ] ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDrugAdministrationEvent> ;
+                                                                         owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                       ] ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDrugPrescription> ;
+                                                                         owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                       ] ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasMeasurement> ;
+                                                                         owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                       ] ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProblemCondition> ;
+                                                                         owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                       ] ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProcedure> ;
+                                                                         owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                        ] ,
                                                                        [ rdf:type owl:Restriction ;
                                                                          owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName> ;
