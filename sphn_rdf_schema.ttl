@@ -1281,11 +1281,6 @@ sphn:hasResult rdf:type owl:ObjectProperty ;
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasSample
 sphn:hasSample rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf sphn:SPHNAttributeObject ;
-               rdfs:domain [ rdf:type owl:Class ;
-                             owl:unionOf ( sphn:Biobanksample
-                                           sphn:LabResult
-                                         )
-                           ] ;
                rdfs:range sphn:Sample ;
                rdfs:comment "any material sample for testing, diagnostic, propagation, treatment or research purposes associated to the concept" ;
                rdfs:label "has sample" ;
