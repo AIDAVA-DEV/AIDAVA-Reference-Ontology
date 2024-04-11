@@ -435,15 +435,63 @@ sphn:hasQualitativeResult rdfs:domain [ rdf:type owl:Class ;
 #    Classes
 #################################################################
 
+###  http://snomed.info/id/160617001
+<http://snomed.info/id/160617001> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/168522007
+<http://snomed.info/id/168522007> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/175362007
+<http://snomed.info/id/175362007> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/22298006
+<http://snomed.info/id/22298006> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/230690007
+<http://snomed.info/id/230690007> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/232717009
+<http://snomed.info/id/232717009> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/233985008
+<http://snomed.info/id/233985008> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/248152002
+<http://snomed.info/id/248152002> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/248153007
+<http://snomed.info/id/248153007> rdf:type owl:Class .
+
+
 ###  http://snomed.info/id/250537006
 <http://snomed.info/id/250537006> rdf:type owl:Class ;
                                   rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAConcept> ;
                                   rdfs:label "Histopathology finding (finding)" .
 
 
+###  http://snomed.info/id/266257000
+<http://snomed.info/id/266257000> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/32907006
+<http://snomed.info/id/32907006> rdf:type owl:Class .
+
+
 ###  http://snomed.info/id/363787002
 <http://snomed.info/id/363787002> rdf:type owl:Class ;
                                   owl:equivalentClass sphn:Measurement .
+
+
+###  http://snomed.info/id/367336001
+<http://snomed.info/id/367336001> rdf:type owl:Class .
 
 
 ###  http://snomed.info/id/373873005
@@ -467,6 +515,18 @@ sphn:hasQualitativeResult rdfs:domain [ rdf:type owl:Class ;
 <http://snomed.info/id/385660001> rdf:type owl:Class .
 
 
+###  http://snomed.info/id/387713003
+<http://snomed.info/id/387713003> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/392090004
+<http://snomed.info/id/392090004> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/394659003
+<http://snomed.info/id/394659003> rdf:type owl:Class .
+
+
 ###  http://snomed.info/id/404684003
 <http://snomed.info/id/404684003> owl:equivalentClass sphn:ProblemCondition .
 
@@ -483,10 +543,66 @@ sphn:hasQualitativeResult rdfs:domain [ rdf:type owl:Class ;
 <http://snomed.info/id/410545000> rdf:type owl:Class .
 
 
+###  http://snomed.info/id/415070008
+<http://snomed.info/id/415070008> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/428923005
+<http://snomed.info/id/428923005> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/432504007
+<http://snomed.info/id/432504007> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/445232009
+<http://snomed.info/id/445232009> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/446841001
+<http://snomed.info/id/446841001> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/53741008
+<http://snomed.info/id/53741008> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/63491006
+<http://snomed.info/id/63491006> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/64368001
+<http://snomed.info/id/64368001> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/67362008
+<http://snomed.info/id/67362008> rdf:type owl:Class .
+
+
 ###  http://snomed.info/id/713609000
 <http://snomed.info/id/713609000> rdf:type owl:Class ;
                                   rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAConcept> ;
                                   rdfs:label "Invasive carcinoma of breast (disorder)" .
+
+
+###  http://snomed.info/id/73211009
+<http://snomed.info/id/73211009> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/77176002
+<http://snomed.info/id/77176002> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/8392000
+<http://snomed.info/id/8392000> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/840580004
+<http://snomed.info/id/840580004> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/88032003
+<http://snomed.info/id/88032003> rdf:type owl:Class .
 
 
 ###  http://terminology.hl7.org/CodeSystem/v3-ActCode/AMB
@@ -1056,6 +1172,11 @@ sphn:RespiratoryRate owl:deprecated "true"^^xsd:boolean .
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#SubjectPseudoIdentifier
 sphn:SubjectPseudoIdentifier owl:deprecated "true"^^xsd:boolean .
+
+
+###  https://loinc.org/rdf/LP145994-2
+<https://loinc.org/rdf/LP145994-2> rdf:type owl:Class ;
+                                   rdfs:subClassOf <https://biomedit.ch/rdf/sphn-resource/loinc/LOINC> .
 
 
 #################################################################
