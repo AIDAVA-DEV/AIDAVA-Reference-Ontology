@@ -10894,7 +10894,8 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 
 ###  https://loinc.org/rdf/LP145994-2
 <https://loinc.org/rdf/LP145994-2> rdf:type owl:Class ;
-                                   rdfs:subClassOf <https://biomedit.ch/rdf/sphn-resource/loinc/LOINC> .
+                                   rdfs:subClassOf <https://biomedit.ch/rdf/sphn-resource/loinc/LOINC> ;
+                                   rdfs:label "Creatinine in serum" .
 
 
 #################################################################
