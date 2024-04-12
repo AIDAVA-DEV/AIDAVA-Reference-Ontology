@@ -2793,8 +2793,20 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                  owl:equivalentClass <https://biomedit.ch/rdf/sphn-ontology/sphn#LabTest> .
 
 
+###  http://snomed.info/id/160617001
+<http://snomed.info/id/160617001> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/168522007
+<http://snomed.info/id/168522007> rdf:type owl:Class .
+
+
 ###  http://snomed.info/id/168524008
 <http://snomed.info/id/168524008> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/175362007
+<http://snomed.info/id/175362007> rdf:type owl:Class .
 
 
 ###  http://snomed.info/id/182832007
@@ -2827,6 +2839,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 <http://snomed.info/id/20295000> rdf:type owl:Class .
 
 
+###  http://snomed.info/id/22298006
+<http://snomed.info/id/22298006> rdf:type owl:Class .
+
+
 ###  http://snomed.info/id/225365006
 <http://snomed.info/id/225365006> rdf:type owl:Class ;
                                   owl:equivalentClass <https://biomedit.ch/rdf/sphn-ontology/sphn#CareHandling> .
@@ -2836,12 +2852,32 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 <http://snomed.info/id/225795001> rdf:type owl:Class .
 
 
+###  http://snomed.info/id/230690007
+<http://snomed.info/id/230690007> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/232717009
+<http://snomed.info/id/232717009> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/233985008
+<http://snomed.info/id/233985008> rdf:type owl:Class .
+
+
 ###  http://snomed.info/id/24028007
 <http://snomed.info/id/24028007> rdf:type owl:Class .
 
 
 ###  http://snomed.info/id/24484000
 <http://snomed.info/id/24484000> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/248152002
+<http://snomed.info/id/248152002> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/248153007
+<http://snomed.info/id/248153007> rdf:type owl:Class .
 
 
 ###  http://snomed.info/id/248365001
@@ -2892,6 +2928,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 
 ###  http://snomed.info/id/263760002
 <http://snomed.info/id/263760002> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/266257000
+<http://snomed.info/id/266257000> rdf:type owl:Class .
 
 
 ###  http://snomed.info/id/266945001
@@ -2960,6 +3000,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 <http://snomed.info/id/31438003> rdf:type owl:Class .
 
 
+###  http://snomed.info/id/32907006
+<http://snomed.info/id/32907006> rdf:type owl:Class .
+
+
 ###  http://snomed.info/id/33195004
 <http://snomed.info/id/33195004> rdf:type owl:Class .
 
@@ -3015,6 +3059,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                   owl:equivalentClass <https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeGender> .
 
 
+###  http://snomed.info/id/367336001
+<http://snomed.info/id/367336001> rdf:type owl:Class .
+
+
 ###  http://snomed.info/id/370807008
 <http://snomed.info/id/370807008> rdf:type owl:Class ;
                                   owl:equivalentClass <https://biomedit.ch/rdf/sphn-ontology/sphn#OncologyTreatmentAssessment> .
@@ -3068,6 +3116,14 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                   owl:equivalentClass <https://biomedit.ch/rdf/sphn-ontology/sphn#BodyTemperature> .
 
 
+###  http://snomed.info/id/387713003
+<http://snomed.info/id/387713003> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/392090004
+<http://snomed.info/id/392090004> rdf:type owl:Class .
+
+
 ###  http://snomed.info/id/394656005
 <http://snomed.info/id/394656005> rdf:type owl:Class .
 
@@ -3075,6 +3131,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 ###  http://snomed.info/id/394658006
 <http://snomed.info/id/394658006> rdf:type owl:Class ;
                                   owl:equivalentClass <https://biomedit.ch/rdf/sphn-ontology/sphn#TherapeuticArea> .
+
+
+###  http://snomed.info/id/394659003
+<http://snomed.info/id/394659003> rdf:type owl:Class .
 
 
 ###  http://snomed.info/id/395007004
@@ -3174,6 +3234,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 <http://snomed.info/id/414135002> rdf:type owl:Class .
 
 
+###  http://snomed.info/id/415070008
+<http://snomed.info/id/415070008> rdf:type owl:Class .
+
+
 ###  http://snomed.info/id/415684004
 <http://snomed.info/id/415684004> rdf:type owl:Class .
 
@@ -3195,6 +3259,14 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 <http://snomed.info/id/419620001> rdf:type owl:Class .
 
 
+###  http://snomed.info/id/428923005
+<http://snomed.info/id/428923005> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/432504007
+<http://snomed.info/id/432504007> rdf:type owl:Class .
+
+
 ###  http://snomed.info/id/439401001
 <http://snomed.info/id/439401001> rdf:type owl:Class ;
                                   owl:equivalentClass <https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis> .
@@ -3208,12 +3280,20 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 <http://snomed.info/id/443390004> rdf:type owl:Class .
 
 
+###  http://snomed.info/id/445232009
+<http://snomed.info/id/445232009> rdf:type owl:Class .
+
+
 ###  http://snomed.info/id/446141000124107
 <http://snomed.info/id/446141000124107> rdf:type owl:Class .
 
 
 ###  http://snomed.info/id/446151000124109
 <http://snomed.info/id/446151000124109> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/446841001
+<http://snomed.info/id/446841001> rdf:type owl:Class .
 
 
 ###  http://snomed.info/id/450436003
@@ -3235,6 +3315,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 
 ###  http://snomed.info/id/51440002
 <http://snomed.info/id/51440002> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/53741008
+<http://snomed.info/id/53741008> rdf:type owl:Class .
 
 
 ###  http://snomed.info/id/54993008
@@ -3263,9 +3347,17 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 <http://snomed.info/id/63075001> rdf:type owl:Class .
 
 
+###  http://snomed.info/id/63491006
+<http://snomed.info/id/63491006> rdf:type owl:Class .
+
+
 ###  http://snomed.info/id/63653004
 <http://snomed.info/id/63653004> rdf:type owl:Class ;
                                  owl:equivalentClass <https://biomedit.ch/rdf/sphn-ontology/sphn#MedicalDevice> .
+
+
+###  http://snomed.info/id/64368001
+<http://snomed.info/id/64368001> rdf:type owl:Class .
 
 
 ###  http://snomed.info/id/66459002
@@ -3279,6 +3371,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 
 ###  http://snomed.info/id/6736007
 <http://snomed.info/id/6736007> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/67362008
+<http://snomed.info/id/67362008> rdf:type owl:Class .
 
 
 ###  http://snomed.info/id/69536005
@@ -3332,6 +3428,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 <http://snomed.info/id/723511001> rdf:type owl:Class .
 
 
+###  http://snomed.info/id/73211009
+<http://snomed.info/id/73211009> rdf:type owl:Class .
+
+
 ###  http://snomed.info/id/736542009
 <http://snomed.info/id/736542009> rdf:type owl:Class ;
                                   owl:equivalentClass <https://biomedit.ch/rdf/sphn-ontology/sphn#PharmaceuticalDoseForm> .
@@ -3348,6 +3448,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 ###  http://snomed.info/id/767524001
 <http://snomed.info/id/767524001> rdf:type owl:Class ;
                                   owl:equivalentClass <https://biomedit.ch/rdf/sphn-ontology/sphn#Unit> .
+
+
+###  http://snomed.info/id/77176002
+<http://snomed.info/id/77176002> rdf:type owl:Class .
 
 
 ###  http://snomed.info/id/7771000
@@ -3376,6 +3480,14 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                  owl:equivalentClass <https://biomedit.ch/rdf/sphn-ontology/sphn#CardiacOutput> .
 
 
+###  http://snomed.info/id/8392000
+<http://snomed.info/id/8392000> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/840580004
+<http://snomed.info/id/840580004> rdf:type owl:Class .
+
+
 ###  http://snomed.info/id/86290005
 <http://snomed.info/id/86290005> rdf:type owl:Class ;
                                  owl:equivalentClass <https://biomedit.ch/rdf/sphn-ontology/sphn#RespiratoryRate> .
@@ -3387,6 +3499,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 
 ###  http://snomed.info/id/87982008
 <http://snomed.info/id/87982008> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/88032003
+<http://snomed.info/id/88032003> rdf:type owl:Class .
 
 
 ###  http://snomed.info/id/88878007
@@ -10774,6 +10890,12 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 
 ###  https://biomedit.ch/rdf/sphn-resource/ucum/UCUM
 <https://biomedit.ch/rdf/sphn-resource/ucum/UCUM> rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#Terminology> .
+
+
+###  https://loinc.org/rdf/LP145994-2
+<https://loinc.org/rdf/LP145994-2> rdf:type owl:Class ;
+                                   rdfs:subClassOf <https://biomedit.ch/rdf/sphn-resource/loinc/LOINC> ;
+                                   rdfs:label "Creatinine in serum" .
 
 
 #################################################################
