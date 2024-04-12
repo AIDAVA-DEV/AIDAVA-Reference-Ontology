@@ -347,6 +347,7 @@ sphn:hasSample rdfs:domain [ rdf:type owl:Class ;
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode
 sphn:hasStatusCode rdfs:domain [ rdf:type owl:Class ;
                                  owl:unionOf ( sphn:Consent
+                                               sphn:ProblemCondition
                                                sphn:Procedure
                                              )
                                ] .
@@ -477,6 +478,10 @@ sphn:hasQualitativeResult rdfs:domain [ rdf:type owl:Class ;
                                   rdfs:label "Histopathology finding (finding)" .
 
 
+###  http://snomed.info/id/261665006
+<http://snomed.info/id/261665006> rdf:type owl:Class .
+
+
 ###  http://snomed.info/id/266257000
 <http://snomed.info/id/266257000> rdf:type owl:Class .
 
@@ -535,12 +540,24 @@ sphn:hasQualitativeResult rdfs:domain [ rdf:type owl:Class ;
 <http://snomed.info/id/410513005> rdf:type owl:Class .
 
 
+###  http://snomed.info/id/410516002
+<http://snomed.info/id/410516002> rdf:type owl:Class .
+
+
 ###  http://snomed.info/id/410537005
 <http://snomed.info/id/410537005> rdf:type owl:Class .
 
 
 ###  http://snomed.info/id/410545000
 <http://snomed.info/id/410545000> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/410590009
+<http://snomed.info/id/410590009> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/410594000
+<http://snomed.info/id/410594000> rdf:type owl:Class .
 
 
 ###  http://snomed.info/id/415070008
@@ -1103,6 +1120,31 @@ sphn:OxygenSaturation rdfs:subClassOf sphn:Deprecated ;
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition
 sphn:ProblemCondition owl:equivalentClass <https://loinc.org/rdf/75321-0> ;
                       rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                               owl:onProperty sphn:hasStatusCode ;
+                                                               owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                    owl:unionOf ( <http://snomed.info/id/261665006>
+                                                                                                  <http://snomed.info/id/410516002>
+                                                                                                  <http://snomed.info/id/410590009>
+                                                                                                  <http://snomed.info/id/410592001>
+                                                                                                  <http://snomed.info/id/410594000>
+                                                                                                  <http://snomed.info/id/410605003>
+                                                                                                  <http://snomed.info/id/415684004>
+                                                                                                  <http://snomed.info/id/723510000>
+                                                                                                )
+                                                                                  ]
+                                                             ]
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty sphn:hasStatusCode ;
+                                                               owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                             ]
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty sphn:hasStatusCode ;
+                                                               owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] ,
+                                      [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                owl:onProperty sphn:hasBodySite ;
                                                                owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                              ]
