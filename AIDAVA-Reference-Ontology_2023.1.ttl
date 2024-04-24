@@ -1292,11 +1292,33 @@ sphn:Procedure rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restriction
                                  rdf:type owl:Class
                                ] ,
                                [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                        owl:onProperty sphn:hasDateTime ;
+                                                        owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty sphn:hasDateTime ;
+                                                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ,
+                               [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                         owl:onProperty sphn:hasFreeText ;
                                                         owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                       ]
                                                       [ rdf:type owl:Restriction ;
                                                         owl:onProperty sphn:hasFreeText ;
+                                                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ,
+                               [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                        owl:onProperty sphn:hasStartDateTime ;
+                                                        owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty sphn:hasStartDateTime ;
                                                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                       ]
                                                     ) ;
