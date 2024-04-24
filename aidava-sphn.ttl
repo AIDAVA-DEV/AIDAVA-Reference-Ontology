@@ -1899,6 +1899,13 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 #    Data properties
 #################################################################
 
+###  http://snomed.info/id/hasFullName
+<http://snomed.info/id/hasFullName> rdf:type owl:DatatypeProperty ;
+                                    rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVADataProperties> ;
+                                    rdfs:label "has full name" ;
+                                    <http://www.w3.org/2004/02/skos/core#definition> "Text representation of the full name" .
+
+
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVADataProperties
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVADataProperties> rdf:type owl:DatatypeProperty ;
                                                                     rdfs:label "AIDAVA data properties" .
@@ -3785,11 +3792,22 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName> rdf:type owl:Class ;
                                                            rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept> ,
                                                                            [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                                                    owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasFamilyName> ;
+                                                                                                    owl:onProperty <http://snomed.info/id/hasFullName> ;
                                                                                                     owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                                                   ]
                                                                                                   [ rdf:type owl:Restriction ;
-                                                                                                    owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCodingDateTime> ;
+                                                                                                    owl:onProperty <http://snomed.info/id/hasFullName> ;
+                                                                                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                  ]
+                                                                                                ) ;
+                                                                             rdf:type owl:Class
+                                                                           ] ,
+                                                                           [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                    owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasFamilyName> ;
+                                                                                                    owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                  ]
+                                                                                                  [ rdf:type owl:Restriction ;
+                                                                                                    owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasFamilyName> ;
                                                                                                     owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                                                                   ]
                                                                                                 ) ;
@@ -3797,7 +3815,7 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                            ] ,
                                                                            [ rdf:type owl:Restriction ;
                                                                              owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasGivenName> ;
-                                                                             owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                             owl:minCardinality "1"^^xsd:nonNegativeInteger
                                                                            ] ;
                                                            rdfs:comment "Name of a human" ;
                                                            rdfs:label "Subject Name" ;
