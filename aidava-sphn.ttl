@@ -9490,6 +9490,17 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                          rdf:type owl:Class
                                                                        ] ,
                                                                        [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime> ;
+                                                                                                owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                                              ]
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime> ;
+                                                                                                owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                              ]
+                                                                                            ) ;
+                                                                         rdf:type owl:Class
+                                                                       ] ,
+                                                                       [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                                 owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasEndDateTime> ;
                                                                                                 owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                                               ]
@@ -9513,7 +9524,7 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                        ] ,
                                                                        [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                                 owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStartDateTime> ;
-                                                                                                owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                                               ]
                                                                                               [ rdf:type owl:Restriction ;
                                                                                                 owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStartDateTime> ;
