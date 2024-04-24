@@ -217,6 +217,15 @@ xsd:time rdf:type rdfs:Datatype .
                                                           rdfs:label "has patient" .
 
 
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatientIdentifier
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatientIdentifier> rdf:type owl:ObjectProperty ;
+                                                                    rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
+                                                                    rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> ;
+                                                                    rdfs:range <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier> ;
+                                                                    rdfs:label "has patient identifier" ;
+                                                                    <http://www.w3.org/2004/02/skos/core#definition> "a relation between the patient and the identifier that is given by a specific system" .
+
+
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProblemCondition
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProblemCondition> rdf:type owl:ObjectProperty ;
                                                                    rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
@@ -1948,6 +1957,15 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                             rdfs:comment "given names (not always 'first'), includes middle names" ;
                                                             rdfs:label "has given name" ;
                                                             <http://www.w3.org/2004/02/skos/core#definition> "given names (not always 'first'), includes middle names" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSystem
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSystem> rdf:type owl:DatatypeProperty ;
+                                                         rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVADataProperties> ;
+                                                         rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier> ;
+                                                         rdfs:range xsd:string ;
+                                                         rdfs:label "has system" ;
+                                                         <http://www.w3.org/2004/02/skos/core#definition> "indicates the system that provides the patient identifier" .
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNAttributeDatatype
@@ -3741,6 +3759,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                          owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                        ] ,
                                                                        [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatientIdentifier> ;
+                                                                         owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                       ] ,
+                                                                       [ rdf:type owl:Restriction ;
                                                                          owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProblemCondition> ;
                                                                          owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                        ] ,
@@ -3755,14 +3777,39 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                        [ rdf:type owl:Restriction ;
                                                                          owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdress> ;
                                                                          owl:minCardinality "0"^^xsd:nonNegativeInteger
-                                                                       ] ,
-                                                                       [ rdf:type owl:Restriction ;
-                                                                         owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier> ;
-                                                                         owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                        ] ;
                                                        rdfs:comment "Individual receiving health care services" ;
                                                        rdfs:label "Patient" ;
                                                        <http://www.w3.org/2004/02/skos/core#definition> "Individual receiving health care services" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept> ,
+                                                                                 [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSystem> ;
+                                                                                                          owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                        ]
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSystem> ;
+                                                                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                        ]
+                                                                                                      ) ;
+                                                                                   rdf:type owl:Class
+                                                                                 ] ,
+                                                                                 [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier> ;
+                                                                                                          owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                        ]
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier> ;
+                                                                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                        ]
+                                                                                                      ) ;
+                                                                                   rdf:type owl:Class
+                                                                                 ] ;
+                                                                 rdfs:label "Patient Identifier" ;
+                                                                 <http://www.w3.org/2004/02/skos/core#definition> "Identifier of the patient in a specific system" .
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure
