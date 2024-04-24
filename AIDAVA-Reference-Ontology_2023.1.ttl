@@ -1047,6 +1047,21 @@ sphn:InhaledOxygenConcentration rdfs:subClassOf sphn:Deprecated ;
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#Intent
 sphn:Intent rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                     owl:onProperty sphn:hasCode ;
+                                                     owl:someValuesFrom <http://snomed.info/id/363675004>
+                                                   ]
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty sphn:hasCode ;
+                                                     owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                   ]
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty sphn:hasCode ;
+                                                     owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                   ]
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] ,
+                            [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                      owl:onProperty sphn:hasFreeText ;
                                                      owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                    ]
