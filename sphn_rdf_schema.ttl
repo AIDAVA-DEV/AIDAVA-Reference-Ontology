@@ -8352,17 +8352,6 @@ sphn:Procedure rdf:type owl:Class ;
                                                     ) ;
                                  rdf:type owl:Class
                                ] ,
-                               [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                        owl:onProperty sphn:hasStartDateTime ;
-                                                        owl:minCardinality "1"^^xsd:nonNegativeInteger
-                                                      ]
-                                                      [ rdf:type owl:Restriction ;
-                                                        owl:onProperty sphn:hasStartDateTime ;
-                                                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                                                      ]
-                                                    ) ;
-                                 rdf:type owl:Class
-                               ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty sphn:hasCode ;
                                  owl:minCardinality "1"^^xsd:nonNegativeInteger
