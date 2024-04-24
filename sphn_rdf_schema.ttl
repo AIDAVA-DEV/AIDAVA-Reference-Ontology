@@ -7355,22 +7355,7 @@ sphn:InhaledOxygenConcentration rdf:type owl:Class ;
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#Intent
 sphn:Intent rdf:type owl:Class ;
-            rdfs:subClassOf sphn:SPHNConcept ,
-                            [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                     owl:onProperty sphn:hasCode ;
-                                                     owl:someValuesFrom <http://snomed.info/id/363675004>
-                                                   ]
-                                                   [ rdf:type owl:Restriction ;
-                                                     owl:onProperty sphn:hasCode ;
-                                                     owl:minCardinality "1"^^xsd:nonNegativeInteger
-                                                   ]
-                                                   [ rdf:type owl:Restriction ;
-                                                     owl:onProperty sphn:hasCode ;
-                                                     owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                                                   ]
-                                                 ) ;
-                              rdf:type owl:Class
-                            ] ;
+            rdfs:subClassOf sphn:SPHNConcept ;
             rdfs:comment "treatment or procedure purpose" ;
             rdfs:label "Intent" ;
             skos:definition "treatment or procedure purpose" .

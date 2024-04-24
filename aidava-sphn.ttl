@@ -8283,7 +8283,7 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                            ]
                                                                                            [ rdf:type owl:Restriction ;
                                                                                              owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ;
-                                                                                             owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                                             owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                                            ]
                                                                                            [ rdf:type owl:Restriction ;
                                                                                              owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ;
