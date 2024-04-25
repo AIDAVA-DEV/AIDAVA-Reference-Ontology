@@ -150,7 +150,8 @@ dcterms:license rdf:type owl:AnnotationProperty .
                                                                                     )
                                                                       ] ;
                                                           rdfs:range <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> ;
-                                                          rdfs:label "has patient" .
+                                                          rdfs:label "has patient" ;
+                                                          <http://www.w3.org/2004/02/skos/core#definition> "a relation from a given concept to the patient it is for" .
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatientIdentifier
