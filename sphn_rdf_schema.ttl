@@ -1221,7 +1221,6 @@ sphn:hasReference rdf:type owl:ObjectProperty ;
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasReferenceRange
 sphn:hasReferenceRange rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf sphn:SPHNAttributeObject ;
-                       rdfs:domain sphn:LabResult ;
                        rdfs:range sphn:ReferenceRange ;
                        rdfs:comment "normal range of the concept" ;
                        rdfs:label "has reference range" ;

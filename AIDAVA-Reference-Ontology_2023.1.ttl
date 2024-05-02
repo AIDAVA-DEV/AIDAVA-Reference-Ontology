@@ -345,6 +345,14 @@ sphn:hasQualitativeResultCode rdfs:domain [ rdf:type owl:Class ;
                                           ] .
 
 
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasReferenceRange
+sphn:hasReferenceRange rdfs:domain [ rdf:type owl:Class ;
+                                     owl:unionOf ( sphn:LabResult
+                                                   sphn:Measurement
+                                                 )
+                                   ] .
+
+
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasSample
 sphn:hasSample rdfs:domain [ rdf:type owl:Class ;
                              owl:unionOf ( sphn:Biobanksample
@@ -442,6 +450,7 @@ sphn:hasFreeText rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condi
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier
 sphn:hasIdentifier rdfs:domain [ rdf:type owl:Class ;
                                  owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient>
+                                               <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier>
                                                sphn:AdministrativeCase
                                                sphn:Biobanksample
                                                sphn:Code
@@ -1508,6 +1517,17 @@ sphn:Measurement rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restricti
                                                         ]
                                                         [ rdf:type owl:Restriction ;
                                                           owl:onProperty sphn:hasQualitativeResultCode ;
+                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ,
+                                 [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                          owl:onProperty sphn:hasReferenceRange ;
+                                                          owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty sphn:hasReferenceRange ;
                                                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                         ]
                                                       ) ;
