@@ -381,7 +381,6 @@ sphn:hasDataDetermination rdf:type owl:ObjectProperty ;
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataFile
 sphn:hasDataFile rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf sphn:SPHNAttributeObject ;
-                 rdfs:domain sphn:Electrocardiogram ;
                  rdfs:range sphn:DataFile ;
                  rdfs:comment "data file associated to the concept" ;
                  rdfs:label "has data file" ;
@@ -5235,17 +5234,6 @@ sphn:DataFile rdf:type owl:Class ;
                                                      ]
                                                      [ rdf:type owl:Restriction ;
                                                        owl:onProperty sphn:hasFormatCode ;
-                                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                                                     ]
-                                                   ) ;
-                                rdf:type owl:Class
-                              ] ,
-                              [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                       owl:onProperty sphn:hasDataProviderInstitute ;
-                                                       owl:minCardinality "1"^^xsd:nonNegativeInteger
-                                                     ]
-                                                     [ rdf:type owl:Restriction ;
-                                                       owl:onProperty sphn:hasDataProviderInstitute ;
                                                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                      ]
                                                    ) ;

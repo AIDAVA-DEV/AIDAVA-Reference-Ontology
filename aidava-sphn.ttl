@@ -638,7 +638,46 @@ xsd:time rdf:type rdfs:Datatype .
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataFile
 <https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataFile> rdf:type owl:ObjectProperty ;
                                                          rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNAttributeObject> ;
-                                                         rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#Electrocardiogram> ;
+                                                         rdfs:domain [ rdf:type owl:Class ;
+                                                                       owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/sphn#AccessDevicePresence>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeGender>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#AdverseEvent>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#Allergy>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#AllergyEpisode>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#Biobanksample>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#BirthDate>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#BodyMassIndex>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#BodyPosition>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#BodySurfaceArea>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#CardiacIndex>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#CivilStatus>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#Consent>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#DeathDate>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#DeathStatus>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#DiagnosticRadiologicExamination>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#DrugAdministrationEvent>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#Electrocardiogram>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#ElectrocardiographicProcedure>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHProcedure>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#GestationalAgeAtBirth>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#OncologyTreatmentAssessment>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#RadiotherapyProcedure>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#Sample>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#SimpleScore>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#TumorGrade>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#TumorSpecimen>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#TumorStage>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#VariantDescriptor>
+                                                                                   )
+                                                                     ] ;
                                                          rdfs:range <https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile> ;
                                                          rdfs:comment "data file associated to the concept" ;
                                                          rdfs:label "has data file" ;
@@ -6315,7 +6354,7 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                       ] ,
                                                                       [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                                owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataProviderInstitute> ;
-                                                                                               owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                                               owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                                              ]
                                                                                              [ rdf:type owl:Restriction ;
                                                                                                owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataProviderInstitute> ;
