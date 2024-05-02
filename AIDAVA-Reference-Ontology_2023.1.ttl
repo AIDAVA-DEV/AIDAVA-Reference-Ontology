@@ -311,6 +311,49 @@ sphn:hasDataDetermination rdfs:domain [ rdf:type owl:Class ;
                                       ] .
 
 
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasDataFile
+sphn:hasDataFile rdfs:domain [ rdf:type owl:Class ;
+                               owl:unionOf ( sphn:AccessDevicePresence
+                                             sphn:AdministrativeCase
+                                             sphn:AdministrativeGender
+                                             sphn:AdverseEvent
+                                             sphn:Allergy
+                                             sphn:AllergyEpisode
+                                             sphn:Biobanksample
+                                             sphn:BirthDate
+                                             sphn:BodyMassIndex
+                                             sphn:BodyPosition
+                                             sphn:BodySurfaceArea
+                                             sphn:CardiacIndex
+                                             sphn:CivilStatus
+                                             sphn:Consent
+                                             sphn:DataFile
+                                             sphn:DeathDate
+                                             sphn:DeathStatus
+                                             sphn:DiagnosticRadiologicExamination
+                                             sphn:DrugAdministrationEvent
+                                             sphn:DrugPrescription
+                                             sphn:Electrocardiogram
+                                             sphn:ElectrocardiographicProcedure
+                                             sphn:FOPHProcedure
+                                             sphn:GestationalAgeAtBirth
+                                             sphn:HealthcareEncounter
+                                             sphn:Measurement
+                                             sphn:OncologyTreatmentAssessment
+                                             sphn:ProblemCondition
+                                             sphn:Procedure
+                                             sphn:RadiotherapyProcedure
+                                             sphn:Sample
+                                             sphn:SimpleScore
+                                             sphn:TNMClassification
+                                             sphn:TumorGrade
+                                             sphn:TumorSpecimen
+                                             sphn:TumorStage
+                                             sphn:VariantDescriptor
+                                           )
+                             ] .
+
+
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasLabTest
 sphn:hasLabTest rdfs:domain [ rdf:type owl:Class ;
                               owl:unionOf ( sphn:LabResult
@@ -1220,6 +1263,17 @@ sphn:DataFile rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restriction 
                                                      ]
                                                      [ rdf:type owl:Restriction ;
                                                        owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> ;
+                                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ,
+                              [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                       owl:onProperty sphn:hasDataProviderInstitute ;
+                                                       owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty sphn:hasDataProviderInstitute ;
                                                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                      ]
                                                    ) ;
