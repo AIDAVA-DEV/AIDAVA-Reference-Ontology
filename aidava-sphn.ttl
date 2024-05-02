@@ -1504,7 +1504,11 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasReferenceRange
 <https://biomedit.ch/rdf/sphn-ontology/sphn#hasReferenceRange> rdf:type owl:ObjectProperty ;
                                                                rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNAttributeObject> ;
-                                                               rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#LabResult> ;
+                                                               rdfs:domain [ rdf:type owl:Class ;
+                                                                             owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/sphn#LabResult>
+                                                                                           <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>
+                                                                                         )
+                                                                           ] ;
                                                                rdfs:range <https://biomedit.ch/rdf/sphn-ontology/sphn#ReferenceRange> ;
                                                                rdfs:comment "normal range of the concept" ;
                                                                rdfs:label "has reference range" ;
@@ -2320,6 +2324,7 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                            rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNAttributeDatatype> ;
                                                            rdfs:domain [ rdf:type owl:Class ;
                                                                          owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient>
+                                                                                       <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier>
                                                                                        <https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase>
                                                                                        <https://biomedit.ch/rdf/sphn-ontology/sphn#Biobanksample>
                                                                                        <https://biomedit.ch/rdf/sphn-ontology/sphn#Code>
@@ -8980,6 +8985,17 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                                 ]
                                                                                                 [ rdf:type owl:Restriction ;
                                                                                                   owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQualitativeResultCode> ;
+                                                                                                  owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                ]
+                                                                                              ) ;
+                                                                           rdf:type owl:Class
+                                                                         ] ,
+                                                                         [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasReferenceRange> ;
+                                                                                                  owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                                ]
+                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasReferenceRange> ;
                                                                                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                                                                 ]
                                                                                               ) ;
