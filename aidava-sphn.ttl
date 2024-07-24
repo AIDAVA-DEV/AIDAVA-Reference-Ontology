@@ -4,9 +4,10 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://biomedit.ch/rdf/sphn-ontology/aidava-ontology> .
+@base <https://biomedit.ch/rdf/sphn-ontology/aidava-ontology#> .
 
 <https://biomedit.ch/rdf/sphn-ontology/aidava-ontology> rdf:type owl:Ontology ;
+                                                         owl:versionIRI <https://biomedit.ch/rdf/sphn-ontology/aidava-ontology/2024/1> ;
                                                          owl:imports <https://biomedit.ch/rdf/sphn-resource/atc/2023/1> ,
                                                                      <https://biomedit.ch/rdf/sphn-resource/chop/2023/4> ,
                                                                      <https://biomedit.ch/rdf/sphn-resource/geno/20220810> ,
