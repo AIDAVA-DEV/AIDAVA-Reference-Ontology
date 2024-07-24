@@ -12,7 +12,8 @@
 @base <https://biomedit.ch/rdf/sphn-ontology/AIDAVA> .
 
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA> rdf:type owl:Ontology ;
-                                                owl:versionIRI <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/2023/1> ;
+                                                owl:versionIRI <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/2024/1> ;
+                                                owl:priorVersion <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/2023/1> ;
                                                 owl:imports <https://biomedit.ch/rdf/sphn-ontology/sphn/2023/2> ;
                                                 dc:description "The RDF schema data elements defined in AIDAVA dataset and aligned with IPS." ;
                                                 dc:title "The AIDAVA Reference Ontology RDF Schema" ;
