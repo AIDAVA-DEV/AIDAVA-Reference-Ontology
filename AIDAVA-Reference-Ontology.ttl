@@ -13,11 +13,11 @@
 
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA> rdf:type owl:Ontology ;
                                                 owl:versionIRI <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/2024/1> ;
-                                                owl:priorVersion <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/2023/1> ;
                                                 owl:imports <https://biomedit.ch/rdf/sphn-ontology/sphn/2023/2> ;
                                                 dc:description "The RDF schema data elements defined in AIDAVA dataset and aligned with IPS." ;
                                                 dc:title "The AIDAVA Reference Ontology RDF Schema" ;
-                                                dcterms:license <https://creativecommons.org/licenses/by/4.0/> .
+                                                dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+                                                owl:priorVersion <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/2023/1> .
 
 #################################################################
 #    Annotation properties
@@ -409,6 +409,7 @@ sphn:hasSample rdfs:domain [ rdf:type owl:Class ;
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasStatusCode
 sphn:hasStatusCode rdfs:domain [ rdf:type owl:Class ;
                                  owl:unionOf ( sphn:Consent
+                                               sphn:DrugAdministrationEvent
                                                sphn:ProblemCondition
                                                sphn:Procedure
                                              )
@@ -606,6 +607,10 @@ sphn:hasQualitativeResult rdfs:domain [ rdf:type owl:Class ;
 
 ###  http://snomed.info/id/385660001
 <http://snomed.info/id/385660001> rdf:type owl:Class .
+
+
+###  http://snomed.info/id/385661002
+<http://snomed.info/id/385661002> rdf:type owl:Class .
 
 
 ###  http://snomed.info/id/387713003
@@ -1330,7 +1335,32 @@ sphn:DiagnosticRadiologicExamination rdfs:subClassOf [ owl:intersectionOf ( [ rd
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#DrugAdministrationEvent
-sphn:DrugAdministrationEvent rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+sphn:DrugAdministrationEvent owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty sphn:hasStatusCode ;
+                                                                          owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                               owl:unionOf ( <http://snomed.info/id/385651009>
+                                                                                                             <http://snomed.info/id/385655000>
+                                                                                                             <http://snomed.info/id/385660001>
+                                                                                                             <http://snomed.info/id/385661002>
+                                                                                                             <http://snomed.info/id/410513005>
+                                                                                                             <http://snomed.info/id/410537005>
+                                                                                                             <http://snomed.info/id/410545000>
+                                                                                                             <http://snomed.info/id/723510000>
+                                                                                                           )
+                                                                                             ]
+                                                                        ]
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty sphn:hasStatusCode ;
+                                                                          owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                        ]
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty sphn:hasStatusCode ;
+                                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                        ]
+                                                                      ) ;
+                                                   rdf:type owl:Class
+                                                 ] ;
+                             rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                       owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> ;
                                                                       owl:minCardinality "1"^^xsd:nonNegativeInteger
                                                                     ]
