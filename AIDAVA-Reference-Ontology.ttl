@@ -444,6 +444,16 @@ sphn:hasStatusCode rdfs:domain [ rdf:type owl:Class ;
                                                                 <http://www.w3.org/2004/02/skos/core#definition> "birth datetime of a person" .
 
 
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDosageText
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDosageText> rdf:type owl:DatatypeProperty ;
+                                                             rdfs:subPropertyOf sphn:hasFreeText ;
+                                                             rdfs:domain sphn:DrugAdministrationEvent ;
+                                                             rdfs:range xsd:string ;
+                                                             rdfs:comment "free text describing the dosage" ;
+                                                             rdfs:label "has dosage text" ;
+                                                             <http://www.w3.org/2004/02/skos/core#definition> "free text describing the dosage" .
+
+
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasFamilyName
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasFamilyName> rdf:type owl:DatatypeProperty ;
                                                              rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVADataProperties> ;
@@ -1366,6 +1376,17 @@ sphn:DrugAdministrationEvent rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type o
                                                                     ]
                                                                     [ rdf:type owl:Restriction ;
                                                                       owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> ;
+                                                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                    ]
+                                                                  ) ;
+                                               rdf:type owl:Class
+                                             ] ,
+                                             [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDosageText> ;
+                                                                      owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                    ]
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDosageText> ;
                                                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                                     ]
                                                                   ) ;
