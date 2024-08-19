@@ -4,7 +4,7 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://biomedit.ch/rdf/sphn-ontology/aidava-ontology#> .
+@base <https://biomedit.ch/rdf/sphn-ontology/aidava-ontology> .
 
 <https://biomedit.ch/rdf/sphn-ontology/aidava-ontology> rdf:type owl:Ontology ;
                                                          owl:versionIRI <https://biomedit.ch/rdf/sphn-ontology/aidava-ontology/2024/1> ;
@@ -1976,6 +1976,16 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                 rdfs:range xsd:dateTime ;
                                                                 rdfs:label "has birth datetime" ;
                                                                 <http://www.w3.org/2004/02/skos/core#definition> "birth datetime of a person" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDosageText
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDosageText> rdf:type owl:DatatypeProperty ;
+                                                             rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText> ;
+                                                             rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#DrugAdministrationEvent> ;
+                                                             rdfs:range xsd:string ;
+                                                             rdfs:comment "free text describing the dosage" ;
+                                                             rdfs:label "has dosage text" ;
+                                                             <http://www.w3.org/2004/02/skos/core#definition> "free text describing the dosage" .
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasFamilyName
@@ -7318,6 +7328,17 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                                             ]
                                                                                                             [ rdf:type owl:Restriction ;
                                                                                                               owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasTimePattern> ;
+                                                                                                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                            ]
+                                                                                                          ) ;
+                                                                                       rdf:type owl:Class
+                                                                                     ] ,
+                                                                                     [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                              owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDosageText> ;
+                                                                                                              owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                                            ]
+                                                                                                            [ rdf:type owl:Restriction ;
+                                                                                                              owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDosageText> ;
                                                                                                               owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                                                                             ]
                                                                                                           ) ;
