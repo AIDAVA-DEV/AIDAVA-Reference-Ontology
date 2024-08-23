@@ -2521,6 +2521,7 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                    owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/sphn#Biobanksample>
                                                                                  <https://biomedit.ch/rdf/sphn-ontology/sphn#Code>
                                                                                  <https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile>
+                                                                                 <https://biomedit.ch/rdf/sphn-ontology/sphn#DataProviderInstitute>
                                                                                  <https://biomedit.ch/rdf/sphn-ontology/sphn#Substance>
                                                                                )
                                                                  ] ;
@@ -6427,10 +6428,21 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                                           ]
                                                                                                           [ rdf:type owl:Restriction ;
                                                                                                             owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ;
-                                                                                                            owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                            owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                                                           ]
                                                                                                           [ rdf:type owl:Restriction ;
                                                                                                             owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ;
+                                                                                                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                          ]
+                                                                                                        ) ;
+                                                                                     rdf:type owl:Class
+                                                                                   ] ,
+                                                                                   [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                            owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasName> ;
+                                                                                                            owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                                          ]
+                                                                                                          [ rdf:type owl:Restriction ;
+                                                                                                            owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasName> ;
                                                                                                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                                                                           ]
                                                                                                         ) ;
