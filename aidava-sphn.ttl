@@ -2350,6 +2350,7 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#ReferenceRange>
                                                                                    )
                                                                      ] ;
                                                          rdfs:range xsd:string ;
@@ -10260,6 +10261,17 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                                    ]
                                                                                                    [ rdf:type owl:Restriction ;
                                                                                                      owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasUpperLimit> ;
+                                                                                                     owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                   ]
+                                                                                                 ) ;
+                                                                              rdf:type owl:Class
+                                                                            ] ,
+                                                                            [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                     owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText> ;
+                                                                                                     owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                                   ]
+                                                                                                   [ rdf:type owl:Restriction ;
+                                                                                                     owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText> ;
                                                                                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                                                                    ]
                                                                                                  ) ;
