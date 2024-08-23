@@ -519,6 +519,17 @@ sphn:hasIdentifier rdfs:domain [ rdf:type owl:Class ;
                                ] .
 
 
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasName
+sphn:hasName rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( sphn:Biobanksample
+                                         sphn:Code
+                                         sphn:DataFile
+                                         sphn:DataProviderInstitute
+                                         sphn:Substance
+                                       )
+                         ] .
+
+
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasOnsetDateTime
 sphn:hasOnsetDateTime rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition> .
 
@@ -1295,6 +1306,35 @@ sphn:DataFile rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restriction 
                                                    ) ;
                                 rdf:type owl:Class
                               ] .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#DataProviderInstitute
+sphn:DataProviderInstitute rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty sphn:hasCode ;
+                                                                    owl:someValuesFrom sphn:Code
+                                                                  ]
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty sphn:hasCode ;
+                                                                    owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                  ]
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty sphn:hasCode ;
+                                                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                  ]
+                                                                ) ;
+                                             rdf:type owl:Class
+                                           ] ,
+                                           [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty sphn:hasName ;
+                                                                    owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                  ]
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty sphn:hasName ;
+                                                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                  ]
+                                                                ) ;
+                                             rdf:type owl:Class
+                                           ] .
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#DeathDate
