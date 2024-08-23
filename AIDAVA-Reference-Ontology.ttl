@@ -498,6 +498,7 @@ sphn:hasFreeText rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condi
                                              sphn:Measurement
                                              sphn:ProblemCondition
                                              sphn:Procedure
+                                             sphn:ReferenceRange
                                            )
                              ] .
 
@@ -1878,6 +1879,20 @@ sphn:RadiotherapyProcedure rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl
                                                                 ) ;
                                              rdf:type owl:Class
                                            ] .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#ReferenceRange
+sphn:ReferenceRange rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                             owl:onProperty sphn:hasFreeText ;
+                                                             owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                           ]
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty sphn:hasFreeText ;
+                                                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                           ]
+                                                         ) ;
+                                      rdf:type owl:Class
+                                    ] .
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#RespiratoryRate
