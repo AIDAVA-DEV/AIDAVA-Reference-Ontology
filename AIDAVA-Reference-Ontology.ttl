@@ -56,6 +56,15 @@ dcterms:license rdf:type owl:AnnotationProperty .
                                                             <http://www.w3.org/2004/02/skos/core#definition> "The date of birth for the individual" .
 
 
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasCategory
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasCategory> rdf:type owl:ObjectProperty ;
+                                                           rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
+                                                           rdfs:domain <https://biomedit.ch/rdf/sphn-resource/loinc/LOINC> ;
+                                                           rdfs:range <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory> ;
+                                                           rdfs:label "has category" ;
+                                                           <http://www.w3.org/2004/02/skos/core#definition> "property to allow to group LOINC codes into FHIR IPS categories" .
+
+
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasConditionCode
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasConditionCode> rdf:type owl:ObjectProperty ;
                                                                 rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ,
@@ -829,6 +838,13 @@ sphn:hasQualitativeResult rdfs:domain [ rdf:type owl:Class ;
                                                            rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAConcept> ;
                                                            rdfs:comment "Class representing Observation in FHIR IPS implementation" ;
                                                            rdfs:label "Observation" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory> rdf:type owl:Class ;
+                                                                   rdfs:subClassOf sphn:SPHNConcept ;
+                                                                   rdfs:label "Observation Category" ;
+                                                                   <http://www.w3.org/2004/02/skos/core#definition> "Obsevation category allowing to group LOINC codes of type Measurement" .
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/OncologyDiagnosis
@@ -2005,6 +2021,31 @@ sphn:VariantDescriptor rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Res
 <https://loinc.org/rdf/LP145994-2> rdf:type owl:Class ;
                                    rdfs:subClassOf <https://biomedit.ch/rdf/sphn-resource/loinc/LOINC> ;
                                    rdfs:label "Creatinine in serum" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory/Laboratory
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory/Laboratory> rdf:type owl:NamedIndividual ,
+                                                                                       <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory> ;
+                                                                              rdfs:label "Laboratory" ;
+                                                                              <http://www.w3.org/2004/02/skos/core#definition> "An instance of Observation Category that is quivalent to the FHIR IPS Laboratory category" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory/SocialHistory
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory/SocialHistory> rdf:type owl:NamedIndividual ,
+                                                                                          <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory> ;
+                                                                                 rdfs:label "Social History" ;
+                                                                                 <http://www.w3.org/2004/02/skos/core#definition> "An instance of Observation Category that is quivalent to the FHIR IPS Social History category" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory/VitalSigns
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory/VitalSigns> rdf:type owl:NamedIndividual ,
+                                                                                       <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory> ;
+                                                                              rdfs:label "Vital Signs" ;
+                                                                              <http://www.w3.org/2004/02/skos/core#definition> "An instance of Observation Category that is quivalent to the FHIR IPS Vital Signs category" .
 
 
 #################################################################
