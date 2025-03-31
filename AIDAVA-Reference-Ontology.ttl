@@ -102,6 +102,15 @@ dcterms:license rdf:type owl:AnnotationProperty .
                                                               <http://www.w3.org/2004/02/skos/core#definition> "a relation between the patient and the measurements available for the patient" .
 
 
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasMember
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasMember> rdf:type owl:ObjectProperty ;
+                                                         rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
+                                                         rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Set> ;
+                                                         rdfs:range sphn:Measurement ;
+                                                         rdfs:label "has member" ;
+                                                         <http://www.w3.org/2004/02/skos/core#definition> "has item is a relation between a collection and an item contained therein." .
+
+
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> rdf:type owl:ObjectProperty ;
                                                           rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
@@ -1024,6 +1033,17 @@ sphn:hasQualitativeResult rdfs:domain [ rdf:type owl:Class ;
                                                        rdfs:comment "a pharmaceutical or biologic product" ;
                                                        rdfs:label "Product" ;
                                                        <http://www.w3.org/2004/02/skos/core#definition> "a pharmaceutical or biologic product" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Set
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Set> rdf:type owl:Class ;
+                                                   rdfs:subClassOf sphn:SPHNConcept ,
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasMeasurement> ;
+                                                                     owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                   ] ;
+                                                   rdfs:label "Set" ;
+                                                   <http://www.w3.org/2004/02/skos/core#definition> "A set is an information object for which there may be zero or more items." .
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen
