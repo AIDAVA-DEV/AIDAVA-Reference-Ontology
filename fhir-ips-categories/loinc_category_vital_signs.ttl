@@ -8,42 +8,42 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix fn: <http://www.w3.org/2005/xpath-functions#> .
 
-<https://biomedit.ch/rdf/sphn-resource/loinc/85353-1> <https://biomedit.ch/rdf/sphn-ontology/AIDAVAhasCategory>
+<https://loinc.org/rdf/85353-1> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasCategory>
     <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory/VitalSigns> .
 
-<https://biomedit.ch/rdf/sphn-resource/loinc/9279-1> <https://biomedit.ch/rdf/sphn-ontology/AIDAVAhasCategory>
+<https://loinc.org/rdf/9279-1> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasCategory>
     <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory/VitalSigns> .
 
-<https://biomedit.ch/rdf/sphn-resource/loinc/8867-4> <https://biomedit.ch/rdf/sphn-ontology/AIDAVAhasCategory>
+<https://loinc.org/rdf/8867-4> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasCategory>
     <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory/VitalSigns> .
 
-<https://biomedit.ch/rdf/sphn-resource/loinc/59408-5> <https://biomedit.ch/rdf/sphn-ontology/AIDAVAhasCategory>
+<https://loinc.org/rdf/59408-5> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasCategory>
     <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory/VitalSigns> .
 
-<https://biomedit.ch/rdf/sphn-resource/loinc/8310-5> <https://biomedit.ch/rdf/sphn-ontology/AIDAVAhasCategory>
+<https://loinc.org/rdf/8310-5> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasCategory>
     <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory/VitalSigns> .
 
-<https://biomedit.ch/rdf/sphn-resource/loinc/8302-2> <https://biomedit.ch/rdf/sphn-ontology/AIDAVAhasCategory>
+<https://loinc.org/rdf/8302-2> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasCategory>
     <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory/VitalSigns> .
 
-<https://biomedit.ch/rdf/sphn-resource/loinc/9843-4> <https://biomedit.ch/rdf/sphn-ontology/AIDAVAhasCategory>
+<https://loinc.org/rdf/9843-4> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasCategory>
     <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory/VitalSigns> .
 
-<https://biomedit.ch/rdf/sphn-resource/loinc/29463-7> <https://biomedit.ch/rdf/sphn-ontology/AIDAVAhasCategory>
+<https://loinc.org/rdf/29463-7> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasCategory>
     <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory/VitalSigns> .
 
-<https://biomedit.ch/rdf/sphn-resource/loinc/39156-5> <https://biomedit.ch/rdf/sphn-ontology/AIDAVAhasCategory>
+<https://loinc.org/rdf/39156-5> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasCategory>
     <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory/VitalSigns> .
 
-<https://biomedit.ch/rdf/sphn-resource/loinc/85354-9> <https://biomedit.ch/rdf/sphn-ontology/AIDAVAhasCategory>
+<https://loinc.org/rdf/85354-9> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasCategory>
     <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory/VitalSigns> .
 
-<https://biomedit.ch/rdf/sphn-resource/loinc/8480-6> <https://biomedit.ch/rdf/sphn-ontology/AIDAVAhasCategory>
+<https://loinc.org/rdf/8480-6> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasCategory>
     <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory/VitalSigns> .
 
-<https://biomedit.ch/rdf/sphn-resource/loinc/8462-4> <https://biomedit.ch/rdf/sphn-ontology/AIDAVAhasCategory>
+<https://loinc.org/rdf/8462-4> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasCategory>
     <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory/VitalSigns> .
 
-<https://biomedit.ch/rdf/sphn-resource/loinc/2708-6> <https://biomedit.ch/rdf/sphn-ontology/AIDAVAhasCategory>
+<https://loinc.org/rdf/2708-6> <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasCategory>
     <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory/VitalSigns> .
 	
