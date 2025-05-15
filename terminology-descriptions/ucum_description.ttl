@@ -1,0 +1,8 @@
+@prefix dcat:	<http://www.w3.org/ns/dcat#> .
+@prefix dct: 	<http://purl.org/dc/terms/> .
+
+<https://rdf.aidava.eu/ontology/terminology/ucum> rdf:type dcat:Dataset ;
+    	dct:dataset  "UCUM" ;
+    	dct:identifier  <http://unitsofmeasure.org> ;
+    	dct:language "en" ;
+    	dcat:version "2023.1" .

@@ -1,0 +1,8 @@
+@prefix dcat:	<http://www.w3.org/ns/dcat#> .
+@prefix dct: 	<http://purl.org/dc/terms/> .
+
+<https://rdf.aidava.eu/ontology/terminology/snomed-ct-at> rdf:type dcat:Dataset ;
+    	dct:dataset  "Snomed_CT_Austria" ;
+    	dct:identifier  <http://snomed.info/sct> ;
+    	dct:language "de-at" ; 
+    	dcat:version "August2024" .
