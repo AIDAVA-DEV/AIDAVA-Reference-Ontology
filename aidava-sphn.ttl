@@ -7,7 +7,7 @@
 @base <https://biomedit.ch/rdf/sphn-ontology/aidava-ontology> .
 
 <https://biomedit.ch/rdf/sphn-ontology/aidava-ontology> rdf:type owl:Ontology ;
-                                                         owl:versionIRI <https://biomedit.ch/rdf/sphn-ontology/aidava-ontology/2024/1> ;
+                                                         owl:versionIRI <https://biomedit.ch/rdf/sphn-ontology/aidava-ontology/2025/1> ;
                                                          owl:imports <https://biomedit.ch/rdf/sphn-resource/atc/2023/1> ,
                                                                      <https://biomedit.ch/rdf/sphn-resource/chop/2023/4> ,
                                                                      <https://biomedit.ch/rdf/sphn-resource/geno/20220810> ,
@@ -22,7 +22,9 @@
                                                          <http://purl.org/dc/elements/1.1/title> "The AIDAVA Reference Ontology RDF Schema" ,
                                                                                                  "The SPHN RDF Schema" ;
                                                          <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
-                                                         owl:priorVersion <https://biomedit.ch/rdf/sphn-ontology/sphn/2022/2> .
+                                                         owl:priorVersion <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/2023/1> ,
+                                                                          <https://biomedit.ch/rdf/sphn-ontology/aidava-ontology/2024/1> ,
+                                                                          <https://biomedit.ch/rdf/sphn-ontology/sphn/2022/2> .
 
 #################################################################
 #    Annotation properties
@@ -100,10 +102,28 @@ xsd:time rdf:type rdfs:Datatype .
                                                                       rdfs:label "AIDAVA object properties" .
 
 
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAddress
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAddress> rdf:type owl:ObjectProperty ;
+                                                          rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
+                                                          rdfs:domain [ rdf:type owl:Class ;
+                                                                        owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Department>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/HealthcareOrganization>
+                                                                                      <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient>
+                                                                                    )
+                                                                      ] ;
+                                                          rdfs:range <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Address> ;
+                                                          rdfs:label "has address" ;
+                                                          <http://www.w3.org/2004/02/skos/core#definition> "link to an address of a person or an organization" .
+
+
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdministrativeGender
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdministrativeGender> rdf:type owl:ObjectProperty ;
                                                                        rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
-                                                                       rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> ;
+                                                                       rdfs:domain [ rdf:type owl:Class ;
+                                                                                     owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient>
+                                                                                                   <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Person>
+                                                                                                 )
+                                                                                   ] ;
                                                                        rdfs:range <https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeGender> ;
                                                                        rdfs:comment "the gender of the individual used for administrative purposes" ;
                                                                        rdfs:label "has administrative gender" ;
@@ -139,6 +159,21 @@ xsd:time rdf:type rdfs:Datatype .
                                                                 rdfs:label "Condition code" .
 
 
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasContactInformation
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasContactInformation> rdf:type owl:ObjectProperty ;
+                                                                     rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
+                                                                     rdfs:domain [ rdf:type owl:Class ;
+                                                                                   owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Department>
+                                                                                                 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/HealthcareOrganization>
+                                                                                                 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/HealthcarePersonnel>
+                                                                                                 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient>
+                                                                                               )
+                                                                                 ] ;
+                                                                     rdfs:range <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ContactInformation> ;
+                                                                     rdfs:label "has contact information" ;
+                                                                     <http://www.w3.org/2004/02/skos/core#definition> "link to the contact information of a person or an organization" .
+
+
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDrugAdministrationEvent
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDrugAdministrationEvent> rdf:type owl:ObjectProperty ;
                                                                           rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
@@ -157,6 +192,49 @@ xsd:time rdf:type rdfs:Datatype .
                                                                    <http://www.w3.org/2004/02/skos/core#definition> "a relation between the patient and the medical product prescriptions available for the patient" .
 
 
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> rdf:type owl:ObjectProperty ;
+                                                                         rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
+                                                                         rdfs:domain [ rdf:type owl:Class ;
+                                                                                       owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/sphn#AccessDevicePresence>
+                                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase>
+                                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#AdverseEvent>
+                                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#Allergy>
+                                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#AllergyEpisode>
+                                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#Biobanksample>
+                                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#BodyMassIndex>
+                                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#BodyPosition>
+                                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#BodySurfaceArea>
+                                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#CardiacIndex>
+                                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#Consent>
+                                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile>
+                                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#DiagnosticRadiologicExamination>
+                                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#DrugAdministrationEvent>
+                                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription>
+                                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#ElectrocardiographicProcedure>
+                                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHProcedure>
+                                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#GestationalAgeAtBirth>
+                                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter>
+                                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#Location>
+                                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>
+                                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#OncologyTreatmentAssessment>
+                                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>
+                                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>
+                                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#RadiotherapyProcedure>
+                                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#Sample>
+                                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#SimpleScore>
+                                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification>
+                                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#TumorGrade>
+                                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#TumorSpecimen>
+                                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#TumorStage>
+                                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#VariantDescriptor>
+                                                                                                   )
+                                                                                     ] ;
+                                                                         rdfs:range <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/HealthcareOrganization> ;
+                                                                         rdfs:label "has healthcare organization" ;
+                                                                         <http://www.w3.org/2004/02/skos/core#definition> "link to the hospital, clinic or healthcare facility or institute providing the data" .
+
+
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasMeasurement
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasMeasurement> rdf:type owl:ObjectProperty ;
                                                               rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
@@ -164,6 +242,15 @@ xsd:time rdf:type rdfs:Datatype .
                                                               rdfs:range <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> ;
                                                               rdfs:label "has measurement" ;
                                                               <http://www.w3.org/2004/02/skos/core#definition> "a relation between the patient and the measurements available for the patient" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasMember
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasMember> rdf:type owl:ObjectProperty ;
+                                                         rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
+                                                         rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Set> ;
+                                                         rdfs:range <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> ;
+                                                         rdfs:label "has member" ;
+                                                         <http://www.w3.org/2004/02/skos/core#definition> "has item is a relation between a collection and an item contained therein." .
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient
@@ -228,15 +315,6 @@ xsd:time rdf:type rdfs:Datatype .
                                                           <http://www.w3.org/2004/02/skos/core#definition> "a relation from a given concept to the patient it is for" .
 
 
-###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatientIdentifier
-<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatientIdentifier> rdf:type owl:ObjectProperty ;
-                                                                    rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
-                                                                    rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> ;
-                                                                    rdfs:range <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier> ;
-                                                                    rdfs:label "has patient identifier" ;
-                                                                    <http://www.w3.org/2004/02/skos/core#definition> "a relation between the patient and the identifier that is given by a specific system" .
-
-
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProblemCondition
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProblemCondition> rdf:type owl:ObjectProperty ;
                                                                    rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
@@ -258,7 +336,12 @@ xsd:time rdf:type rdfs:Datatype .
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName> rdf:type owl:ObjectProperty ;
                                                               rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
-                                                              rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> ;
+                                                              rdfs:domain [ rdf:type owl:Class ;
+                                                                            owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/HealthcarePersonnel>
+                                                                                          <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient>
+                                                                                          <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Person>
+                                                                                        )
+                                                                          ] ;
                                                               rdfs:range <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName> ;
                                                               rdfs:comment "a name associated with the patient" ;
                                                               rdfs:label "has subject name" ;
@@ -272,6 +355,37 @@ xsd:time rdf:type rdfs:Datatype .
                                                           rdfs:range <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement> ;
                                                           rdfs:label "interprets" ;
                                                           <http://www.w3.org/2004/02/skos/core#definition> "a relation between a clinical finding and an observable entity" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/isFeatureOf
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/isFeatureOf> rdf:type owl:ObjectProperty ;
+                                                           rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
+                                                           rdfs:domain [ rdf:type owl:Class ;
+                                                                         owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/HealthcarePersonnel>
+                                                                                       <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient>
+                                                                                     )
+                                                                       ] ;
+                                                           rdfs:range <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Person> ;
+                                                           rdfs:comment "the relation shows the link between a Role of a Thing (ex. Patient) and the Thing (ex. Person)" ;
+                                                           rdfs:label "is feature of" ;
+                                                           <http://www.w3.org/2004/02/skos/core#definition> "a relation between an internal, contextual, or externally attributed characteristic and some Thing" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/isPartOf
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/isPartOf> rdf:type owl:ObjectProperty ;
+                                                        rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
+                                                        rdfs:domain [ rdf:type owl:Class ;
+                                                                      owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Department>
+                                                                                    <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/HealthcarePersonnel>
+                                                                                  )
+                                                                    ] ;
+                                                        rdfs:range [ rdf:type owl:Class ;
+                                                                     owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Department>
+                                                                                   <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/HealthcareOrganization>
+                                                                                 )
+                                                                   ] ;
+                                                        rdfs:label "is part of" ;
+                                                        <http://www.w3.org/2004/02/skos/core#definition> "is part of is a transitive, reflexive and antisymmetric relation between a part and itself or a part and a whole" .
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/usingSubstance
@@ -751,6 +865,7 @@ xsd:time rdf:type rdfs:Datatype .
                                                                       rdfs:range <https://biomedit.ch/rdf/sphn-ontology/sphn#DataProviderInstitute> ;
                                                                       rdfs:comment "link to the unique business identification number (UID) of the healthcare institute providing the data" ;
                                                                       rdfs:label "has data provider institute" ;
+                                                                      owl:deprecated "true"^^xsd:boolean ;
                                                                       <http://www.w3.org/2004/02/skos/core#definition> "link to the unique business identification number (UID) of the healthcare institute providing the data" .
 
 
@@ -1968,23 +2083,44 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                     rdfs:label "AIDAVA data properties" .
 
 
-###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdress
-<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdress> rdf:type owl:DatatypeProperty ;
-                                                         rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVADataProperties> ;
-                                                         rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> ;
-                                                         rdfs:range xsd:string ;
-                                                         rdfs:comment "an address for the individual" ;
-                                                         rdfs:label "has adress" ;
-                                                         <http://www.w3.org/2004/02/skos/core#definition> "an address for the individual" .
-
-
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDateTime
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDateTime> rdf:type owl:DatatypeProperty ;
                                                                 rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime> ;
-                                                                rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient> ;
+                                                                rdfs:domain [ rdf:type owl:Class ;
+                                                                              owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient>
+                                                                                            <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Person>
+                                                                                          )
+                                                                            ] ;
                                                                 rdfs:range xsd:dateTime ;
                                                                 rdfs:label "has birth datetime" ;
                                                                 <http://www.w3.org/2004/02/skos/core#definition> "birth datetime of a person" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasCity
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasCity> rdf:type owl:DatatypeProperty ;
+                                                       rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVADataProperties> ;
+                                                       rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Address> ;
+                                                       rdfs:range xsd:string ;
+                                                       rdfs:label "has city" ;
+                                                       <http://www.w3.org/2004/02/skos/core#definition> "city of the address" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasContactType
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasContactType> rdf:type owl:DatatypeProperty ;
+                                                              rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVADataProperties> ;
+                                                              rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ContactInformation> ;
+                                                              rdfs:range xsd:string ;
+                                                              rdfs:label "has contact type" ;
+                                                              <http://www.w3.org/2004/02/skos/core#definition> "the type of contact that can be used to contact a person or an organization" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasCountry
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasCountry> rdf:type owl:DatatypeProperty ;
+                                                          rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVADataProperties> ;
+                                                          rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Address> ;
+                                                          rdfs:range xsd:string ;
+                                                          rdfs:label "has country" ;
+                                                          <http://www.w3.org/2004/02/skos/core#definition> "country of the address" .
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasDosageText
@@ -1997,6 +2133,15 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                              <http://www.w3.org/2004/02/skos/core#definition> "free text describing the dosage" .
 
 
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasEmailAddress
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasEmailAddress> rdf:type owl:DatatypeProperty ;
+                                                               rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVADataProperties> ;
+                                                               rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ContactInformation> ;
+                                                               rdfs:range xsd:string ;
+                                                               rdfs:label "has email address" ;
+                                                               <http://www.w3.org/2004/02/skos/core#definition> "the email address to contact a person or an organization" .
+
+
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasFamilyName
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasFamilyName> rdf:type owl:DatatypeProperty ;
                                                              rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVADataProperties> ;
@@ -2007,9 +2152,20 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                              <http://www.w3.org/2004/02/skos/core#definition> "family name (often called 'Surname')" .
 
 
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasFax
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasFax> rdf:type owl:DatatypeProperty ;
+                                                      rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVADataProperties> ;
+                                                      rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ContactInformation> ;
+                                                      rdfs:range xsd:string ;
+                                                      rdfs:label "has fax" ;
+                                                      <http://www.w3.org/2004/02/skos/core#definition> "the fax for contacting a person or an organization" .
+
+
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasFullName
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasFullName> rdf:type owl:DatatypeProperty ;
                                                            rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVADataProperties> ;
+                                                           rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName> ;
+                                                           rdfs:range xsd:string ;
                                                            rdfs:label "has full name" ;
                                                            <http://www.w3.org/2004/02/skos/core#definition> "Text representation of the full name" .
 
@@ -2024,13 +2180,40 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                             <http://www.w3.org/2004/02/skos/core#definition> "given names (not always 'first'), includes middle names" .
 
 
-###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSystem
-<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSystem> rdf:type owl:DatatypeProperty ;
-                                                         rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVADataProperties> ;
-                                                         rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier> ;
-                                                         rdfs:range xsd:string ;
-                                                         rdfs:label "has system" ;
-                                                         <http://www.w3.org/2004/02/skos/core#definition> "indicates the system that provides the patient identifier" .
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasJobTitle
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasJobTitle> rdf:type owl:DatatypeProperty ;
+                                                           rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVADataProperties> ;
+                                                           rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/HealthcarePersonnel> ;
+                                                           rdfs:range xsd:string ;
+                                                           rdfs:label "has job title" ;
+                                                           <http://www.w3.org/2004/02/skos/core#definition> "the job title affiliated with the professional role of a person" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasLanguage
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasLanguage> rdf:type owl:DatatypeProperty ;
+                                                           rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVADataProperties> ;
+                                                           rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ContactInformation> ;
+                                                           rdfs:range xsd:string ;
+                                                           rdfs:label "has language" ;
+                                                           <http://www.w3.org/2004/02/skos/core#definition> "a language that can be used to contact a person or an organization" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPhoneNumber
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPhoneNumber> rdf:type owl:DatatypeProperty ;
+                                                              rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVADataProperties> ;
+                                                              rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ContactInformation> ;
+                                                              rdfs:range xsd:string ;
+                                                              rdfs:label "has phone number" ;
+                                                              <http://www.w3.org/2004/02/skos/core#definition> "the contact phone number of a person or an organization" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPostalCode
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPostalCode> rdf:type owl:DatatypeProperty ;
+                                                             rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVADataProperties> ;
+                                                             rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Address> ;
+                                                             rdfs:range xsd:string ;
+                                                             rdfs:label "has postal code" ;
+                                                             <http://www.w3.org/2004/02/skos/core#definition> "postal code of the address" .
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNAttributeDatatype
@@ -2354,7 +2537,8 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                          rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNAttributeDatatype> ;
                                                          rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition> ,
                                                                      [ rdf:type owl:Class ;
-                                                                       owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/sphn#BodySite>
+                                                                       owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Address>
+                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#BodySite>
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#Intent>
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>
                                                                                      <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>
@@ -2384,8 +2568,11 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 <https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier> rdf:type owl:DatatypeProperty ;
                                                            rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNAttributeDatatype> ;
                                                            rdfs:domain [ rdf:type owl:Class ;
-                                                                         owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient>
-                                                                                       <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier>
+                                                                         owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Department>
+                                                                                       <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/HealthcareOrganization>
+                                                                                       <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/HealthcarePersonnel>
+                                                                                       <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient>
+                                                                                       <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Person>
                                                                                        <https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase>
                                                                                        <https://biomedit.ch/rdf/sphn-ontology/sphn#Biobanksample>
                                                                                        <https://biomedit.ch/rdf/sphn-ontology/sphn#Code>
@@ -2528,7 +2715,9 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 <https://biomedit.ch/rdf/sphn-ontology/sphn#hasName> rdf:type owl:DatatypeProperty ;
                                                      rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNAttributeDatatype> ;
                                                      rdfs:domain [ rdf:type owl:Class ;
-                                                                   owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/sphn#Biobanksample>
+                                                                   owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Department>
+                                                                                 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/HealthcareOrganization>
+                                                                                 <https://biomedit.ch/rdf/sphn-ontology/sphn#Biobanksample>
                                                                                  <https://biomedit.ch/rdf/sphn-ontology/sphn#Code>
                                                                                  <https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile>
                                                                                  <https://biomedit.ch/rdf/sphn-ontology/sphn#DataProviderInstitute>
@@ -2577,13 +2766,36 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> rdf:type owl:DatatypeProperty ;
                                                                rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime> ;
                                                                rdfs:domain [ rdf:type owl:Class ;
-                                                                             owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeGender>
+                                                                             owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/sphn#AccessDevicePresence>
+                                                                                           <https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase>
+                                                                                           <https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeGender>
+                                                                                           <https://biomedit.ch/rdf/sphn-ontology/sphn#AdverseEvent>
                                                                                            <https://biomedit.ch/rdf/sphn-ontology/sphn#Allergy>
-                                                                                           <https://biomedit.ch/rdf/sphn-ontology/sphn#Diagnosis>
-                                                                                           <https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHDiagnosis>
-                                                                                           <https://biomedit.ch/rdf/sphn-ontology/sphn#ICDODiagnosis>
-                                                                                           <https://biomedit.ch/rdf/sphn-ontology/sphn#NursingDiagnosis>
+                                                                                           <https://biomedit.ch/rdf/sphn-ontology/sphn#AllergyEpisode>
+                                                                                           <https://biomedit.ch/rdf/sphn-ontology/sphn#BodyMassIndex>
+                                                                                           <https://biomedit.ch/rdf/sphn-ontology/sphn#BodyPosition>
+                                                                                           <https://biomedit.ch/rdf/sphn-ontology/sphn#BodySurfaceArea>
+                                                                                           <https://biomedit.ch/rdf/sphn-ontology/sphn#CardiacIndex>
+                                                                                           <https://biomedit.ch/rdf/sphn-ontology/sphn#CivilStatus>
+                                                                                           <https://biomedit.ch/rdf/sphn-ontology/sphn#Consent>
+                                                                                           <https://biomedit.ch/rdf/sphn-ontology/sphn#DiagnosticRadiologicExamination>
+                                                                                           <https://biomedit.ch/rdf/sphn-ontology/sphn#DrugAdministrationEvent>
+                                                                                           <https://biomedit.ch/rdf/sphn-ontology/sphn#DrugPrescription>
+                                                                                           <https://biomedit.ch/rdf/sphn-ontology/sphn#ElectrocardiographicProcedure>
+                                                                                           <https://biomedit.ch/rdf/sphn-ontology/sphn#FOPHProcedure>
+                                                                                           <https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter>
+                                                                                           <https://biomedit.ch/rdf/sphn-ontology/sphn#LabResult>
+                                                                                           <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>
+                                                                                           <https://biomedit.ch/rdf/sphn-ontology/sphn#OncologyTreatmentAssessment>
                                                                                            <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>
+                                                                                           <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>
+                                                                                           <https://biomedit.ch/rdf/sphn-ontology/sphn#RadiotherapyProcedure>
+                                                                                           <https://biomedit.ch/rdf/sphn-ontology/sphn#Sample>
+                                                                                           <https://biomedit.ch/rdf/sphn-ontology/sphn#SimpleScore>
+                                                                                           <https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification>
+                                                                                           <https://biomedit.ch/rdf/sphn-ontology/sphn#TumorGrade>
+                                                                                           <https://biomedit.ch/rdf/sphn-ontology/sphn#TumorSpecimen>
+                                                                                           <https://biomedit.ch/rdf/sphn-ontology/sphn#TumorStage>
                                                                                          )
                                                                            ] ;
                                                                rdfs:range xsd:dateTime ;
@@ -3702,6 +3914,36 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                              rdfs:label "AIDAVA concept" .
 
 
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Address
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Address> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept> ,
+                                                                       [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText> ;
+                                                                                                owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                              ]
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasFreeText> ;
+                                                                                                owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                              ]
+                                                                                            ) ;
+                                                                         rdf:type owl:Class
+                                                                       ] ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasCity> ;
+                                                                         owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                       ] ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasCountry> ;
+                                                                         owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                       ] ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPostalCode> ;
+                                                                         owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                       ] ;
+                                                       rdfs:label "Address" ;
+                                                       <http://www.w3.org/2004/02/skos/core#definition> "The address of a person or an organization" .
+
+
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Condition> rdf:type owl:Class ;
                                                          rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAConcept> ;
@@ -3709,11 +3951,183 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                          rdfs:label "Condition" .
 
 
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ContactInformation
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ContactInformation> rdf:type owl:Class ;
+                                                                  rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept> ,
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasContactType> ;
+                                                                                    owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                  ] ,
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasEmailAddress> ;
+                                                                                    owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                  ] ,
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasFax> ;
+                                                                                    owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                  ] ,
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasLanguage> ;
+                                                                                    owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                  ] ,
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPhoneNumber> ;
+                                                                                    owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                  ] ;
+                                                                  rdfs:label "Contact Information" ;
+                                                                  <http://www.w3.org/2004/02/skos/core#definition> "the contact information of a person or an organization" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Department
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Department> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept> ,
+                                                                          [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                   owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAddress> ;
+                                                                                                   owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                                 ]
+                                                                                                 [ rdf:type owl:Restriction ;
+                                                                                                   owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAddress> ;
+                                                                                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                 ]
+                                                                                               ) ;
+                                                                            rdf:type owl:Class
+                                                                          ] ,
+                                                                          [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                   owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasContactInformation> ;
+                                                                                                   owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                                 ]
+                                                                                                 [ rdf:type owl:Restriction ;
+                                                                                                   owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasContactInformation> ;
+                                                                                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                 ]
+                                                                                               ) ;
+                                                                            rdf:type owl:Class
+                                                                          ] ,
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/isPartOf> ;
+                                                                            owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                          ] ,
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier> ;
+                                                                            owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                          ] ,
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasName> ;
+                                                                            owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                          ] ;
+                                                          rdfs:label "Department" ;
+                                                          <http://www.w3.org/2004/02/skos/core#definition> "a department of an organization or an institution" .
+
+
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/DiagnosticReport> rdf:type owl:Class ;
                                                                 rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAConcept> ;
                                                                 rdfs:comment "Class representing Diagnostic report in FHIR IPS implementation" ;
                                                                 rdfs:label "Diagnostic report" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/HealthcareOrganization
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/HealthcareOrganization> rdf:type owl:Class ;
+                                                                      rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept> ,
+                                                                                      [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                               owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ;
+                                                                                                               owl:someValuesFrom <https://biomedit.ch/rdf/sphn-ontology/sphn#Code>
+                                                                                                             ]
+                                                                                                             [ rdf:type owl:Restriction ;
+                                                                                                               owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ;
+                                                                                                               owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                                             ]
+                                                                                                             [ rdf:type owl:Restriction ;
+                                                                                                               owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ;
+                                                                                                               owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                             ]
+                                                                                                           ) ;
+                                                                                        rdf:type owl:Class
+                                                                                      ] ,
+                                                                                      [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                               owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAddress> ;
+                                                                                                               owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                                             ]
+                                                                                                             [ rdf:type owl:Restriction ;
+                                                                                                               owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAddress> ;
+                                                                                                               owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                             ]
+                                                                                                           ) ;
+                                                                                        rdf:type owl:Class
+                                                                                      ] ,
+                                                                                      [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                               owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasContactInformation> ;
+                                                                                                               owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                                             ]
+                                                                                                             [ rdf:type owl:Restriction ;
+                                                                                                               owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasContactInformation> ;
+                                                                                                               owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                             ]
+                                                                                                           ) ;
+                                                                                        rdf:type owl:Class
+                                                                                      ] ,
+                                                                                      [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                               owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier> ;
+                                                                                                               owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                                             ]
+                                                                                                             [ rdf:type owl:Restriction ;
+                                                                                                               owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier> ;
+                                                                                                               owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                             ]
+                                                                                                           ) ;
+                                                                                        rdf:type owl:Class
+                                                                                      ] ,
+                                                                                      [ rdf:type owl:Restriction ;
+                                                                                        owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasName> ;
+                                                                                        owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                      ] ;
+                                                                      rdfs:label "Healthcare Organization" ;
+                                                                      <http://www.w3.org/2004/02/skos/core#definition> "The Healthcare Organization is a hospital, clinic or a healthcare facility" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/HealthcarePersonnel
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/HealthcarePersonnel> rdf:type owl:Class ;
+                                                                   rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept> ,
+                                                                                   [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                            owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasContactInformation> ;
+                                                                                                            owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                                          ]
+                                                                                                          [ rdf:type owl:Restriction ;
+                                                                                                            owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasContactInformation> ;
+                                                                                                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                          ]
+                                                                                                        ) ;
+                                                                                     rdf:type owl:Class
+                                                                                   ] ,
+                                                                                   [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                            owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/isFeatureOf> ;
+                                                                                                            owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                                          ]
+                                                                                                          [ rdf:type owl:Restriction ;
+                                                                                                            owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/isFeatureOf> ;
+                                                                                                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                          ]
+                                                                                                        ) ;
+                                                                                     rdf:type owl:Class
+                                                                                   ] ,
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName> ;
+                                                                                     owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                   ] ,
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/isPartOf> ;
+                                                                                     owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                   ] ,
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasJobTitle> ;
+                                                                                     owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                   ] ,
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier> ;
+                                                                                     owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                   ] ;
+                                                                   rdfs:label "Healthcare Personnel" ;
+                                                                   <http://www.w3.org/2004/02/skos/core#definition> "a person that is affiliated with a healthcare organization in the role of a healthcare proffesional, practitioner or someone with a formal responsibility in the provisioning of healthcare or related services" .
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/HistologyInvasiveBreastCancer
@@ -3815,11 +4229,55 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                          rdf:type owl:Class
                                                                        ] ,
                                                                        [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasContactInformation> ;
+                                                                                                owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                              ]
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasContactInformation> ;
+                                                                                                owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                              ]
+                                                                                            ) ;
+                                                                         rdf:type owl:Class
+                                                                       ] ,
+                                                                       [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName> ;
+                                                                                                owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                                              ]
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName> ;
+                                                                                                owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                              ]
+                                                                                            ) ;
+                                                                         rdf:type owl:Class
+                                                                       ] ,
+                                                                       [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/isFeatureOf> ;
+                                                                                                owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                              ]
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/isFeatureOf> ;
+                                                                                                owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                              ]
+                                                                                            ) ;
+                                                                         rdf:type owl:Class
+                                                                       ] ,
+                                                                       [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                                 owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDateTime> ;
                                                                                                 owl:minCardinality "1"^^xsd:nonNegativeInteger
                                                                                               ]
                                                                                               [ rdf:type owl:Restriction ;
                                                                                                 owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDateTime> ;
+                                                                                                owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                              ]
+                                                                                            ) ;
+                                                                         rdf:type owl:Class
+                                                                       ] ,
+                                                                       [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier> ;
+                                                                                                owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                              ]
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier> ;
                                                                                                 owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                                                               ]
                                                                                             ) ;
@@ -3838,23 +4296,11 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                          owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                        ] ,
                                                                        [ rdf:type owl:Restriction ;
-                                                                         owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatientIdentifier> ;
-                                                                         owl:minCardinality "0"^^xsd:nonNegativeInteger
-                                                                       ] ,
-                                                                       [ rdf:type owl:Restriction ;
                                                                          owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProblemCondition> ;
                                                                          owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                        ] ,
                                                                        [ rdf:type owl:Restriction ;
                                                                          owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasProcedure> ;
-                                                                         owl:minCardinality "0"^^xsd:nonNegativeInteger
-                                                                       ] ,
-                                                                       [ rdf:type owl:Restriction ;
-                                                                         owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName> ;
-                                                                         owl:minCardinality "1"^^xsd:nonNegativeInteger
-                                                                       ] ,
-                                                                       [ rdf:type owl:Restriction ;
-                                                                         owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdress> ;
                                                                          owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                        ] ;
                                                        rdfs:comment "Individual receiving health care services" ;
@@ -3862,33 +4308,55 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                        <http://www.w3.org/2004/02/skos/core#definition> "Individual receiving health care services" .
 
 
-###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier
-<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/PatientIdentifier> rdf:type owl:Class ;
-                                                                 rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept> ,
-                                                                                 [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                                                          owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSystem> ;
-                                                                                                          owl:minCardinality "1"^^xsd:nonNegativeInteger
-                                                                                                        ]
-                                                                                                        [ rdf:type owl:Restriction ;
-                                                                                                          owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSystem> ;
-                                                                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                                                                                                        ]
-                                                                                                      ) ;
-                                                                                   rdf:type owl:Class
-                                                                                 ] ,
-                                                                                 [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                                                          owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier> ;
-                                                                                                          owl:minCardinality "1"^^xsd:nonNegativeInteger
-                                                                                                        ]
-                                                                                                        [ rdf:type owl:Restriction ;
-                                                                                                          owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier> ;
-                                                                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                                                                                                        ]
-                                                                                                      ) ;
-                                                                                   rdf:type owl:Class
-                                                                                 ] ;
-                                                                 rdfs:label "Patient Identifier" ;
-                                                                 <http://www.w3.org/2004/02/skos/core#definition> "Identifier of the patient in a specific system" .
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Person
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Person> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept> ,
+                                                                      [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                               owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdministrativeGender> ;
+                                                                                               owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                             ]
+                                                                                             [ rdf:type owl:Restriction ;
+                                                                                               owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdministrativeGender> ;
+                                                                                               owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                             ]
+                                                                                           ) ;
+                                                                        rdf:type owl:Class
+                                                                      ] ,
+                                                                      [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                               owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName> ;
+                                                                                               owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                             ]
+                                                                                             [ rdf:type owl:Restriction ;
+                                                                                               owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName> ;
+                                                                                               owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                             ]
+                                                                                           ) ;
+                                                                        rdf:type owl:Class
+                                                                      ] ,
+                                                                      [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                               owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDateTime> ;
+                                                                                               owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                             ]
+                                                                                             [ rdf:type owl:Restriction ;
+                                                                                               owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDateTime> ;
+                                                                                               owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                             ]
+                                                                                           ) ;
+                                                                        rdf:type owl:Class
+                                                                      ] ,
+                                                                      [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                               owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier> ;
+                                                                                               owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                             ]
+                                                                                             [ rdf:type owl:Restriction ;
+                                                                                               owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier> ;
+                                                                                               owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                             ]
+                                                                                           ) ;
+                                                                        rdf:type owl:Class
+                                                                      ] ;
+                                                      rdfs:label "Person" ;
+                                                      <http://www.w3.org/2004/02/skos/core#definition> "a unique person that can be represented by different roles such as being a patient or a healthcare practitioner" .
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Procedure
@@ -3925,6 +4393,17 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                        rdfs:comment "a pharmaceutical or biologic product" ;
                                                        rdfs:label "Product" ;
                                                        <http://www.w3.org/2004/02/skos/core#definition> "a pharmaceutical or biologic product" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Set
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Set> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept> ,
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasMeasurement> ;
+                                                                     owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                   ] ;
+                                                   rdfs:label "Set" ;
+                                                   <http://www.w3.org/2004/02/skos/core#definition> "A set is an information object for which there may be zero or more items." .
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Specimen
@@ -4063,6 +4542,17 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                     rdf:type owl:Class
                                                                                   ] ,
                                                                                   [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                           owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                           owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                                         ]
+                                                                                                         [ rdf:type owl:Restriction ;
+                                                                                                           owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                         ]
+                                                                                                       ) ;
+                                                                                    rdf:type owl:Class
+                                                                                  ] ,
+                                                                                  [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                                            owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStartDateTime> ;
                                                                                                            owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                                                          ]
@@ -4072,6 +4562,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                                          ]
                                                                                                        ) ;
                                                                                     rdf:type owl:Class
+                                                                                  ] ,
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
+                                                                                    owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                                   ] ;
                                                                   rdfs:comment "application of medical access device, such as cannula, tube, catheter or drainage" ;
                                                                   rdfs:label "Access Device Presence" ;
@@ -4179,6 +4673,21 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                                        ]
                                                                                                      ) ;
                                                                                   rdf:type owl:Class
+                                                                                ] ,
+                                                                                [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                         owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                         owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                                       ]
+                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                         owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                       ]
+                                                                                                     ) ;
+                                                                                  rdf:type owl:Class
+                                                                                ] ,
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
+                                                                                  owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                                 ] ;
                                                                 rdfs:comment "administrative artefact for billing according to Swiss DRG" ;
                                                                 rdfs:label "Administrative Case" ;
@@ -4371,6 +4880,21 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                                  ]
                                                                                                ) ;
                                                                             rdf:type owl:Class
+                                                                          ] ,
+                                                                          [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                   owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                   owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                                 ]
+                                                                                                 [ rdf:type owl:Restriction ;
+                                                                                                   owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                 ]
+                                                                                               ) ;
+                                                                            rdf:type owl:Class
+                                                                          ] ,
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
+                                                                            owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                           ] ;
                                                           rdfs:comment "results from an intervention that caused unintentional harm" ;
                                                           rdfs:label "Adverse Event" ;
@@ -4623,6 +5147,21 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                             ]
                                                                                           ) ;
                                                                        rdf:type owl:Class
+                                                                     ] ,
+                                                                     [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                              owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                            ]
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                            ]
+                                                                                          ) ;
+                                                                       rdf:type owl:Class
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
+                                                                       owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                      ] ;
                                                      rdfs:comment "risk of harmful or undesirable, physiological response which is unique to an individual and associated with exposure to an allergen" ;
                                                      rdfs:label "Allergy" ;
@@ -4814,6 +5353,21 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                                    ]
                                                                                                  ) ;
                                                                               rdf:type owl:Class
+                                                                            ] ,
+                                                                            [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                     owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                     owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                                   ]
+                                                                                                   [ rdf:type owl:Restriction ;
+                                                                                                     owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                     owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                   ]
+                                                                                                 ) ;
+                                                                              rdf:type owl:Class
+                                                                            ] ,
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
+                                                                              owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                             ] ;
                                                             rdfs:comment "manifestation of an allergic reaction following an exposure to an allergen" ;
                                                             rdfs:label "Allergy Episode" ;
@@ -4901,6 +5455,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                                   ]
                                                                                                 ) ;
                                                                              rdf:type owl:Class
+                                                                           ] ,
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
+                                                                             owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                            ] ;
                                                            rdfs:comment "biosample stored in a biobank" ;
                                                            rdfs:label "Biobanksample" ;
@@ -5309,6 +5867,21 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                                   ]
                                                                                                 ) ;
                                                                              rdf:type owl:Class
+                                                                           ] ,
+                                                                           [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                    owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                    owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                                  ]
+                                                                                                  [ rdf:type owl:Restriction ;
+                                                                                                    owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                  ]
+                                                                                                ) ;
+                                                                             rdf:type owl:Class
+                                                                           ] ,
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
+                                                                             owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                            ] ;
                                                            rdfs:comment "body weight in kilograms divided by the square of the body height in meters" ;
                                                            rdfs:label "Body Mass Index" ;
@@ -5389,6 +5962,17 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                             rdf:type owl:Class
                                                                           ] ,
                                                                           [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                   owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                   owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                                 ]
+                                                                                                 [ rdf:type owl:Restriction ;
+                                                                                                   owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                 ]
+                                                                                               ) ;
+                                                                            rdf:type owl:Class
+                                                                          ] ,
+                                                                          [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                                    owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStartDateTime> ;
                                                                                                    owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                                                  ]
@@ -5398,6 +5982,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                                  ]
                                                                                                ) ;
                                                                             rdf:type owl:Class
+                                                                          ] ,
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
+                                                                            owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                           ] ;
                                                           rdfs:comment "position of the body during a certain time interval, examination or therapy" ;
                                                           rdfs:label "Body Position" ;
@@ -5544,6 +6132,21 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                                     ]
                                                                                                   ) ;
                                                                                rdf:type owl:Class
+                                                                             ] ,
+                                                                             [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                      owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                      owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                                    ]
+                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                      owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                    ]
+                                                                                                  ) ;
+                                                                               rdf:type owl:Class
+                                                                             ] ,
+                                                                             [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
+                                                                               owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                              ] ;
                                                              rdfs:comment "two dimensional measure of the outer layer of the body" ;
                                                              rdfs:label "Body Surface Area" ;
@@ -5794,6 +6397,21 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                                  ]
                                                                                                ) ;
                                                                             rdf:type owl:Class
+                                                                          ] ,
+                                                                          [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                   owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                   owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                                 ]
+                                                                                                 [ rdf:type owl:Restriction ;
+                                                                                                   owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                 ]
+                                                                                               ) ;
+                                                                            rdf:type owl:Class
+                                                                          ] ,
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
+                                                                            owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                           ] ;
                                                           rdfs:comment "cardiac output in relation to the body surface area (BSA)" ;
                                                           rdfs:label "Cardiac Index" ;
@@ -6164,6 +6782,17 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                                 ]
                                                                                               ) ;
                                                                            rdf:type owl:Class
+                                                                         ] ,
+                                                                         [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                  owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                                ]
+                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                  owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                ]
+                                                                                              ) ;
+                                                                           rdf:type owl:Class
                                                                          ] ;
                                                          rdfs:comment "the civil status indicates the familial and social situation of the individual" ;
                                                          rdfs:label "Civil Status" ;
@@ -6309,6 +6938,17 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                        rdf:type owl:Class
                                                                      ] ,
                                                                      [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                              owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                            ]
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                            ]
+                                                                                          ) ;
+                                                                       rdf:type owl:Class
+                                                                     ] ,
+                                                                     [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                               owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasTemplateIdentifier> ;
                                                                                               owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                                             ]
@@ -6318,6 +6958,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                             ]
                                                                                           ) ;
                                                                        rdf:type owl:Class
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
+                                                                       owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                      ] ;
                                                      rdfs:comment "information on the individual’s permission to make health related data and collected samples available for research purposes" ;
                                                      rdfs:label "Consent" ;
@@ -6429,6 +7073,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                              ]
                                                                                            ) ;
                                                                         rdf:type owl:Class
+                                                                      ] ,
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
+                                                                        owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                       ] ;
                                                       rdfs:comment "electronic resource of information, which can be stored, accessed and transferred as a single unit" ;
                                                       rdfs:label "Data File" ;
@@ -6438,7 +7086,8 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#DataProviderInstitute
 <https://biomedit.ch/rdf/sphn-ontology/sphn#DataProviderInstitute> rdf:type owl:Class ;
-                                                                   rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept> ,
+                                                                   rdfs:subClassOf <https://biomedit.ch/rdf/sphn-ontology/sphn#Deprecated> ,
+                                                                                   <https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNConcept> ,
                                                                                    [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                                             owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ;
                                                                                                             owl:someValuesFrom <https://biomedit.ch/rdf/sphn-ontology/sphn#Code>
@@ -6467,6 +7116,7 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                    ] ;
                                                                    rdfs:comment "institute providing the data" ;
                                                                    rdfs:label "Data Provider Institute" ;
+                                                                   owl:deprecated "true"^^xsd:boolean ;
                                                                    <http://www.w3.org/2004/02/skos/core#definition> "institute providing the data" ;
                                                                    <http://www.w3.org/2004/02/skos/core#note> "sphn:hasCode allowed coding system: UID" .
 
@@ -7137,6 +7787,17 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                                rdf:type owl:Class
                                                                                              ] ,
                                                                                              [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                                      owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                                      owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                                    ]
+                                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                                      owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                                    ]
+                                                                                                                  ) ;
+                                                                                               rdf:type owl:Class
+                                                                                             ] ,
+                                                                                             [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                                                       owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStartDateTime> ;
                                                                                                                       owl:minCardinality "1"^^xsd:nonNegativeInteger
                                                                                                                     ]
@@ -7146,6 +7807,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                                                     ]
                                                                                                                   ) ;
                                                                                                rdf:type owl:Class
+                                                                                             ] ,
+                                                                                             [ rdf:type owl:Restriction ;
+                                                                                               owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
+                                                                                               owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                                              ] ;
                                                                              rdfs:comment "radiographic procedure using the emission of x-rays to form an image of the structure penetrated by the radiation" ;
                                                                              rdfs:label "Diagnostic Radiologic Examination" ;
@@ -7385,6 +8050,17 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                        rdf:type owl:Class
                                                                                      ] ,
                                                                                      [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                              owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                              owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                                            ]
+                                                                                                            [ rdf:type owl:Restriction ;
+                                                                                                              owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                            ]
+                                                                                                          ) ;
+                                                                                       rdf:type owl:Class
+                                                                                     ] ,
+                                                                                     [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                                               owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStartDateTime> ;
                                                                                                               owl:minCardinality "1"^^xsd:nonNegativeInteger
                                                                                                             ]
@@ -7394,6 +8070,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                                             ]
                                                                                                           ) ;
                                                                                        rdf:type owl:Class
+                                                                                     ] ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
+                                                                                       owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                                      ] ;
                                                                      rdfs:comment "single event at which a drug was administered to the patient; this could be a single time point in case of a pill/cream or a duration in case of a single infusion pack or a single patch; one or many drug administration events are initiated by a drug prescription depending on the frequency stated in the prescription" ;
                                                                      rdfs:label "Drug Administration Event" ;
@@ -7550,6 +8230,21 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                                      ]
                                                                                                    ) ;
                                                                                 rdf:type owl:Class
+                                                                              ] ,
+                                                                              [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                       owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                       owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                     ]
+                                                                                                     [ rdf:type owl:Restriction ;
+                                                                                                       owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                     ]
+                                                                                                   ) ;
+                                                                                rdf:type owl:Class
+                                                                              ] ,
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
+                                                                                owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                               ] ;
                                                               rdfs:comment "plan that defines at which frequency a drug should be administered to a patient with a given quantity; at every frequency time point a drug administration event should occur" ;
                                                               rdfs:label "Drug Prescription" ;
@@ -7726,6 +8421,17 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                              rdf:type owl:Class
                                                                                            ] ,
                                                                                            [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                                    owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                                    owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                                  ]
+                                                                                                                  [ rdf:type owl:Restriction ;
+                                                                                                                    owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                                  ]
+                                                                                                                ) ;
+                                                                                             rdf:type owl:Class
+                                                                                           ] ,
+                                                                                           [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                                                     owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStartDateTime> ;
                                                                                                                     owl:minCardinality "1"^^xsd:nonNegativeInteger
                                                                                                                   ]
@@ -7735,6 +8441,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                                                   ]
                                                                                                                 ) ;
                                                                                              rdf:type owl:Class
+                                                                                           ] ,
+                                                                                           [ rdf:type owl:Restriction ;
+                                                                                             owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
+                                                                                             owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                                            ] ;
                                                                            rdfs:comment "electrographic procedure on the heart which results in a graph of voltage versus time visualizing the electrical activity of the heart muscle using electrodes placed on the skin" ;
                                                                            rdfs:label "Electrocardiographic Procedure" ;
@@ -7980,6 +8690,17 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                              rdf:type owl:Class
                                                                            ] ,
                                                                            [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                    owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                    owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                  ]
+                                                                                                  [ rdf:type owl:Restriction ;
+                                                                                                    owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                  ]
+                                                                                                ) ;
+                                                                             rdf:type owl:Class
+                                                                           ] ,
+                                                                           [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                                     owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStartDateTime> ;
                                                                                                     owl:minCardinality "1"^^xsd:nonNegativeInteger
                                                                                                   ]
@@ -7989,6 +8710,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                                   ]
                                                                                                 ) ;
                                                                              rdf:type owl:Class
+                                                                           ] ,
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
+                                                                             owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                            ] ;
                                                            rdfs:comment "procedure, coded respecting the rules of FOPH and used for building the DRGs, e.g. Z57.34 open biopsy of the urinary bladder" ;
                                                            rdfs:label "FOPH Procedure" ;
@@ -8173,6 +8898,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                      rdf:type owl:Class
                                                                                    ] ,
                                                                                    [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
+                                                                                     owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                   ] ,
+                                                                                   [ rdf:type owl:Restriction ;
                                                                                      owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase> ;
                                                                                      owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                                    ] ,
@@ -8303,6 +9032,17 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                    rdf:type owl:Class
                                                                                  ] ,
                                                                                  [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                          owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                        ]
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                        ]
+                                                                                                      ) ;
+                                                                                   rdf:type owl:Class
+                                                                                 ] ,
+                                                                                 [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                                           owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStartDateTime> ;
                                                                                                           owl:minCardinality "1"^^xsd:nonNegativeInteger
                                                                                                         ]
@@ -8312,6 +9052,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                                         ]
                                                                                                       ) ;
                                                                                    rdf:type owl:Class
+                                                                                 ] ,
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
+                                                                                   owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                                  ] ;
                                                                  rdfs:comment "an interaction between an individual and a specific unit or service of a healthcare provider institute, e.g. emergency, intensive care unit, for the purpose of providing healthcare service(s) or assessing the health status of an individual" ;
                                                                  rdfs:label "Healthcare Encounter" ;
@@ -8969,6 +9713,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                              ]
                                                                                            ) ;
                                                                         rdf:type owl:Class
+                                                                      ] ,
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
+                                                                        owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                       ] ;
                                                       rdfs:comment "physical location or medical division taking care of the individual" ;
                                                       rdfs:label "Location" ;
@@ -9164,6 +9912,21 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                                 ]
                                                                                               ) ;
                                                                            rdf:type owl:Class
+                                                                         ] ,
+                                                                         [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                  owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                ]
+                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                  owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                ]
+                                                                                              ) ;
+                                                                           rdf:type owl:Class
+                                                                         ] ,
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
+                                                                           owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                          ] ,
                                                                          [ rdf:type owl:Restriction ;
                                                                            owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity> ;
@@ -9462,6 +10225,21 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                                                 ]
                                                                                                               ) ;
                                                                                            rdf:type owl:Class
+                                                                                         ] ,
+                                                                                         [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                                  owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                                  owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                                                ]
+                                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                                  owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                                  owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                                ]
+                                                                                                              ) ;
+                                                                                           rdf:type owl:Class
+                                                                                         ] ,
+                                                                                         [ rdf:type owl:Restriction ;
+                                                                                           owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
+                                                                                           owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                                          ] ;
                                                                          rdfs:comment "assessment of oncology treatment" ;
                                                                          rdfs:label "Oncology Treatment Assessment" ;
@@ -9805,6 +10583,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                 rdf:type owl:Class
                                                                               ] ,
                                                                               [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
+                                                                                owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                              ] ,
+                                                                              [ rdf:type owl:Restriction ;
                                                                                 owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/interprets> ;
                                                                                 owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                               ] ,
@@ -9957,6 +10739,17 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                          rdf:type owl:Class
                                                                        ] ,
                                                                        [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                                              ]
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                              ]
+                                                                                            ) ;
+                                                                         rdf:type owl:Class
+                                                                       ] ,
+                                                                       [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                                 owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStartDateTime> ;
                                                                                                 owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                                               ]
@@ -9966,6 +10759,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                               ]
                                                                                             ) ;
                                                                          rdf:type owl:Class
+                                                                       ] ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
+                                                                         owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                        ] ,
                                                                        [ rdf:type owl:Restriction ;
                                                                          owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/usingSubstance> ;
@@ -10221,6 +11018,17 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                      rdf:type owl:Class
                                                                                    ] ,
                                                                                    [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                            owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                            owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                          ]
+                                                                                                          [ rdf:type owl:Restriction ;
+                                                                                                            owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                          ]
+                                                                                                        ) ;
+                                                                                     rdf:type owl:Class
+                                                                                   ] ,
+                                                                                   [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                                             owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasStartDateTime> ;
                                                                                                             owl:minCardinality "1"^^xsd:nonNegativeInteger
                                                                                                           ]
@@ -10230,6 +11038,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                                           ]
                                                                                                         ) ;
                                                                                      rdf:type owl:Class
+                                                                                   ] ,
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
+                                                                                     owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                                    ] ;
                                                                    rdfs:comment "given radiotherapy procedure during oncological treatment" ;
                                                                    rdfs:label "Radiotherapy Procedure" ;
@@ -10504,6 +11316,21 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                          ) ;
                                                                       rdf:type owl:Class
                                                                     ] ,
+                                                                    [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                             owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                             owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                           ]
+                                                                                           [ rdf:type owl:Restriction ;
+                                                                                             owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                           ]
+                                                                                         ) ;
+                                                                      rdf:type owl:Class
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
+                                                                      owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                    ] ,
                                                                     [ rdf:type owl:Restriction ;
                                                                       owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier> ;
                                                                       owl:minCardinality "0"^^xsd:nonNegativeInteger
@@ -10614,6 +11441,17 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                            rdf:type owl:Class
                                                                          ] ,
                                                                          [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                  owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                                ]
+                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                  owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                ]
+                                                                                              ) ;
+                                                                           rdf:type owl:Class
+                                                                         ] ,
+                                                                         [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                                   owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasScoringSystem> ;
                                                                                                   owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                                                 ]
@@ -10623,6 +11461,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                                 ]
                                                                                               ) ;
                                                                            rdf:type owl:Class
+                                                                         ] ,
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
+                                                                           owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                          ] ;
                                                          rdfs:comment "score given using a scoring system based on procedures that serve to classify e.g. health status, disease pattern or injury pattern and are used in medicine" ;
                                                          rdfs:label "Simple Score" ;
@@ -10891,6 +11733,17 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                  rdf:type owl:Class
                                                                                ] ,
                                                                                [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                        owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                        owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                      ]
+                                                                                                      [ rdf:type owl:Restriction ;
+                                                                                                        owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                      ]
+                                                                                                    ) ;
+                                                                                 rdf:type owl:Class
+                                                                               ] ,
+                                                                               [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                                                         owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasTPrefix> ;
                                                                                                         owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                                                       ]
@@ -10922,6 +11775,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                                       ]
                                                                                                     ) ;
                                                                                  rdf:type owl:Class
+                                                                               ] ,
+                                                                               [ rdf:type owl:Restriction ;
+                                                                                 owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
+                                                                                 owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                                ] ;
                                                                rdfs:comment "classification of malignant tumor" ;
                                                                rdfs:label "TNM Classification" ;
@@ -11108,6 +11965,21 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                                ]
                                                                                              ) ;
                                                                           rdf:type owl:Class
+                                                                        ] ,
+                                                                        [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                 owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                 owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                                               ]
+                                                                                               [ rdf:type owl:Restriction ;
+                                                                                                 owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                 owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                               ]
+                                                                                             ) ;
+                                                                          rdf:type owl:Class
+                                                                        ] ,
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
+                                                                          owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                         ] ;
                                                         rdfs:comment "tumor cells and tumor tissue abnormality" ;
                                                         rdfs:label "Tumor Grade" ;
@@ -11245,6 +12117,21 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                                 ) ;
                                                                              rdf:type owl:Class
                                                                            ] ,
+                                                                           [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                    owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                    owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                                  ]
+                                                                                                  [ rdf:type owl:Restriction ;
+                                                                                                    owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                  ]
+                                                                                                ) ;
+                                                                             rdf:type owl:Class
+                                                                           ] ,
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
+                                                                             owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                           ] ,
                                                                            [ rdf:type owl:Restriction ;
                                                                              owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasIdentifier> ;
                                                                              owl:minCardinality "0"^^xsd:nonNegativeInteger
@@ -11339,6 +12226,21 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                                ]
                                                                                              ) ;
                                                                           rdf:type owl:Class
+                                                                        ] ,
+                                                                        [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                 owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                 owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                                               ]
+                                                                                               [ rdf:type owl:Restriction ;
+                                                                                                 owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime> ;
+                                                                                                 owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                               ]
+                                                                                             ) ;
+                                                                          rdf:type owl:Class
+                                                                        ] ,
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
+                                                                          owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                         ] ;
                                                         rdfs:comment "growth extent of the tumor and how far the tumor has spread" ;
                                                         rdfs:label "Tumor Stage" ;
@@ -11478,6 +12380,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                                       ]
                                                                                                     ) ;
                                                                                  rdf:type owl:Class
+                                                                               ] ,
+                                                                               [ rdf:type owl:Restriction ;
+                                                                                 owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
+                                                                                 owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                                ] ,
                                                                                [ rdf:type owl:Restriction ;
                                                                                  owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasAdministrativeCase> ;

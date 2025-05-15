@@ -12,12 +12,13 @@
 @base <https://biomedit.ch/rdf/sphn-ontology/AIDAVA> .
 
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA> rdf:type owl:Ontology ;
-                                                owl:versionIRI <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/2024/1> ;
+                                                owl:versionIRI <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/2025/1> ;
                                                 owl:imports <https://biomedit.ch/rdf/sphn-ontology/sphn/2023/2> ;
                                                 dc:description "The RDF schema data elements defined in AIDAVA dataset and aligned with IPS." ;
                                                 dc:title "The AIDAVA Reference Ontology RDF Schema" ;
                                                 dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-                                                owl:priorVersion <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/2023/1> .
+                                                owl:priorVersion <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/2023/1> ,
+                                                                 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/2024/1> .
 
 #################################################################
 #    Annotation properties
@@ -740,6 +741,42 @@ sphn:hasQualitativeResult rdfs:domain [ rdf:type owl:Class ;
                                                       sphn:Measurement
                                                     )
                                       ] .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime
+sphn:hasRecordDateTime rdfs:domain [ rdf:type owl:Class ;
+                                     owl:unionOf ( sphn:AccessDevicePresence
+                                                   sphn:AdministrativeCase
+                                                   sphn:AdministrativeGender
+                                                   sphn:AdverseEvent
+                                                   sphn:Allergy
+                                                   sphn:AllergyEpisode
+                                                   sphn:BodyMassIndex
+                                                   sphn:BodyPosition
+                                                   sphn:BodySurfaceArea
+                                                   sphn:CardiacIndex
+                                                   sphn:CivilStatus
+                                                   sphn:Consent
+                                                   sphn:DiagnosticRadiologicExamination
+                                                   sphn:DrugAdministrationEvent
+                                                   sphn:DrugPrescription
+                                                   sphn:ElectrocardiographicProcedure
+                                                   sphn:FOPHProcedure
+                                                   sphn:HealthcareEncounter
+                                                   sphn:LabResult
+                                                   sphn:Measurement
+                                                   sphn:OncologyTreatmentAssessment
+                                                   sphn:ProblemCondition
+                                                   sphn:Procedure
+                                                   sphn:RadiotherapyProcedure
+                                                   sphn:Sample
+                                                   sphn:SimpleScore
+                                                   sphn:TNMClassification
+                                                   sphn:TumorGrade
+                                                   sphn:TumorSpecimen
+                                                   sphn:TumorStage
+                                                 )
+                                   ] .
 
 
 #################################################################
@@ -1532,7 +1569,18 @@ sphn:hasQualitativeResult rdfs:domain [ rdf:type owl:Class ;
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#AccessDevicePresence
-sphn:AccessDevicePresence rdfs:subClassOf [ rdf:type owl:Restriction ;
+sphn:AccessDevicePresence rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty sphn:hasRecordDateTime ;
+                                                                   owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                 ]
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty sphn:hasRecordDateTime ;
+                                                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                 ]
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
                                             owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
                                             owl:minCardinality "0"^^xsd:nonNegativeInteger
                                           ] .
@@ -1545,6 +1593,17 @@ sphn:AdministrativeCase rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Re
                                                                ]
                                                                [ rdf:type owl:Restriction ;
                                                                  owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> ;
+                                                                 owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                               ]
+                                                             ) ;
+                                          rdf:type owl:Class
+                                        ] ,
+                                        [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty sphn:hasRecordDateTime ;
+                                                                 owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                               ]
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty sphn:hasRecordDateTime ;
                                                                  owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                                ]
                                                              ) ;
@@ -1582,6 +1641,17 @@ sphn:AdverseEvent rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restrict
                                                        ) ;
                                     rdf:type owl:Class
                                   ] ,
+                                  [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                           owl:onProperty sphn:hasRecordDateTime ;
+                                                           owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                         ]
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty sphn:hasRecordDateTime ;
+                                                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                         ]
+                                                       ) ;
+                                    rdf:type owl:Class
+                                  ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
                                     owl:minCardinality "0"^^xsd:nonNegativeInteger
@@ -1600,6 +1670,17 @@ sphn:Allergy rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                   ) ;
                                rdf:type owl:Class
                              ] ,
+                             [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                      owl:onProperty sphn:hasRecordDateTime ;
+                                                      owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                    ]
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty sphn:hasRecordDateTime ;
+                                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                    ]
+                                                  ) ;
+                               rdf:type owl:Class
+                             ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
                                owl:minCardinality "0"^^xsd:nonNegativeInteger
@@ -1613,6 +1694,17 @@ sphn:AllergyEpisode rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restri
                                                            ]
                                                            [ rdf:type owl:Restriction ;
                                                              owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> ;
+                                                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                           ]
+                                                         ) ;
+                                      rdf:type owl:Class
+                                    ] ,
+                                    [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                             owl:onProperty sphn:hasRecordDateTime ;
+                                                             owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                           ]
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty sphn:hasRecordDateTime ;
                                                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                            ]
                                                          ) ;
@@ -1678,6 +1770,17 @@ sphn:BodyMassIndex rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restric
                                                         ) ;
                                      rdf:type owl:Class
                                    ] ,
+                                   [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                            owl:onProperty sphn:hasRecordDateTime ;
+                                                            owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                          ]
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty sphn:hasRecordDateTime ;
+                                                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                          ]
+                                                        ) ;
+                                     rdf:type owl:Class
+                                   ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
                                      owl:minCardinality "0"^^xsd:nonNegativeInteger
@@ -1691,6 +1794,17 @@ sphn:BodyPosition rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restrict
                                                          ]
                                                          [ rdf:type owl:Restriction ;
                                                            owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> ;
+                                                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                         ]
+                                                       ) ;
+                                    rdf:type owl:Class
+                                  ] ,
+                                  [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                           owl:onProperty sphn:hasRecordDateTime ;
+                                                           owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                         ]
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty sphn:hasRecordDateTime ;
                                                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                          ]
                                                        ) ;
@@ -1728,6 +1842,17 @@ sphn:BodySurfaceArea rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restr
                                                           ) ;
                                        rdf:type owl:Class
                                      ] ,
+                                     [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                              owl:onProperty sphn:hasRecordDateTime ;
+                                                              owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                            ]
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty sphn:hasRecordDateTime ;
+                                                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
                                        owl:minCardinality "0"^^xsd:nonNegativeInteger
@@ -1751,6 +1876,17 @@ sphn:CardiacIndex rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restrict
                                                          ]
                                                          [ rdf:type owl:Restriction ;
                                                            owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> ;
+                                                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                         ]
+                                                       ) ;
+                                    rdf:type owl:Class
+                                  ] ,
+                                  [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                           owl:onProperty sphn:hasRecordDateTime ;
+                                                           owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                         ]
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty sphn:hasRecordDateTime ;
                                                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                          ]
                                                        ) ;
@@ -1783,6 +1919,17 @@ sphn:CivilStatus rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restricti
                                                         ]
                                                       ) ;
                                    rdf:type owl:Class
+                                 ] ,
+                                 [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                          owl:onProperty sphn:hasRecordDateTime ;
+                                                          owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty sphn:hasRecordDateTime ;
+                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
                                  ] .
 
 
@@ -1793,6 +1940,17 @@ sphn:Consent rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                     ]
                                                     [ rdf:type owl:Restriction ;
                                                       owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> ;
+                                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                    ]
+                                                  ) ;
+                               rdf:type owl:Class
+                             ] ,
+                             [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                      owl:onProperty sphn:hasRecordDateTime ;
+                                                      owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                    ]
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty sphn:hasRecordDateTime ;
                                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                     ]
                                                   ) ;
@@ -1909,6 +2067,17 @@ sphn:DiagnosticRadiologicExamination rdfs:subClassOf [ owl:intersectionOf ( [ rd
                                                                           ) ;
                                                        rdf:type owl:Class
                                                      ] ,
+                                                     [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty sphn:hasRecordDateTime ;
+                                                                              owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                            ]
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty sphn:hasRecordDateTime ;
+                                                                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                            ]
+                                                                          ) ;
+                                                       rdf:type owl:Class
+                                                     ] ,
                                                      [ rdf:type owl:Restriction ;
                                                        owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
                                                        owl:minCardinality "0"^^xsd:nonNegativeInteger
@@ -1963,6 +2132,17 @@ sphn:DrugAdministrationEvent rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type o
                                                                   ) ;
                                                rdf:type owl:Class
                                              ] ,
+                                             [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty sphn:hasRecordDateTime ;
+                                                                      owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                    ]
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty sphn:hasRecordDateTime ;
+                                                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                    ]
+                                                                  ) ;
+                                               rdf:type owl:Class
+                                             ] ,
                                              [ rdf:type owl:Restriction ;
                                                owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
                                                owl:minCardinality "0"^^xsd:nonNegativeInteger
@@ -1976,6 +2156,17 @@ sphn:DrugPrescription rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Rest
                                                              ]
                                                              [ rdf:type owl:Restriction ;
                                                                owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> ;
+                                                               owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] ,
+                                      [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                               owl:onProperty sphn:hasRecordDateTime ;
+                                                               owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                             ]
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty sphn:hasRecordDateTime ;
                                                                owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                              ]
                                                            ) ;
@@ -1999,6 +2190,17 @@ sphn:ElectrocardiographicProcedure rdfs:subClassOf [ owl:intersectionOf ( [ rdf:
                                                                         ) ;
                                                      rdf:type owl:Class
                                                    ] ,
+                                                   [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty sphn:hasRecordDateTime ;
+                                                                            owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                          ]
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty sphn:hasRecordDateTime ;
+                                                                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                          ]
+                                                                        ) ;
+                                                     rdf:type owl:Class
+                                                   ] ,
                                                    [ rdf:type owl:Restriction ;
                                                      owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
                                                      owl:minCardinality "0"^^xsd:nonNegativeInteger
@@ -2017,6 +2219,17 @@ sphn:FOPHProcedure rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restric
                                                           ]
                                                           [ rdf:type owl:Restriction ;
                                                             owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> ;
+                                                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                          ]
+                                                        ) ;
+                                     rdf:type owl:Class
+                                   ] ,
+                                   [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                            owl:onProperty sphn:hasRecordDateTime ;
+                                                            owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                          ]
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty sphn:hasRecordDateTime ;
                                                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                           ]
                                                         ) ;
@@ -2053,6 +2266,17 @@ sphn:HealthcareEncounter rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:R
                                                                 ]
                                                                 [ rdf:type owl:Restriction ;
                                                                   owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> ;
+                                                                  owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                ]
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ] ,
+                                         [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty sphn:hasRecordDateTime ;
+                                                                  owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                ]
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty sphn:hasRecordDateTime ;
                                                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                                 ]
                                                               ) ;
@@ -2263,6 +2487,17 @@ sphn:Measurement rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restricti
                                                       ) ;
                                    rdf:type owl:Class
                                  ] ,
+                                 [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                          owl:onProperty sphn:hasRecordDateTime ;
+                                                          owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty sphn:hasRecordDateTime ;
+                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
                                    owl:minCardinality "0"^^xsd:nonNegativeInteger
@@ -2285,6 +2520,17 @@ sphn:OncologyTreatmentAssessment rdfs:subClassOf [ owl:intersectionOf ( [ rdf:ty
                                                                         ]
                                                                         [ rdf:type owl:Restriction ;
                                                                           owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> ;
+                                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                        ]
+                                                                      ) ;
+                                                   rdf:type owl:Class
+                                                 ] ,
+                                                 [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty sphn:hasRecordDateTime ;
+                                                                          owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                        ]
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty sphn:hasRecordDateTime ;
                                                                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                                         ]
                                                                       ) ;
@@ -2424,6 +2670,17 @@ sphn:Procedure rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restriction
                                  rdf:type owl:Class
                                ] ,
                                [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                        owl:onProperty sphn:hasRecordDateTime ;
+                                                        owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty sphn:hasRecordDateTime ;
+                                                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ,
+                               [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                         owl:onProperty sphn:hasStartDateTime ;
                                                         owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                       ]
@@ -2451,6 +2708,17 @@ sphn:RadiotherapyProcedure rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl
                                                                   ]
                                                                   [ rdf:type owl:Restriction ;
                                                                     owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> ;
+                                                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                  ]
+                                                                ) ;
+                                             rdf:type owl:Class
+                                           ] ,
+                                           [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty sphn:hasRecordDateTime ;
+                                                                    owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                  ]
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty sphn:hasRecordDateTime ;
                                                                     owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                                   ]
                                                                 ) ;
@@ -2492,6 +2760,17 @@ sphn:Sample rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                  ) ;
                               rdf:type owl:Class
                             ] ,
+                            [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                     owl:onProperty sphn:hasRecordDateTime ;
+                                                     owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                   ]
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty sphn:hasRecordDateTime ;
+                                                     owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                   ]
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
                               owl:minCardinality "0"^^xsd:nonNegativeInteger
@@ -2505,6 +2784,17 @@ sphn:SimpleScore rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restricti
                                                         ]
                                                         [ rdf:type owl:Restriction ;
                                                           owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> ;
+                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ,
+                                 [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                          owl:onProperty sphn:hasRecordDateTime ;
+                                                          owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty sphn:hasRecordDateTime ;
                                                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                         ]
                                                       ) ;
@@ -2532,6 +2822,17 @@ sphn:TNMClassification rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Res
                                                             ) ;
                                          rdf:type owl:Class
                                        ] ,
+                                       [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                owl:onProperty sphn:hasRecordDateTime ;
+                                                                owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                              ]
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty sphn:hasRecordDateTime ;
+                                                                owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                              ]
+                                                            ) ;
+                                         rdf:type owl:Class
+                                       ] ,
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
                                          owl:minCardinality "0"^^xsd:nonNegativeInteger
@@ -2545,6 +2846,17 @@ sphn:TumorGrade rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restrictio
                                                        ]
                                                        [ rdf:type owl:Restriction ;
                                                          owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> ;
+                                                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] ,
+                                [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                         owl:onProperty sphn:hasRecordDateTime ;
+                                                         owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                       ]
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty sphn:hasRecordDateTime ;
                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                        ]
                                                      ) ;
@@ -2568,6 +2880,17 @@ sphn:TumorSpecimen rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restric
                                                         ) ;
                                      rdf:type owl:Class
                                    ] ,
+                                   [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                            owl:onProperty sphn:hasRecordDateTime ;
+                                                            owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                          ]
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty sphn:hasRecordDateTime ;
+                                                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                          ]
+                                                        ) ;
+                                     rdf:type owl:Class
+                                   ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
                                      owl:minCardinality "0"^^xsd:nonNegativeInteger
@@ -2581,6 +2904,17 @@ sphn:TumorStage rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restrictio
                                                        ]
                                                        [ rdf:type owl:Restriction ;
                                                          owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> ;
+                                                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] ,
+                                [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                         owl:onProperty sphn:hasRecordDateTime ;
+                                                         owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                       ]
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty sphn:hasRecordDateTime ;
                                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                        ]
                                                      ) ;

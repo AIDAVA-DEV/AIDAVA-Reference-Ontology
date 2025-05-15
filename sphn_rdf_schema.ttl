@@ -2114,16 +2114,6 @@ sphn:hasQualitativeResult rdf:type owl:DatatypeProperty ;
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime
 sphn:hasRecordDateTime rdf:type owl:DatatypeProperty ;
                        rdfs:subPropertyOf sphn:hasDateTime ;
-                       rdfs:domain [ rdf:type owl:Class ;
-                                     owl:unionOf ( sphn:AdministrativeGender
-                                                   sphn:Allergy
-                                                   sphn:Diagnosis
-                                                   sphn:FOPHDiagnosis
-                                                   sphn:ICDODiagnosis
-                                                   sphn:NursingDiagnosis
-                                                   sphn:ProblemCondition
-                                                 )
-                                   ] ;
                        rdfs:range xsd:dateTime ;
                        rdfs:comment "datetime the concept was recorded" ;
                        rdfs:label "has record datetime" ;
