@@ -1,0 +1,8 @@
+@prefix dcat:	<http://www.w3.org/ns/dcat#> .
+@prefix dct: 	<http://purl.org/dc/terms/> .
+
+<https://rdf.aidava.eu/ontology/terminology/loinc> rdf:type dcat:Dataset ;
+    	dct:dataset  "LOINC" ;
+    	dct:identifier  <http://loinc.org/rdf#> ;
+    	dct:language "en" ;
+    	dcat:version "2.74" .

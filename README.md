@@ -1,8 +1,92 @@
-# AIDAVA-Reference-Ontology
+# How to use it
+
+This repository contains the AIDAVA reference ontology (AIDAVA RO), as well as versions of the SPHN schema and a list of termonologies: 
+
+* A file with the SPHN schema version 2023.2 - sphn_rdf_schema_2023.2.ttl - just SPHN with no changes - this is the initial base of the AIDAVA RO
+AIDAVA-Reference-Ontology.ttl - the file with the changes implemented for the AIDAVA RO
+* A file with subset of SPHN that should be loaded with the AIDAVA ontology (sphn_rdf_schema.ttl) - from it are removed definitions that were changed in AIDAVA RO 
+* A merge between the AIDAVA ontology file and SPHN subset file - aidava-sphn.ttl - currently used as the ontology file for data onboarding because it contains both SPHN (with some parts missing, that are changed in AIDAVA RO) and the AIDAVA RO changes AIDAVA-Reference-Ontology.ttl. They have to be used in combination when onboarding the data. 
+
+The changes of the ontology file are done in Protege. The AIDAVA-Reference-Ontology.ttl is loaded and it prompts to be loaded also the expected external terminologies and the SPHN terminology. It is important to make the changes in the AIDAVA-Reference-Ontology.ttl file and then save it. After that, merge it with the loaded SPHN ontology to export the aidava-sphn.ttl file. If there are changes that are directly changing the SPHN schema and not just adding on top of it, then the relevant classes/properties have to be removed from the aidava-sphn.ttl file. This is done by loading it separately and removing what’s needed and then saving in Protege. 
+
+
+In the AIDAVA project we agree to the following named graph conventions
+
+## Suggested organization of a repository
+
+### Named graph conventions
+
+SPHN-Ontology: https://rdf.aidava.eu/ontology/aidava-sphn 
+
+------
+
+Loinc: https://rdf.aidava.eu/ontology/terminology/loinc
+
+Loinc Metadata: https://rdf.aidava.eu/metadata/description/loinc
+
+------
+
+UCUM: https://rdf.aidava.eu/ontology/terminology/ucum
+
+UCUM Metadata: https://rdf.aidava.eu/metadata/description/ucum
+
+-----
+
+Snomed-ct International:  https://rdf.aidava.eu/ontology/terminology/snomed-ct-int
+
+Metadata: https://rdf.aidava.eu/metadata/description/snomed-ct-int
+
+-----
+
+Snomed-ct Dutch: https://rdf.aidava.eu/ontology/terminology/snomed-ct-nl
+
+Metadata: https://rdf.aidava.eu/metadata/description/snomed-ct-nl
+
+-----
+
+Snomed-ct Estonian:  https://rdf.aidava.eu/ontology/terminology/snomed-ct-et
+
+Metadata: https://rdf.aidava.eu/metadata/description/snomed-ct-et
+
+-----
+
+Snomed-ct German: https://rdf.aidava.eu/ontology/terminology/snomed-ct-de
+
+Meatadata: https://rdf.aidava.eu/metadata/description/snomed-ct-de
+
+-----
+
+Snomed-ct Austrian: https://rdf.aidava.eu/ontology/terminology/snomed-ct-at
+
+Metadata: https://rdf.aidava.eu/metadata/description/snomed-ct-at
+
+## LOINC codes sets according to FHIR IPS categories
+
+Laboratory : https://rdf.aidava.eu/ontology/terminology/loinc/category/laboratory
+
+Vitalsigns: https://rdf.aidava.eu/ontology/terminology/loinc/category/vitalsigns
+
+## Source and Personal Health Graphs
+
+First Source Knowledge Graph (SKG1): `https://rdf.aidava.eu/resource/datasource/file/[FILE_ID]`
+
+Second Source Knowledge Graph (SKG2): `https://rdf.aidava.eu/resource/datasource/file/[FILE_ID]`
+
+Personal Health Knowledge Graph (PHKG): `https://rdf.aidava.eu/resource/phkg/[ID]`
+
+
+## Provenance Metagraph (how source KGs are connected to PHKG)
+Metagraph: https://rdf.aidava.eu/metadata#metagraph
+
+---
+---
+
+# AIDAVA-Reference-Ontology development
 AIDAVA Reference Ontology
 
 The current working version of AIDAVA RO is based on SPHN schema but it has the following differences/changes: 
 
+[OUTDATED]
 ## Added: 
 
 ### Patient 
