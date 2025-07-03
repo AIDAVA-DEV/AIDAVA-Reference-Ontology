@@ -97,6 +97,14 @@ xsd:time rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
+###  http://purl.obolibrary.org/obo/so#has_part
+<http://purl.obolibrary.org/obo/so#has_part> owl:equivalentProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPart> .
+
+
+###  http://purl.obolibrary.org/obo/so#part_of
+<http://purl.obolibrary.org/obo/so#part_of> owl:equivalentProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/isPartOf> .
+
+
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> rdf:type owl:ObjectProperty ;
                                                                       rdfs:label "AIDAVA object properties" .
@@ -253,6 +261,13 @@ xsd:time rdf:type rdfs:Datatype .
                                                          <http://www.w3.org/2004/02/skos/core#definition> "has item is a relation between a collection and an item contained therein." .
 
 
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPart
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPart> rdf:type owl:ObjectProperty ;
+                                                       rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
+                                                       rdfs:label "has part" ;
+                                                       <http://www.w3.org/2004/02/skos/core#definition> "has part is a transitive, reflexive and antisymmetric relation between a whole and itself or a whole and its part" .
+
+
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient> rdf:type owl:ObjectProperty ;
                                                           rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
@@ -386,6 +401,31 @@ xsd:time rdf:type rdfs:Datatype .
                                                                    ] ;
                                                         rdfs:label "is part of" ;
                                                         <http://www.w3.org/2004/02/skos/core#definition> "is part of is a transitive, reflexive and antisymmetric relation between a part and itself or a part and a whole" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/precedes
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/precedes> rdf:type owl:ObjectProperty ;
+                                                        rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
+                                                        rdfs:domain [ rdf:type owl:Class ;
+                                                                      owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>
+                                                                                    <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>
+                                                                                    <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>
+                                                                                    <https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification>
+                                                                                    <https://biomedit.ch/rdf/sphn-ontology/sphn#TumorGrade>
+                                                                                    <https://biomedit.ch/rdf/sphn-ontology/sphn#TumorStage>
+                                                                                  )
+                                                                    ] ;
+                                                        rdfs:range [ rdf:type owl:Class ;
+                                                                     owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>
+                                                                                   <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>
+                                                                                   <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>
+                                                                                   <https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification>
+                                                                                   <https://biomedit.ch/rdf/sphn-ontology/sphn#TumorGrade>
+                                                                                   <https://biomedit.ch/rdf/sphn-ontology/sphn#TumorStage>
+                                                                                 )
+                                                                   ] ;
+                                                        rdfs:label "precedes" ;
+                                                        <http://www.w3.org/2004/02/skos/core#definition> "a relation in which one process occurs prior to another process" .
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/usingSubstance
@@ -2083,6 +2123,54 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                     rdfs:label "AIDAVA data properties" .
 
 
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/auditEventTimestamp
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/auditEventTimestamp> rdf:type owl:DatatypeProperty ;
+                                                                   rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVADataProperties> ;
+                                                                   rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile> ;
+                                                                   rdfs:range xsd:dateTime ;
+                                                                   rdfs:label "audit event timestamp" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/authorSpecialty
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/authorSpecialty> rdf:type owl:DatatypeProperty ;
+                                                               rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVADataProperties> ;
+                                                               rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile> ;
+                                                               rdfs:range xsd:string ;
+                                                               rdfs:label "author specialty" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/committer
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/committer> rdf:type owl:DatatypeProperty ;
+                                                         rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVADataProperties> ;
+                                                         rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile> ;
+                                                         rdfs:range xsd:string ;
+                                                         rdfs:label "committer" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/composer
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/composer> rdf:type owl:DatatypeProperty ;
+                                                        rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVADataProperties> ;
+                                                        rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile> ;
+                                                        rdfs:range xsd:string ;
+                                                        rdfs:label "composer" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/filePath
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/filePath> rdf:type owl:DatatypeProperty ;
+                                                        rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVADataProperties> ;
+                                                        rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile> ;
+                                                        rdfs:range xsd:string ;
+                                                        rdfs:label "file path" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/fileSource
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/fileSource> rdf:type owl:DatatypeProperty ;
+                                                          rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVADataProperties> ;
+                                                          rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile> ;
+                                                          rdfs:range xsd:string ;
+                                                          rdfs:label "file source" .
+
+
 ###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDateTime
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDateTime> rdf:type owl:DatatypeProperty ;
                                                                 rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/sphn#hasDateTime> ;
@@ -2214,6 +2302,22 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                              rdfs:range xsd:string ;
                                                              rdfs:label "has postal code" ;
                                                              <http://www.w3.org/2004/02/skos/core#definition> "postal code of the address" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/sourceType
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/sourceType> rdf:type owl:DatatypeProperty ;
+                                                          rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVADataProperties> ;
+                                                          rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile> ;
+                                                          rdfs:range xsd:string ;
+                                                          rdfs:label "source type" .
+
+
+###  https://biomedit.ch/rdf/sphn-ontology/AIDAVA/subjectOfCare
+<https://biomedit.ch/rdf/sphn-ontology/AIDAVA/subjectOfCare> rdf:type owl:DatatypeProperty ;
+                                                             rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVADataProperties> ;
+                                                             rdfs:domain <https://biomedit.ch/rdf/sphn-ontology/sphn#DataFile> ;
+                                                             rdfs:range xsd:string ;
+                                                             rdfs:label "subject of care" .
 
 
 ###  https://biomedit.ch/rdf/sphn-ontology/sphn#SPHNAttributeDatatype
