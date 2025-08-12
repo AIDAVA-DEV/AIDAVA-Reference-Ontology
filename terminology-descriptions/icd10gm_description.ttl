@@ -1,0 +1,8 @@
+@prefix dcat:	<http://www.w3.org/ns/dcat#> .
+@prefix dct: 	<http://purl.org/dc/terms/> .
+
+<https://rdf.aidava.eu/ontology/terminology/icd10gm> rdf:type dcat:Dataset ;
+    	dct:dataset  " 	ICD-10-gm" ;
+    	dct:identifier  <http://hl7.org/fhir/sid/icd-10-gm> ;
+    	dct:language "de" ;
+    	dcat:version "2021" .

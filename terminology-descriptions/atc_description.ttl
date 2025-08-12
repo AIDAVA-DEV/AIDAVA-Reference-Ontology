@@ -1,0 +1,8 @@
+@prefix dcat:	<http://www.w3.org/ns/dcat#> .
+@prefix dct: 	<http://purl.org/dc/terms/> .
+
+<https://rdf.aidava.eu/ontology/terminology/atc> rdf:type dcat:Dataset ;
+    	dct:dataset  "Anatomical Therapeutic Chemical Classification System" ;
+    	dct:identifier  <http://www.whocc.no/atc> ;
+    	dct:language "en" ;
+    	dcat:version "2016" .
