@@ -407,7 +407,9 @@ xsd:time rdf:type rdfs:Datatype .
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/precedes> rdf:type owl:ObjectProperty ;
                                                         rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
                                                         rdfs:domain [ rdf:type owl:Class ;
-                                                                      owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>
+                                                                      owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase>
+                                                                                    <https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter>
+                                                                                    <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>
                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>
                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>
                                                                                     <https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification>
@@ -416,7 +418,9 @@ xsd:time rdf:type rdfs:Datatype .
                                                                                   )
                                                                     ] ;
                                                         rdfs:range [ rdf:type owl:Class ;
-                                                                     owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>
+                                                                     owl:unionOf ( <https://biomedit.ch/rdf/sphn-ontology/sphn#AdministrativeCase>
+                                                                                   <https://biomedit.ch/rdf/sphn-ontology/sphn#HealthcareEncounter>
+                                                                                   <https://biomedit.ch/rdf/sphn-ontology/sphn#Measurement>
                                                                                    <https://biomedit.ch/rdf/sphn-ontology/sphn#ProblemCondition>
                                                                                    <https://biomedit.ch/rdf/sphn-ontology/sphn#Procedure>
                                                                                    <https://biomedit.ch/rdf/sphn-ontology/sphn#TNMClassification>
@@ -4792,6 +4796,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                 [ rdf:type owl:Restriction ;
                                                                                   owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
                                                                                   owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                ] ,
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/precedes> ;
+                                                                                  owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                                 ] ;
                                                                 rdfs:comment "administrative artefact for billing according to Swiss DRG" ;
                                                                 rdfs:label "Administrative Case" ;
@@ -9160,6 +9168,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                  [ rdf:type owl:Restriction ;
                                                                                    owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
                                                                                    owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                                 ] ,
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/precedes> ;
+                                                                                   owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                                  ] ;
                                                                  rdfs:comment "an interaction between an individual and a specific unit or service of a healthcare provider institute, e.g. emergency, intensive care unit, for the purpose of providing healthcare service(s) or assessing the health status of an individual" ;
                                                                  rdfs:label "Healthcare Encounter" ;
@@ -10033,6 +10045,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                            owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                          ] ,
                                                                          [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/precedes> ;
+                                                                           owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                         ] ,
+                                                                         [ rdf:type owl:Restriction ;
                                                                            owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasQuantity> ;
                                                                            owl:minCardinality "1"^^xsd:nonNegativeInteger
                                                                          ] ;
@@ -10695,6 +10711,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                 owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                               ] ,
                                                                               [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/precedes> ;
+                                                                                owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                              ] ,
+                                                                              [ rdf:type owl:Restriction ;
                                                                                 owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/sphn#hasCode> ;
                                                                                 owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                               ] ;
@@ -10866,6 +10886,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                        ] ,
                                                                        [ rdf:type owl:Restriction ;
                                                                          owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
+                                                                         owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                       ] ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/precedes> ;
                                                                          owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                        ] ,
                                                                        [ rdf:type owl:Restriction ;
@@ -11883,6 +11907,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                                [ rdf:type owl:Restriction ;
                                                                                  owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
                                                                                  owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                               ] ,
+                                                                               [ rdf:type owl:Restriction ;
+                                                                                 owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/precedes> ;
+                                                                                 owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                                ] ;
                                                                rdfs:comment "classification of malignant tumor" ;
                                                                rdfs:label "TNM Classification" ;
@@ -12083,6 +12111,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                         ] ,
                                                                         [ rdf:type owl:Restriction ;
                                                                           owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
+                                                                          owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                        ] ,
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/precedes> ;
                                                                           owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                         ] ;
                                                         rdfs:comment "tumor cells and tumor tissue abnormality" ;
@@ -12344,6 +12376,10 @@ but are not limited to, implants, instruments, devices, in vitro diagnostics, us
                                                                         ] ,
                                                                         [ rdf:type owl:Restriction ;
                                                                           owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
+                                                                          owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                                                        ] ,
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/precedes> ;
                                                                           owl:minCardinality "0"^^xsd:nonNegativeInteger
                                                                         ] ;
                                                         rdfs:comment "growth extent of the tumor and how far the tumor has spread" ;
