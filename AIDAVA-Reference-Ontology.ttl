@@ -342,7 +342,9 @@ dcterms:license rdf:type owl:AnnotationProperty .
 <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/precedes> rdf:type owl:ObjectProperty ;
                                                         rdfs:subPropertyOf <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties> ;
                                                         rdfs:domain [ rdf:type owl:Class ;
-                                                                      owl:unionOf ( sphn:Measurement
+                                                                      owl:unionOf ( sphn:AdministrativeCase
+                                                                                    sphn:HealthcareEncounter
+                                                                                    sphn:Measurement
                                                                                     sphn:ProblemCondition
                                                                                     sphn:Procedure
                                                                                     sphn:TNMClassification
@@ -351,7 +353,9 @@ dcterms:license rdf:type owl:AnnotationProperty .
                                                                                   )
                                                                     ] ;
                                                         rdfs:range [ rdf:type owl:Class ;
-                                                                     owl:unionOf ( sphn:Measurement
+                                                                     owl:unionOf ( sphn:AdministrativeCase
+                                                                                   sphn:HealthcareEncounter
+                                                                                   sphn:Measurement
                                                                                    sphn:ProblemCondition
                                                                                    sphn:Procedure
                                                                                    sphn:TNMClassification
@@ -1716,6 +1720,10 @@ sphn:AdministrativeCase rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Re
                                         [ rdf:type owl:Restriction ;
                                           owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
                                           owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/precedes> ;
+                                          owl:minCardinality "0"^^xsd:nonNegativeInteger
                                         ] .
 
 
@@ -2389,6 +2397,10 @@ sphn:HealthcareEncounter rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:R
                                          [ rdf:type owl:Restriction ;
                                            owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
                                            owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/precedes> ;
+                                           owl:minCardinality "0"^^xsd:nonNegativeInteger
                                          ] .
 
 
@@ -2607,6 +2619,10 @@ sphn:Measurement rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restricti
                                    owl:minCardinality "0"^^xsd:nonNegativeInteger
                                  ] ,
                                  [ rdf:type owl:Restriction ;
+                                   owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/precedes> ;
+                                   owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty sphn:hasQuantity ;
                                    owl:minCardinality "1"^^xsd:nonNegativeInteger
                                  ] .
@@ -2709,6 +2725,10 @@ sphn:ProblemCondition owl:equivalentClass <https://loinc.org/rdf/75321-0> ;
                                         owl:minCardinality "0"^^xsd:nonNegativeInteger
                                       ] ,
                                       [ rdf:type owl:Restriction ;
+                                        owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/precedes> ;
+                                        owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
                                         owl:onProperty sphn:hasCode ;
                                         owl:minCardinality "0"^^xsd:nonNegativeInteger
                                       ] .
@@ -2797,6 +2817,10 @@ sphn:Procedure rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restriction
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
+                                 owl:minCardinality "0"^^xsd:nonNegativeInteger
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/precedes> ;
                                  owl:minCardinality "0"^^xsd:nonNegativeInteger
                                ] ,
                                [ rdf:type owl:Restriction ;
@@ -2940,6 +2964,10 @@ sphn:TNMClassification rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Res
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
                                          owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/precedes> ;
+                                         owl:minCardinality "0"^^xsd:nonNegativeInteger
                                        ] .
 
 
@@ -2968,6 +2996,10 @@ sphn:TumorGrade rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restrictio
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
+                                  owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/precedes> ;
                                   owl:minCardinality "0"^^xsd:nonNegativeInteger
                                 ] .
 
@@ -3026,6 +3058,10 @@ sphn:TumorStage rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restrictio
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasHealthcareOrganization> ;
+                                  owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty <https://biomedit.ch/rdf/sphn-ontology/AIDAVA/precedes> ;
                                   owl:minCardinality "0"^^xsd:nonNegativeInteger
                                 ] .
 
