@@ -1,365 +1,558 @@
-# How to use it
+
+# AIDAVA RO
 
 This repository contains the AIDAVA reference ontology (AIDAVA RO), as well as versions of the SPHN schema and a list of termonologies: 
 
-* A file with the SPHN schema version 2023.2 - sphn_rdf_schema_2023.2.ttl - just SPHN with no changes - this is the initial base of the AIDAVA RO
-AIDAVA-Reference-Ontology.ttl - the file with the changes implemented for the AIDAVA RO
-* A file with subset of SPHN that should be loaded with the AIDAVA ontology (sphn_rdf_schema.ttl) - from it are removed definitions that were changed in AIDAVA RO 
-* A merge between the AIDAVA ontology file and SPHN subset file - aidava-sphn.ttl - currently used as the ontology file for data onboarding because it contains both SPHN (with some parts missing, that are changed in AIDAVA RO) and the AIDAVA RO changes AIDAVA-Reference-Ontology.ttl. They have to be used in combination when onboarding the data. 
+- A file with the SPHN schema version 2023.2 - [sphn_rdf_schema_2023.2.ttl](https://github.com/AIDAVA-DEV/AIDAVA-Reference-Ontology/blob/main/sphn_rdf_schema_2023.2.ttl) - the original SPHN schema with no changes - this is the initial base of the AIDAVA RO
+[AIDAVA-Reference-Ontology.ttl](https://github.com/AIDAVA-DEV/AIDAVA-Reference-Ontology/blob/main/AIDAVA-Reference-Ontology.ttl) - the file with the changes implemented for the AIDAVA RO
+- A file with **subset** of SPHN that should be loaded with the AIDAVA ontology - [sphn_rdf_schema.ttl](https://github.com/AIDAVA-DEV/AIDAVA-Reference-Ontology/blob/main/sphn_rdf_schema.ttl) - a reduced file, from which are removed definitions and statements that were changed for the purposes of the AIDAVA project and were moved to the [AIDAVA-Reference-Ontology.ttl](https://github.com/AIDAVA-DEV/AIDAVA-Reference-Ontology/blob/main/AIDAVA-Reference-Ontology.ttl) file 
+- A **merge** between the AIDAVA ontology file and SPHN subset file - [aidava-sphn.ttl](https://github.com/AIDAVA-DEV/AIDAVA-Reference-Ontology/blob/main/aidava-sphn.ttl) - this is the file used as the current reference ontology in the AIDAVA project for data onboarding because it contains both SPHN (with some parts missing, that are changed in AIDAVA RO) and the AIDAVA RO changes AIDAVA-Reference-Ontology.ttl. 
 
-The changes of the ontology file are done in Protege. The AIDAVA-Reference-Ontology.ttl is loaded and it prompts to be loaded also the expected external terminologies and the SPHN terminology. It is important to make the changes in the AIDAVA-Reference-Ontology.ttl file and then save it. After that, merge it with the loaded SPHN ontology to export the aidava-sphn.ttl file. If there are changes that are directly changing the SPHN schema and not just adding on top of it, then the relevant classes/properties have to be removed from the aidava-sphn.ttl file. This is done by loading it separately and removing what’s needed and then saving in Protege. 
-
-
-In the AIDAVA project we agree to the following named graph conventions
-
-## Suggested organization of a repository
-
-### Named graph conventions
-
-SPHN-Ontology: https://rdf.aidava.eu/ontology/aidava-sphn 
-
-------
-
-Loinc: https://rdf.aidava.eu/ontology/terminology/loinc
-
-Loinc Metadata: https://rdf.aidava.eu/metadata/description/loinc
-
-------
-
-UCUM: https://rdf.aidava.eu/ontology/terminology/ucum
-
-UCUM Metadata: https://rdf.aidava.eu/metadata/description/ucum
-
------
-
-Snomed-ct International:  https://rdf.aidava.eu/ontology/terminology/snomed-ct-int
-
-Metadata: https://rdf.aidava.eu/metadata/description/snomed-ct-int
-
------
-
-Snomed-ct Dutch: https://rdf.aidava.eu/ontology/terminology/snomed-ct-nl
-
-Metadata: https://rdf.aidava.eu/metadata/description/snomed-ct-nl
-
------
-
-Snomed-ct Estonian:  https://rdf.aidava.eu/ontology/terminology/snomed-ct-et
-
-Metadata: https://rdf.aidava.eu/metadata/description/snomed-ct-et
-
------
-
-Snomed-ct German: https://rdf.aidava.eu/ontology/terminology/snomed-ct-de
-
-Meatadata: https://rdf.aidava.eu/metadata/description/snomed-ct-de
-
------
-
-Snomed-ct Austrian: https://rdf.aidava.eu/ontology/terminology/snomed-ct-at
-
-Metadata: https://rdf.aidava.eu/metadata/description/snomed-ct-at
-
-## LOINC codes sets according to FHIR IPS categories
-
-Laboratory : https://rdf.aidava.eu/ontology/terminology/loinc/category/laboratory
-
-Vitalsigns: https://rdf.aidava.eu/ontology/terminology/loinc/category/vitalsigns
-
-## Source and Personal Health Graphs
-
-First Source Knowledge Graph (SKG1): `https://rdf.aidava.eu/resource/datasource/file/[FILE_ID]`
-
-Second Source Knowledge Graph (SKG2): `https://rdf.aidava.eu/resource/datasource/file/[FILE_ID]`
-
-Personal Health Knowledge Graph (PHKG): `https://rdf.aidava.eu/resource/phkg/[ID]`
+The changes of the ontology file are done in Protege. The **AIDAVA-Reference-Ontology.ttl** is loaded and it prompts to be loaded also the expected external terminologies and the SPHN terminology (the subset one should be selected). All changes and additions are done in the **AIDAVA-Reference-Ontology.ttl** file. Then, the **AIDAVA-Reference-Ontology.ttl** file is merged with the loaded SPHN ontology (**sphn_rdf_schema.ttl**) and exported as **aidava-sphn.ttl** file. If there are changes that are directly changing the SPHN schema and not just adding on top of it, the statements relevant to the changes are removed from the **aidava-sphn.ttl** file (by loading that file separately in Protege and removing what’s needed and then saving). 
 
 
-## Provenance Metagraph (how source KGs are connected to PHKG)
-Metagraph: https://rdf.aidava.eu/metadata#metagraph
+## Resources
+
+In the AIDAVA project are used some of the external terminologies available in [external-terminologies](https://github.com/AIDAVA-DEV/AIDAVA-Reference-Ontology/tree/main/external-terminologies), as well as some additional resources, listed below. For the terminology resources we have provided metadata in the form of dcat descriptions available in [terminology-descriptions](https://github.com/AIDAVA-DEV/AIDAVA-Reference-Ontology/tree/main/terminology-descriptions) that should be loaded to the repository of the reference ontology along with the resources. This was motivated by the need to be able to extract up to date general information about the resource in formats such as FHIR. 
+
+In addition, there are lists of LOINC codes that are used for assigning FHIR categories for the FHIR IPS Profile Observation, that would also be loaded to specific named graphs, as described below. 
+
+### Named graph suggestions
+
+#### AIDAVA RO 
+ - aidava-sphn.ttl: https://rdf.aidava.eu/ontology/aidava-sphn 
+
+#### Termonologies
+
+ - https://rdf.aidava.eu/ontology/terminology/snomed-ct-int
+ - https://rdf.aidava.eu/ontology/terminology/snomed-ct-nl
+ - https://rdf.aidava.eu/ontology/terminology/snomed-ct-et
+ - https://rdf.aidava.eu/ontology/terminology/snomed-ct-de
+ - https://rdf.aidava.eu/ontology/terminology/snomed-ct-at
+ - https://rdf.aidava.eu/ontology/terminology/loinc
+ - https://rdf.aidava.eu/ontology/terminology/ucum
+ - https://rdf.aidava.eu/ontology/terminology/atc
+ - https://rdf.aidava.eu/ontology/terminology/icd10gm
+ - https://rdf.aidava.eu/ontology/mapping/snomed-ct-int_to_icd10gm 
+
+ #### Descriptions of Termonologies
+
+ - https://rdf.aidava.eu/metadata/description/snomed-ct-int
+ - https://rdf.aidava.eu/metadata/description/snomed-ct-nl
+ - https://rdf.aidava.eu/metadata/description/snomed-ct-et
+ - https://rdf.aidava.eu/metadata/description/snomed-ct-de
+ - https://rdf.aidava.eu/metadata/description/snomed-ct-at
+ - https://rdf.aidava.eu/metadata/description/loinc
+ - https://rdf.aidava.eu/metadata/description/ucum
+ - https://rdf.aidava.eu/metadata/description/atc
+ - https://rdf.aidava.eu/metadata/description/icd10gm
+
+#### FHIR categories value sets
+
+ - https://rdf.aidava.eu/ontology/terminology/loinc/category/laboratory
+ - https://rdf.aidava.eu/ontology/terminology/loinc/category/vitalsigns
+
+
+## AIDAVA RO development summary 
+
+There are many additions to SPHN in the AIDAVA RO, as well as many changes: 
 
 ---
 ---
 
-# AIDAVA-Reference-Ontology development
-AIDAVA Reference Ontology
+### Additions:
 
-The current working version of AIDAVA RO is based on SPHN schema but it has the following differences/changes: 
+**1. Classes:** The classes were introduced usually with new properties that are highlighted, and some properties from SPHN had to be redefined to include it as a domain and/or range. 
 
-[OUTDATED]
-## Added: 
+---
 
-### Patient 
-IRI 	https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+#### Person 
 
-Description 	
+Related Issues: #126
 
+**IRI** 	https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Person
+
+**Description** 	
+a unique person that can be represented by different roles such as being a patient or a healthcare practitioner
+
+**In Domain Of** 
+
+ - sphn:SPHNConcept
+ - ***has administrative gender*** *op* max 1 min 0
+ - ***has subject name*** *op* min 0 max 1
+ - ***has birth datetime*** *dp* min 0 max 1
+ - sphn:hasIdentifier *dp* max 1 min 0
+
+In Range Of 	
+ - ***is feature of*** *op* 
+
+---
+
+#### Patient 
+
+Related Issues: #16, #68, #50, #78, #79, #126
+
+**IRI** 	https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Patient
+
+**Description** 	
 Individual receiving health care services
 
-Sub Class Of 	
+**Sub Class Of** 
+ - sphn:SPHNConcept
+ - Person
 
-    SPHN Concept c
-    has administrative gender op max 1
-    and has administrative gender op min 0
-    has birth date op min 1
-    and has birth date op max 1
+**In Domain Of** 
 
-In Domain Of 	
+ - ***has administrative gender*** *op* max 1 min 0
+ - ***has birth date*** *op* min 1 max 1
+ - ***has contact information*** *op* min 0 max 1
+ - ***has subject name*** *op* max 1 min 1
+ - ***is feature of*** *op* min 0 max 1
+ - ***has birth datetime*** *dp* min 1 max 1
+ - sphn:hasIdentifier *dp* min 0 max 1
+ - ***has birth date*** *op*
+ - ***has drug administration event*** *op*
+ - ***has drug prescription*** *op*
+ - ***has measurement*** *op*
+ - ***has problem condition*** *op*
+ - ***has procedure*** *op*
 
-    has administrative gender op
-    has birth date op
-    has subject name op
-    has adress dp
+**In Range Of** 	
 
-In Range Of 	has patient op
-Restriction 	
+ - ***as patient*** *op* 
 
-    has subject name op min 1
-    has adress dp min 0
-    has identifier dp min 0 
+---
 
-### Product
-IRI 	https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product 
+#### Healthcare Personnel
+Related Issues: #126
 
-Description : 
+**IRI** 	https://biomedit.ch/rdf/sphn-ontology/AIDAVA/HealthcarePersonnel
+
+**Description** 
+
+a person that is affiliated with a healthcare organization in the role of a healthcare proffesional, practitioner or someone with a formal responsibility in the provisioning of healthcare or related services
+
+**In Domain Of**	
+
+ - ***has contact information*** *op* max 1 min 0
+ - ***is feature of*** *op* max 1 min 0
+ - ***has subject name*** *op* min 0
+ - ***is part of*** *op* min 0
+ - ***has job title*** *dp* min 0
+ - sphn:hasIdentifier min 0 
+
+---
+
+#### Subject Name
+Related Issues: #126
+
+**IRI** 	https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName
+
+**Description** 
+Name of a human
+
+**In Domain Of**
+
+ - ***has family name*** *dp* min 1 max 1
+ - ***has full name*** *dp* max 1 min 0
+ - ***has given name*** *dp* min 1 
+
+**In Range Of** 	has subject name*** *op*
+
+---
+
+#### Healthcare Organization
+Related Issues: #126
+
+**IRI** 	https://biomedit.ch/rdf/sphn-ontology/AIDAVA/HealthcareOrganization
+
+**Description** 	
+The Healthcare Organization is a hospital, clinic or a healthcare facility
+
+**In Domain Of** 	
+
+ - sphn:hasCode max 1 min 0
+ - ***has address*** *op* min 0 max 1
+ - ***has contact information*** *op* min 0 max 1
+ - sphn:hasIdentifier max 1 min 0
+ - sphn:hasName min 0 
+	
+
+**In Range Of** 	
+ - ***has healthcare organization*** *op*
+ - ***is part of*** *op*
+
+---
+
+#### Department
+Related Issues: #126
+
+**IRI** 	https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Department
+
+**Description** 
+a department of an organization or an institution
+
+**In Domain Of**	
+
+ - ***has address*** *op* max 1 min 0
+ - ***has contact information*** *op* min 0 max 1
+ - ***is part of*** *op*
+ - sphn:hasIdentifier min 0
+ - sphn:hasName min 0
+
+**In Range Of** 	
+
+ - ***is part of*** *op* min 0
+
+---
+
+#### Contact Information
+Related Issues: #126
+
+**IRI** 	https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ContactInformation
+
+**Description** 
+the contact information of a person or an organization
+
+**In Domain Of** 	
+
+ - ***has contact type*** *dp*
+ - ***has email address*** *dp*
+ - ***has fax*** *dp*
+ - ***has language*** *dp*
+ - ***has phone number*** *dp*
+
+**In Range Of** 	
+ - ***has contact information*** *op*
+
+---
+
+#### Address
+Related Issues: #126
+
+**IRI** 	https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Address
+
+**Description** 
+The address of a person or an organization
+
+**In Domain Of**
+
+ - sphn:hasFreeText min 0 max 1
+ - ***has city*** *dp*
+ - ***has country*** *dp*
+ - ***has postal code*** *dp*
+
+**In Range Of** 	has address*** *op*
+
+---
+
+#### Product
+Related Issues: #21
+
+**IRI** 	https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Product
+
+**Description** 	
 a pharmaceutical or biologic product
 
-Sub Class Of 	
+**In Domain Of** 
+ - sphn:hasCode max 1 min 0
 
-    SPHN Concept c
-    has code op some
-    and has code op max 1
-    and has code op min 0 
+---
 
-### Subject Name
+#### Set
+Related Issues: #127 
 
-IRI 	https://biomedit.ch/rdf/sphn-ontology/AIDAVA/SubjectName
+**IRI** 	https://biomedit.ch/rdf/sphn-ontology/AIDAVA/Set
 
-Description 	
+**Description** 	
+A set is an information object for which there may be zero or more items.
 
-Name of a human
-Sub Class Of 	
+**In Domain Of** 	
+ - ***has member*** *op*
+ - ***has measurement*** *op* min 1 
 
-    SPHN Concept c
-    has family name dp min 0
-    and has coding datetime dp max 1
+---
 
-In Domain Of 	
+#### Observation Category 
+Related to FHIR IPS representation issues
 
-    has family name dp
-    has given name dp
+**IRI** 	https://biomedit.ch/rdf/sphn-ontology/AIDAVA/ObservationCategory
 
-In Range Of 	has subject name op
-Restriction 	has given name dp min 0 
+**Description** 	
+Obsevation category allowing to group LOINC codes of type Measurement
 
-### AIDAVA object properties 
+**In Range Of** 
+- has category *op* 
 
-IRI 	https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVAobjectproperties
+**Instances** 
+ - Laboratory
+ - Vital Signs 
+ - Social History 
 
-Super Property Of 	
+---
 
-    has administrative gender op
-    has birth date op
-    Condition code op
-    has patient op
-    has subject name op
-    interprets op
-    using substance op
+#### Vital signs
+Related to FHIR IPS representation issues
 
-#### hasAdministrativeGender
-IRI 	https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdministrativeGender
+**IRI** 	https://biomedit.ch/rdf/sphn-ontology/AIDAVA/VitalSigns
 
-Description 	
+**Description** 	
+Class representing Vital signs in FHIR IPS implementation
 
-the gender of the individual used for administrative purposes
+**2. Value Sets**
 
-Sub Property Of 	AIDAVA object properties op
+---
 
-Domain 	Patient c
+#### Encounter Class
 
-Range 	Administrative Gender 
+**IRI** 	http://terminology.hl7.org/ValueSet/encounter-class
+Related to FHIR IPS representation issues
 
-#### hasBirthDate
+**Description** 	
+This value set defines a set of codes that can be used to indicate the class of encounter: a specific code indicating class of service provided.
 
-IRI 	https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasBirthDate
+Super Class Of 	
 
-Description 	
+ - Ambulatory
+ - Emergency
+ - Home Health
+ - Inpatient Encounter
+ - Observation Encounter
+ - Virtual
 
-The date of birth for the individual
+**3. Properties**
 
-Sub Property Of 	AIDAVA object properties op
+---
 
-Domain 	Patient c
-Range 	Birth Date 
+#### has record date time 
+Related Issues: #135
 
-#### hasConditionCode
-IRI 	https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasConditionCode
+**IRI** https://biomedit.ch/rdf/sphn-ontology/sphn#hasRecordDateTime 
 
-Description 	
+**Sub Property Of**
+ - has datetime *dp* 
+
+**Super Property Of**
+ - has first record datetime *dp* 
+
+**Domain**
+
+Drug Prescription, Body Position, Simple Score, Electrocardiographic Procedure, Body Surface Area, Administrative Gender, Sample, Oncology Treatment Assessment, Measurement, Radiotherapy Procedure, Cardiac Index, Administrative Case, Tumor Grade, Procedure, Civil Status, Access Device Presence, Adverse Event, TNM Classification, Tumor Specimen, Consent, Allergy, Diagnostic Radiologic Examination, Allergy Episode, Lab Result, FOPH Procedure, Problem Condition, Tumor Stage, Drug Administration Event, Healthcare Encounter, Body Mass Index
+
+**Range**
+
+xsd:DateTime 
+
+---
+
+#### Provenance and relative temporality related properties 
+Related Issues: #141, #31, #12, #14, #17
+
+**Object properties**
+ - has part 
+ - precedes - domains and ranges:  sphn:HealthcareEncounter, sphn:Procedure, sphn:Measurement, sphn:TumorGrade, sphn:ProblemCondition, sphn:TNMClassification, sphn:TumorStage, sphn:AdministrativeCase
+
+**Data properties** - with domain sphn:DataFile
+ - audit event timestamp
+ - author specialty
+ - committer
+ - composer
+ - file path
+ - file source
+ - source type
+ - subject of care
+
+---
+
+#### List of all object properties added: 
+ - has address
+ - has administrative gender
+ - has birth date
+ - has category
+ - Condition code
+ - has contact information
+ - has drug administration event
+ - has drug prescription
+ - has healthcare organization
+ - has measurement
+ - has member
+ - has part
+ - has patient
+ - has problem condition
+ - has procedure
+ - has subject name
+ - interprets
+ - is feature of
+ - is part of
+ - precedes
+ - using substance
+
+---
+
+#### List of all data properties added: 
+ - audit event timestamp
+ - author specialty
+ - committer
+ - composer
+ - file path
+ - file source
+ - has city
+ - has contact type
+ - has country
+ - has email address
+ - has family name
+ - has fax
+ - has full name
+ - has given name
+ - has job title
+ - has language
+ - has phone number
+ - has postal code
+ - source type
+ - subject of care
+
+---
+---
+
+### Deprecated
+
+#### Deprecated Classes
+
+ - Oncology Diagnosis
+ - Biosample
+ - Blood Pressure
+ - Body Height
+ - Body Temperature
+ - Body Weight
+ - Cardiac Output
+ - Catheter
+ - Central Venous Pressure
+ - Circumference Measure
+ - Data Provider Institute - replaced with Healthcare Organization
+ - Diagnosis
+ - FOPH Diagnosis
+ - Heart Rate
+ - Inhaled Oxygen Concentration
+ - Lab Result
+ - Nursing Diagnosis
+ - Oxygen Saturation
+ - Systemic Arterial Blood Pressure
+
+#### Deprecated Properties	
+
+ - hasDiastolicPressure  
+ - hasDataProviderInstitute - changed to hasHealthCareOrganization                                                 	  
+ - hasMeanPressure                                                    	  
+ - hasOxygenEquipment                                                        	  
+ - hasOxygenFlowRate                                                        	  
+ - hasRegularityCode                                                        	  
+ - hasSubjectPseudoIdentifier
+ - hasSystolicPressure
+
+---
+---
+
+### Changes related to main profiles
+
+#### Data File related
+Issues: #93, #126
+
+**New properties with domain sphn:DataFile:** 
+
+ - has patient *op* 
+ - audit event timestamp *dp*
+ - author specialty *dp*
+ - committer *dp*
+ - composer *dp*
+ - file path *dp*
+ - file source *dp*
+ - source type *dp*
+ - subject of care *dp*
+
+**In Range Of**	
+
+ - sphn:hasDataFile *op* 
+
+**Changes to domains of sphn:hasDataFile:** 
+
+ - original domains: Electrocardiogram
+ - new domains: Access Device Presence, Administrative Case, Administrative Gender, Adverse Event, Allergy, Allergy Episode, Biobanksample, Birth Date, Body Mass Index, Body Position, Body Surface Area, Cardiac Index, Civil Status, Consent, Data File, Death Date, Death Status, Diagnostic Radiologic Examination, Drug Administration Event, Drug Prescription, Electrocardiogram, Electrocardiographic Procedure, FOPH Procedure, Gestational Age At Birth, Healthcare Encounter, Measurement, Oncology Treatment Assessment, Problem Condition, Procedure, Radiotherapy Procedure, Sample, Simple Score, TNM Classification, Tumor Grade, Tumor Specimen, Tumor Stage, Variant Descriptor
+
+---
+
+#### Problem Condiion related
+Issues: #13, #20, #25, #26, #38, #66. #141
+
+**Equivalent class** changed to snomed:404684003 (clinical finding)
+
+**New properties with domain sphn:ProblemCondition:** 
+
+ - has patient *op* 
+ - interprets *op*
+ - precedes *op*
+
+**Changed properties with domain sphn:ProblemCondition:** 
+
+ - sphn:hasStatusCode  *op* - with SNOMED code restrictions - some (261665006 or 410516002 or 410590009 or 410592001 or 410594000 or 410605003 or 415684004 or 723510000)
+ - sphn:hasBodySite *op* 
+
+**New properties with range sphn:ProblemCondition:**	
+
+ - has problem condition *op* - with domain Patient
+
+---
+
+#### Measurement related
+Issues: #7, #9, #10, #11, #65, #41, #51, #38, #40, #123, 141
+
+**Equivalent class** changed to snomed:363787002 (observable entity)
+
+**New properties with domain sphn:Measurement:** 
+
+ - has patient *op* 
+ - precedes *op*
+ 
+**Changed properties with domain sphn:Measurement:** 
+
+ - has code *op* min 1 max 1
+ - has medical device *op* min 1 max 1
+ - has patient *op* min 1 max 1
+ - has body site *op* min 0 max 1
+ - has data determination *op* min 0 max 1
+ - has lab test *op* min 0 max 1
+ - has measurement method *op* min 0 max 1
+ - has physiologic state *op* min 0 max 1
+ - has qualitative result code *op* min 0 max 1
+ - has quantity *op* min 1 (change in cardinality)
+ - has reference range *op* min 0 max 1
+ - has sample *op* min 0 max 1
+ - has free text *dp* min 0 max 1
+
+**New properties with range sphn:Measurement:**	
+
+ - has measurement *op* - with domain Patient
+ - interprets *op* - with domain Problem Condition
+ - has member *op* - with domain Set
+
+---
+
+#### Procedure related
+Issues: #21, #59, #82, #23, #141
+
+**New properties with domain sphn:Procedure:** 
+
+ - has patient *op* 
+ - precedes *op*
+ - using substance *op* - with ranges Product and Substance
+ 
+**Changed properties with domain sphn:Procedure:** 
+
+ - has status code *op* min 1 max 1 - with restriction of SNOMED codes some (385651009 or 385655000 or 385656004 or 385660001 or 410513005 or 410537005 or 410545000 or 723510000)
+ - has datetime *dp* min 1 max 1
+ - has start datetime *dp* min 0 max 1 (cardinality changed)
+ - has free text *dp* min 0 max 1
+
+**New properties with range sphn:Procedure:**	
+
+ - has procedure *op* - with domain Patient
 
-The code for a Condition class instance
-
-Sub Property Of 	
-
-    AIDAVA object properties op
-    has code op
-
-Domain 	Condition c
-
-Range 	Code 
-
-#### hasPatient 
-IRI 	https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasPatient
-
-Sub Property Of 	AIDAVA object properties op
-
-Domain 	
-
-Body Mass Index or Death Status or Cardiac Index or Biobanksample or Administrative Gender or Civil Status or FOPH Diagnosis or Allergy Episode or ICD-O Diagnosis or Tumor Grade or Body Weight or Adverse Event or Problem Condition or Tumor Specimen or Allergy or Electrocardiographic Procedure or Administrative Case or Diagnosis or Gestational Age At Birth or Death Date or Lab Result or Oncology Treatment Assessment or Sample or Tumor Stage or Oxygen Saturation or Respiratory Rate or Body Height or Body Temperature or Inhaled Oxygen Concentration or Radiotherapy Procedure or Access Device Presence or Measurement or Variant Descriptor or Birth Date or Drug Prescription or Simple Score or Body Surface Area or Circumference Measure or Diagnostic Radiologic Examination or Nursing Diagnosis or Drug Administration Event or Healthcare Encounter or Consent or TNM Classification or Data File or Body Position or Blood Pressure or Cardiac Output or FOPH Procedure or Procedure or Heart Rate c
-
-Range 	Patient 
-
-#### hasSubjectName 
-
-IRI 	https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasSubjectName
-
-Description 	
-
-a name associated with the patient
-
-Sub Property Of 	AIDAVA object properties op
-
-Domain 	Patient c
-
-Range 	Subject Name 
-#### interprets 
-
-IRI 	https://biomedit.ch/rdf/sphn-ontology/AIDAVA/interprets
-
-Description 	
-
-a relation between a clinical finding and an observable entity
-
-Sub Property Of 	AIDAVA object properties op
-
-Domain 	Problem Condition c
-
-Range 	Measurement 
-
-#### usingSubstance 
-
-IRI 	https://biomedit.ch/rdf/sphn-ontology/AIDAVA/usingSubstance
-
-Description 	
-
-a relation between a procedure and substance or pharmaceutical / biologic product
-
-Sub Property Of 	AIDAVA object properties op
-
-Domain 	Procedure c
-
-Range 	Product or Substance 
-
-### AIDAVA data properties
-
-IRI 	https://biomedit.ch/rdf/sphn-ontology/AIDAVA/AIDAVADataProperties
-
-Super Property Of 	
-
-    has adress dp
-    has family name dp
-    has given name dp
-
-#### hasAdress
-
-IRI 	https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasAdress
-Description 	
-
-an address for the individual
-
-Sub Property Of 	AIDAVA data properties dp
-
-Domain 	Patient c
-
-Range 	xsd:string
-
-#### hasFamilyName
-
-IRI 	https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasFamilyName
-Description 	
-
-family name (often called 'Surname')
-
-Sub Property Of 	AIDAVA data properties dp
-
-Domain 	Subject Name c
-
-Range 	xsd:string
-
-#### hasGivenName 
-
-IRI 	https://biomedit.ch/rdf/sphn-ontology/AIDAVA/hasGivenName
-Description 	
-
-given names (not always 'first'), includes middle names
-
-Sub Property Of 	AIDAVA data properties dp
-
-Domain 	Subject Name c
-
-Range 	xsd:string
-
-
-## Changed 
-### Measurement
-sphn:Measurement Equivalentclass http://snomed.info/id/363787002
-
-Multiple properties are added
-
-### Procedure 
-Multiple properties are added
-
-### ProblemCondition 
-Multiple properties are added
-
-### hasBodySite
-IRI 	https://biomedit.ch/rdf/sphn-ontology/sphn#hasBodySite
-
-Description 	
-
-body site where the concept was measured, performed or collected
-Sub Property Of 	SPHN attribute object op
-
-Super Property Of 	
-
-    has insertion point op
-    has manifestation body site op
-    has progression body site op
-    has resting point op
-
-Domain 	
-
-Circumference Measure or Body Temperature or Heart Rate or Allergy Episode or Blood Pressure or Diagnosis or Diagnostic Radiologic Examination or Access Device Presence or Electrocardiographic Procedure or Procedure or FOPH Procedure or Problem Condition or Oncology Treatment Assessment or Oxygen Saturation or Measurement or Tumor Specimen or Sample or Radiotherapy Procedure c
-
-Range 	Body Site 
-
-### hasCode
-Domain 	
-Cardiac Output or Body Site or Data File or Electrocardiographic Procedure or Measurement or Data Provider Institute or Chromosome or Drug or Heart Rate or Transcript or Body Position or Adverse Event or Drug Administration Event or Simple Score or Pharmaceutical Dose Form or Radiotherapy Procedure or Tumor Stage or Data Determination or Civil Status or Medical Device or Diagnosis or Time Pattern or Drug Prescription or Physiologic State or FOPH Diagnosis or Organism or Unit or Allergy Episode or Intent or Lab Result or Substance or Administrative Gender or Gene or Laterality or Care Handling or Cardiac Index or Consent or Protein or Product or Measurement Method or Problem Condition or Variant Descriptor or Sample or Allergy or Death Status or Location or Diagnostic Radiologic Examination or Lab Analyzer or Lab Test or FOPH Procedure or Oncology Treatment Assessment or ICD-O Diagnosis or Reference or Nursing Diagnosis or Tumor Grade or Tumor Specimen or Procedure or Allergen or Chromosomal Location 
-
-## Deprecated
-OncologyDiagnosis
-BloodPressure
-BodyHeight
-BodyTemperature
-BodyWeight
-CardiacOutput
-CircumferenceMeasure
-Diagnosis
-FOPH Diagnosis
-Heart Rate
-Inhaled Oxygen Concentration
-Lab Result
-Nursing Diagnosis
-Oxygen Saturation
-Systemic Arterial Blood Pressure 
