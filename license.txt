@@ -1,0 +1,5 @@
+AIDAVA Reference Ontology under this folder and all its contents are licensed under CC BY-SA 4.0 license.
+
+More information about the license can be found on https://creativecommons.org/licenses/by-sa/4.0/legalcode
+
+The intelectual property rights on AIDAVA Reference Ontology belong to Ontotext AG and University of Maastriht.
